@@ -1,6 +1,3 @@
-import datetime
-
-from .base_request import BaseRequest
 from datetime import datetime
 
 
@@ -8,9 +5,8 @@ def empty(x):
     return x is None or x == {} or x == [] or x == ''
 
 
-class CaseQueryRequest(dict):
+class CaseQueryRequest:
     def __init__(self):
-        super().__init__()
         self.query_template = {
             'caseStatus': '',
             'caseTypes': {'include': [], 'exclude': []},

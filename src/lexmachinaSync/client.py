@@ -1,7 +1,6 @@
 from typing import List
 
 from .base_request import BaseRequest
-from .casequery import CaseQueryRequest
 from .query_district_cases import QueryDistrictCase
 
 
