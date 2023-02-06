@@ -407,15 +407,15 @@ class CaseQueryRequest(dict):
         if isinstance(args, tuple):
             for value in args:
                 self.query_template['patents']['include'].append(value)
-            else:
-                self.query_template['patents']['include'].append(args)
+        else:
+            self.query_template['patents']['include'].append(args)
 
     def exclude_patents(self, *args):
         if isinstance(args, tuple):
             for value in args:
                 self.query_template['patents']['exclude'].append(value)
-            else:
-                self.query_template['patents']['exclude'].append(args)
+        else:
+            self.query_template['patents']['exclude'].append(args)
 
     def include_mdl(self, *args):
         if isinstance(args, tuple):
