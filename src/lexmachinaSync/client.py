@@ -1,7 +1,8 @@
+from typing import List
+
 from .base_request import BaseRequest
-
-
-
+from .casequery import CaseQueryRequest
+from .query_district_cases import QueryDistrictCase
 
 
 class LexMachinaClient(BaseRequest):
@@ -10,17 +11,16 @@ class LexMachinaClient(BaseRequest):
         self.config_file_path = config_file_path
         self.client_id = client_id
         self.client_secret = client_secret
+        self.query = QueryDistrictCase()
 
     def get_district_cases(self, cases: int):
         response = self.get(path='district-cases', args=cases)
         return response
 
-    def query_district_cases(self, data: dict):
-        response = self.post(path='query-district-cases', data=data)
+    def query_district_case(self, query, options=None):
+        return self.query.query_district_case(query, options)
 
-        return response
-
-    def get_parties(self, parties: list[str]):
+    def get_parties(self, parties: List[str]):
         if isinstance(parties, list):
             response = self.get(path='parties', params={"partyIds": parties})
         else:
@@ -29,11 +29,11 @@ class LexMachinaClient(BaseRequest):
 
     def search_parties(self, q: str, page_number: int = 1, page_size: int = 500):
         response = self.get(path='search-parties', params={"q": q,
-                                                                 "pageNumber": page_number,
-                                                                 "pageSize": page_size})
+                                                           "pageNumber": page_number,
+                                                           "pageSize": page_size})
         return response
 
-    def get_attorneys(self, attorneys: list[int]):
+    def get_attorneys(self, attorneys: List[int]):
         if isinstance(attorneys, list):
             response = self.get(path='attorneys', params={"attorneyIds": attorneys})
         else:
@@ -42,11 +42,11 @@ class LexMachinaClient(BaseRequest):
 
     def search_attorneys(self, q: str, page_number: int = 1, page_size: int = 500):
         response = self.get(path='search-attorneys', params={"q": q,
-                                                                   "pageNumber": page_number,
-                                                                   "pageSize": page_size})
+                                                             "pageNumber": page_number,
+                                                             "pageSize": page_size})
         return response
 
-    def get_law_firms(self, law_firms: list[int]):
+    def get_law_firms(self, law_firms: List[int]):
         if isinstance(law_firms, list):
             response = self.get(path='law-firms', params={"lawFirmIds": law_firms})
         else:
@@ -55,11 +55,11 @@ class LexMachinaClient(BaseRequest):
 
     def search_law_firms(self, q: str, page_number: int = 1, page_size: int = 500):
         response = self.get(path='search-law-firms', params={"q": q,
-                                                                   "pageNumber": page_number,
-                                                                   "pageSize": page_size})
+                                                             "pageNumber": page_number,
+                                                             "pageSize": page_size})
         return response
 
-    def get_federal_judges(self, federal_judges: list[int]):
+    def get_federal_judges(self, federal_judges: List[int]):
         if isinstance(federal_judges, list):
             response = self.get(path='federal-judges', params={"federalJudgeIds": federal_judges})
         else:
@@ -74,7 +74,7 @@ class LexMachinaClient(BaseRequest):
         response = self.get(path='search-judges', params={"q": q})
         return response
 
-    def get_patents(self, patents: list[str]):
+    def get_patents(self, patents: List[str]):
         if isinstance(patents, list):
             response = self.get(path='patents', params={"patentNumbers": patents})
         else:

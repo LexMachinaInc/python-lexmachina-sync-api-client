@@ -33,6 +33,6 @@ class BaseRequest(Auth):
                     return response.json()
             except JSONDecodeError:
                 return response.text
+
     def query(self, version: str = "beta", path=None, data=None):
         pass
-
