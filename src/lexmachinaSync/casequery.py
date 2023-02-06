@@ -7,7 +7,7 @@ def empty(x):
 
 class CaseQueryRequest:
     def __init__(self):
-        self.query_template = {
+        self._query_template = {
             'caseStatus': '',
             'caseTypes': {'include': [], 'exclude': []},
             'caseTags': {'include': [], 'exclude': []},
@@ -44,13 +44,13 @@ class CaseQueryRequest:
             'pageSize': 5
         }
 
-    def remove_empty_elements(self, data):
+    def _remove_empty_elements(self, data):
         if not isinstance(data, dict) and not isinstance(data, list):
             return data
         elif isinstance(data, list):
-            return [v for v in (self.remove_empty_elements(v) for v in data) if not empty(v)]
+            return [v for v in (self._remove_empty_elements(v) for v in data) if not empty(v)]
         else:
-            return {k: v for k, v in ((k, self.remove_empty_elements(v)) for k, v in data.items()) if not empty(v)}
+            return {k: v for k, v in ((k, self._remove_empty_elements(v)) for k, v in data.items()) if not empty(v)}
 
     def validate_date(self, date):
         try:
@@ -69,7 +69,7 @@ class CaseQueryRequest:
         '''
         valid_date = self.validate_date(date)
         if isinstance(field, str):
-            new_field = self.query_template['dates'][field]
+            new_field = self._query_template['dates'][field]
             if valid_date:
                 new_field[operator] = date
         else:
@@ -80,355 +80,533 @@ class CaseQueryRequest:
         return self
 
     def set_page(self, page):
-        self.query_template['page'] = page
+        self._query_template['page'] = page
         return self
 
     def next_page(self):
-        self.query_template['page'] += 1
+        self._query_template['page'] += 1
         return self
 
     def set_page_size(self, size):
-        self.query_template['pageSize'] = size
+        self._query_template['pageSize'] = size
         return self
 
     def include_case_types(self, *args):
+        '''
+        :param args: include an arbitrary number of case types
+        list of case types can be found using the /list-case-types endpoint.
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['caseTypes']['include'].append(value)
+                self._query_template['caseTypes']['include'].append(value)
         else:
-            self.query_template['caseTypes']['include'].append(args)
+            self._query_template['caseTypes']['include'].append(args)
+        return self
+
+    def exclude_case_types(self, *args):
+        '''
+        :param args: exclude an arbitrary number of case types
+        list of case types can be found using the /list-case-types endpoint.
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
+        if isinstance(args, tuple):
+            for value in args:
+                self._query_template['caseTypes']['exclude'].append(value)
+        else:
+            self._query_template['caseTypes']['exclude'].append(args)
         return self
 
     def include_case_tags(self, *args):
+        '''
+        :param args: include an arbitrary number of case tags
+        list of case tags can be found using the /list-case-tags endpoint.
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['caseTags']['include'].append(value)
+                self._query_template['caseTags']['include'].append(value)
         else:
-            self.query_template['caseTags']['include'].append(args)
+            self._query_template['caseTags']['include'].append(args)
+        return self
+
+    def exclude_case_tags(self, *args):
+        '''
+        :param args: exclude an arbitrary number of case tags
+        list of case tags can be found using the /list-case-tags endpoint.
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
+        if isinstance(args, tuple):
+            for value in args:
+                self._query_template['caseTags']['exclude'].append(value)
+        else:
+            self._query_template['caseTags']['exclude'].append(args)
         return self
 
     def include_judges(self, *args):
+        '''
+        :param args: include an arbitrary number of judge ids
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['judges']['include'].append(value)
+                self._query_template['judges']['include'].append(value)
         else:
-            self.query_template['judges']['include'].append(args)
+            self._query_template['judges']['include'].append(args)
         return self
 
     def exclude_judges(self, *args):
+        '''
+        :param args: exclude an arbitrary number of judge ids
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['judges']['exclude'].append(value)
+                self._query_template['judges']['exclude'].append(value)
         else:
-            self.query_template['judges']['exclude'].append(args)
+            self._query_template['judges']['exclude'].append(args)
         return self
 
     def include_courts(self, *args):
+        '''
+        :param args: include an arbitrary number of court ids
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['courts']['include'].append(value)
+                self._query_template['courts']['include'].append(value)
         else:
-            self.query_template['courts']['include'].append(args)
+            self._query_template['courts']['include'].append(args)
         return self
 
     def exclude_courts(self, *args):
+        '''
+        :param args: exclude an arbitrary number of court ids
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['courts']['exclude'].append(value)
+                self._query_template['courts']['exclude'].append(value)
         else:
-            self.query_template['courts']['exclude'].append(args)
+            self._query_template['courts']['exclude'].append(args)
         return self
 
     def include_magistrates(self, *args):
+        '''
+        :param args: include an arbitrary number of magistrate ids
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['magistrates']['include'].append(value)
+                self._query_template['magistrates']['include'].append(value)
         else:
-            self.query_template['magistrates']['include'].append(args)
+            self._query_template['magistrates']['include'].append(args)
 
     def exclude_magistrates(self, *args):
+        '''
+        :param args: exclude an arbitrary number of magistrate ids
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['magistrates']['exclude'].append(value)
+                self._query_template['magistrates']['exclude'].append(value)
         else:
-            self.query_template['magistrates']['exclude'].append(args)
+            self._query_template['magistrates']['exclude'].append(args)
         return self
 
     def include_event_types(self, *args):
+        '''
+        :param args: include an arbitrary number of event types.
+        These types can be found with the '/list-events' endpoint
+        This function can be chained with other functions.
+        :return: CaseQueryRequest object
+        '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['events']['includeEventTypes'].append(value)
+                self._query_template['events']['includeEventTypes'].append(value)
         else:
-            self.query_template['events']['includeEventTypes'].append(args)
+            self._query_template['events']['includeEventTypes'].append(args)
         return self
 
     def exclude_event_types(self, *args):
+        '''
+         :param args: exclude an arbitrary number of event types.
+         These types can be found with the '/list-events' endpoint
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['events']['excludeEventTypes'].append(value)
+                self._query_template['events']['excludeEventTypes'].append(value)
         else:
-            self.query_template['events']['excludeEventTypes'].append(args)
+            self._query_template['events']['excludeEventTypes'].append(args)
         return self
 
     def include_law_firms(self, *args):
+        '''
+         :param args: include an arbitrary number of lawfirm ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['lawFirms']['include'].append(value)
+                self._query_template['lawFirms']['include'].append(value)
         else:
-            self.query_template['lawFirms']['include'].append(args)
+            self._query_template['lawFirms']['include'].append(args)
 
         return self
 
     def exclude_law_firms(self, *args):
+        '''
+         :param args: exclude an arbitrary number of lawfirm ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['lawFirms']['exclude'].append(value)
+                self._query_template['lawFirms']['exclude'].append(value)
         else:
-            self.query_template['lawFirms']['exclude'].append(args)
+            self._query_template['lawFirms']['exclude'].append(args)
         return self
 
-    def lawfirms_include_plantiffs(self, *args):
+    def lawfirms_include_plaintiffs(self, *args):
+        '''
+         :param args: include an arbitrary number of plaintiff ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['lawFirms']['includePlaintiff'].append(value)
+                self._query_template['lawFirms']['includePlaintiff'].append(value)
         else:
-            self.query_template['lawFirms']['includePlaintiff'].append(args)
+            self._query_template['lawFirms']['includePlaintiff'].append(args)
         return self
 
-    def lawfirms_exclude_plantiffs(self, *args):
+    def lawfirms_exclude_plaintiffs(self, *args):
+        '''
+         :param args: exclude an arbitrary number of plaintiff ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['lawFirms']['excludePlaintiff'].append(value)
+                self._query_template['lawFirms']['excludePlaintiff'].append(value)
         else:
-            self.query_template['lawFirms']['excludePlaintiff'].append(args)
+            self._query_template['lawFirms']['excludePlaintiff'].append(args)
         return self
 
-    def lawfirms_include_defendent(self, *args):
+    def lawfirms_include_defendant(self, *args):
+        '''
+         :param args: include an arbitrary number of defendant ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['lawFirms']['includeDefendant'].append(value)
+                self._query_template['lawFirms']['includeDefendant'].append(value)
         else:
-            self.query_template['lawFirms']['includeDefendant'].append(args)
+            self._query_template['lawFirms']['includeDefendant'].append(args)
         return self
 
     def lawfirms_exclude_defendant(self, *args):
+        '''
+         :param args: exclude an arbitrary number of defendant ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['lawfirms']['excludeDefendant'].append(value)
+                self._query_template['lawfirms']['excludeDefendant'].append(value)
         else:
-            self.query_template['lawfirms']['excludeDefendant'].append(args)
+            self._query_template['lawfirms']['excludeDefendant'].append(args)
         return self
 
     def lawfirms_include_third_party(self, *args):
+        '''
+         :param args: include an arbitrary number of third party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['lawFirms']['includeThirdParty'].append(value)
+                self._query_template['lawFirms']['includeThirdParty'].append(value)
         else:
-            self.query_template['lawFirms']['includeThirdParty'].append(args)
+            self._query_template['lawFirms']['includeThirdParty'].append(args)
         return self
 
     def lawfirms_exclude_third_party(self, *args):
+        '''
+         :param args: exclude an arbitrary number of third party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['lawFirms']['excludeThirdParty'].append(value)
+                self._query_template['lawFirms']['excludeThirdParty'].append(value)
         else:
-            self.query_template['lawFirms']['excludeThirdParty'].append(args)
+            self._query_template['lawFirms']['excludeThirdParty'].append(args)
         return self
 
     def include_parties(self, *args):
+        '''
+         :param args: include an arbitrary number of party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['parties']['include'].append(value)
+                self._query_template['parties']['include'].append(value)
         else:
-            self.query_template['parties']['include'].append(args)
+            self._query_template['parties']['include'].append(args)
         return self
 
     def exclude_parties(self, *args):
+        '''
+         :param args: exclude an arbitrary number of party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['parties']['exclude'].append(value)
+                self._query_template['parties']['exclude'].append(value)
         else:
-            self.query_template['parties']['exclude'].append(args)
+            self._query_template['parties']['exclude'].append(args)
         return self
 
-    def parties_include_plantiff(self, *args):
+    def parties_include_plaintiff(self, *args):
+        '''
+         :param args: include an arbitrary number of plaintiff party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['parties']['includePlaintiff'].append(value)
+                self._query_template['parties']['includePlaintiff'].append(value)
         else:
-            self.query_template['parties']['includePlaintiff'].append(args)
+            self._query_template['parties']['includePlaintiff'].append(args)
         return self
 
     def parties_exclude_plantiff(self, *args):
+        '''
+         :param args: exclude an arbitrary number of plaintiff party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
+
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['parties']['excludePlaintiff'].append(value)
+                self._query_template['parties']['excludePlaintiff'].append(value)
         else:
-            self.query_template['parties']['excludePlaintiff'].append(args)
+            self._query_template['parties']['excludePlaintiff'].append(args)
         return self
 
     def parties_include_defendant(self, *args):
+        '''
+         :param args: include an arbitrary number of defendant party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['parties']['includeDefendant'].append(value)
+                self._query_template['parties']['includeDefendant'].append(value)
         else:
-            self.query_template['parties']['includeDefendant'].append(args)
+            self._query_template['parties']['includeDefendant'].append(args)
         return self
 
     def parties_exclude_defendant(self, *args):
+        '''
+         :param args: exclude an arbitrary number of defendant party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['parties']['excludeDefendant'].append(value)
+                self._query_template['parties']['excludeDefendant'].append(value)
         else:
-            self.query_template['parties']['excludeDefendant'].append(args)
+            self._query_template['parties']['excludeDefendant'].append(args)
         return self
 
     def parties_include_third_party(self, *args):
+        '''
+         :param args: include an arbitrary number of third-party party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['parties']['includeThirdParty'].append(value)
+                self._query_template['parties']['includeThirdParty'].append(value)
         else:
-            self.query_template['parties']['includeThirdParty'].append(args)
+            self._query_template['parties']['includeThirdParty'].append(args)
         return self
 
     def parties_exclude_third_party(self, *args):
+        '''
+         :param args: exclude an arbitrary number of third-party party ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         '''
+
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['parties']['excludeThirdParty'].append(value)
+                self._query_template['parties']['excludeThirdParty'].append(value)
         else:
-            self.query_template['parties']['excludeThirdParty'].append(args)
+            self._query_template['parties']['excludeThirdParty'].append(args)
         return self
 
     def include_resolutions(self, summary, specific):
+        '''
+        :param summary: Include a resolution summary
+        :param specific: Include specific resolution info
+        These can be found with the '/list-case-resolutions endpoint.
+        This function can be changd with other functions
+        :return: CaseQueryRequest object
+        '''
         resolution = {"summary": summary, "specific": specific}
-        self.query_template['resolutions']['include'].append(resolution)
+        self._query_template['resolutions']['include'].append(resolution)
         return self
 
     def exclude_resolutions(self, summary, specific):
+        '''
+        :param summary: Exclude a resolution summary
+        :param specific: Exclude specific resolution info
+        These can be found with the '/list-case-resolutions endpoint
+        :return: CaseQueryRequest object
+        '''
+
         resolution = {"summary": summary, "specific": specific}
-        self.query_template['resolutions']['exclude'].append(resolution)
+        self._query_template['resolutions']['exclude'].append(resolution)
         return self
 
     def findings_include_awarded_to_parties(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['findings'][0]['awardedToParties'].append(value)
+                self._query_template['findings'][0]['awardedToParties'].append(value)
         else:
-            self.query_template['findings'][0]['awardedToParties'].append(args)
+            self._query_template['findings'][0]['awardedToParties'].append(args)
         return self
 
     def findings_includes_awarded_against_parties(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['findings'][0]['awardedAgainstParties'].append(value)
+                self._query_template['findings'][0]['awardedAgainstParties'].append(value)
         else:
-            self.query_template['findings'][0]['awardedAgainstParties'].append(args)
+            self._query_template['findings'][0]['awardedAgainstParties'].append(args)
         return self
 
     def findings_include_judgment_source(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['rineintw'][0]['judgmentSource']['include'].append(value)
+                self._query_template['rineintw'][0]['judgmentSource']['include'].append(value)
         else:
-            self.query_template['findings'][0]['judgmentSource']['include'].append(args)
+            self._query_template['findings'][0]['judgmentSource']['include'].append(args)
 
     def findings_exclude_judgment_source(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['rineintw'][0]['judgmentSource']['exclude'].append(value)
+                self._query_template['rineintw'][0]['judgmentSource']['exclude'].append(value)
         else:
-            self.query_template['findings'][0]['judgmentSource']['exclude'].append(args)
+            self._query_template['findings'][0]['judgmentSource']['exclude'].append(args)
 
     def findings_include_patent_invalidity_reasons(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['findings'][0]['patentInvalidityReasons']['include'].append(value)
+                self._query_template['findings'][0]['patentInvalidityReasons']['include'].append(value)
         else:
-            self.query_template['findings'][0]['patentInvalidityReasons']['include'].append(args)
+            self._query_template['findings'][0]['patentInvalidityReasons']['include'].append(args)
         return self
 
     def include_remedies_awarded_to_parties(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['remedies'][0]['awardedToParties'].append(value)
+                self._query_template['remedies'][0]['awardedToParties'].append(value)
         else:
-            self.query_template['remedies'][0]['awardedToParties'].append(args)
+            self._query_template['remedies'][0]['awardedToParties'].append(args)
         return self
 
     def include_remedies_awarded_against_parties(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['remedies'][0]['awardedAgainstParties'].append(value)
+                self._query_template['remedies'][0]['awardedAgainstParties'].append(value)
         else:
-            self.query_template['remedies'][0]['awardedAgainstParties'].append(args)
+            self._query_template['remedies'][0]['awardedAgainstParties'].append(args)
         return self
 
     def include_remedies_judgment_source(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['remedies'][0]['judgmentSource']['include'].append(value)
+                self._query_template['remedies'][0]['judgmentSource']['include'].append(value)
         else:
-            self.query_template['remedies'][0]['judgmentSource']['include'].append(args)
+            self._query_template['remedies'][0]['judgmentSource']['include'].append(args)
         return self
 
     def exclude_remedies_judgment_source(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['remedies'][0]['judgmentSource']['exclude'].append(value)
+                self._query_template['remedies'][0]['judgmentSource']['exclude'].append(value)
         else:
-            self.query_template['remedies'][0]['judgmentSource']['exclude'].append(args)
+            self._query_template['remedies'][0]['judgmentSource']['exclude'].append(args)
         return self
 
     def include_remedies_name_type(self, name, type):
         name_type = {'name': name, 'type': type}
-        self.query_template['remedies'][0]['nameType']['include'].append(name_type)
+        self._query_template['remedies'][0]['nameType']['include'].append(name_type)
         return self
 
     def exclude_remedies_name_type(self, name, type):
         name_type = {'name': name, 'type': type}
-        self.query_template['remedies'][0]['nameType']['exclude'].append(name_type)
+        self._query_template['remedies'][0]['nameType']['exclude'].append(name_type)
         return self
 
     def add_remedies_date(self, value, operator):
-        self.set_date(value, self.query_template['remedies'][0]['date'], operator)
+        self.set_date(value, self._query_template['remedies'][0]['date'], operator)
         return self
 
     def set_damages_minimum_amount(self, amount):
         if amount <= 0 or isinstance(amount, str):
             raise ValueError("Damages amount must be a number greater than 0")
-        self.query_template['damages'][0]['minimumAmount'] = amount
+        self._query_template['damages'][0]['minimumAmount'] = amount
         return self
 
     def include_patents(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['patents']['include'].append(value)
+                self._query_template['patents']['include'].append(value)
         else:
-            self.query_template['patents']['include'].append(args)
+            self._query_template['patents']['include'].append(args)
 
     def exclude_patents(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['patents']['exclude'].append(value)
+                self._query_template['patents']['exclude'].append(value)
         else:
-            self.query_template['patents']['exclude'].append(args)
+            self._query_template['patents']['exclude'].append(args)
 
     def include_mdl(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['mdl']['include'].append(value)
+                self._query_template['mdl']['include'].append(value)
         else:
-            self.query_template['mdl']['include'].append(args)
+            self._query_template['mdl']['include'].append(args)
         return self
 
     def exclude_mdl(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self.query_template['mdl']['exclude'].append(value)
+                self._query_template['mdl']['exclude'].append(value)
         else:
-            self.query_template['mdl']['exclude'].append(args)
+            self._query_template['mdl']['exclude'].append(args)
         return self
 
     def execute(self):
-        self.query_template = self.remove_empty_elements(self.query_template)
-        return self.query_template
+        self._query_template = self._remove_empty_elements(self._query_template)
+        return self._query_template
