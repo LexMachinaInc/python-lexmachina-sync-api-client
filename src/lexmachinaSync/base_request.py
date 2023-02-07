@@ -5,7 +5,7 @@ from .auth import Auth
 
 
 class BaseRequest(Auth):
-    def get(self, version: str = "beta", path=None, args=None, params=None):
+    def _get(self, version: str = "beta", path=None, args=None, params=None):
         try:
             with requests.Session() as session:
                 token = self.get_token()
@@ -20,7 +20,7 @@ class BaseRequest(Auth):
         except JSONDecodeError:
             return response.text
 
-    def post(self, version: str = "beta", path=None, data=None):
+    def _post(self, version: str = "beta", path=None, data=None):
         with requests.Session() as session:
             token = self.get_token()
             headers = {"Authorization": f"Bearer {token}", "User-Agent": "lexmachina-0.0.1"}
@@ -33,6 +33,3 @@ class BaseRequest(Auth):
                     return response.json()
             except JSONDecodeError:
                 return response.text
-
-    def query(self, version: str = "beta", path=None, data=None):
-        pass

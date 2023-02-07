@@ -396,7 +396,7 @@ class CaseQueryRequest:
             self._query_template['parties']['includePlaintiff'].append(args)
         return self
 
-    def parties_exclude_plantiff(self, *args):
+    def parties_exclude_plaintiff(self, *args):
         '''
          :param args: exclude an arbitrary number of plaintiff party ids.
          This function can be chained with other functions.
@@ -488,6 +488,11 @@ class CaseQueryRequest:
         return self
 
     def findings_include_awarded_to_parties(self, *args):
+        """
+           :param args: include an arbitrary number of party ids.
+           This function can be chained with other functions.
+           :return: CaseQueryRequest object
+           """
         if isinstance(args, tuple):
             for value in args:
                 self._query_template['findings'][0]['awardedToParties'].append(value)
@@ -496,6 +501,11 @@ class CaseQueryRequest:
         return self
 
     def findings_includes_awarded_against_parties(self, *args):
+        """
+           :param args: exclude an arbitrary number of party ids.
+           This function can be chained with other functions.
+           :return: CaseQueryRequest object
+           """
         if isinstance(args, tuple):
             for value in args:
                 self._query_template['findings'][0]['awardedAgainstParties'].append(value)
@@ -504,6 +514,11 @@ class CaseQueryRequest:
         return self
 
     def findings_include_judgment_source(self, *args):
+        """
+           :param args: include an arbitrary number of judgment source ids.
+           This function can be chained with other functions.
+           :return: CaseQueryRequest object
+           """
         if isinstance(args, tuple):
             for value in args:
                 self._query_template['findings'][0]['judgmentSource']['include'].append(value)
@@ -511,6 +526,11 @@ class CaseQueryRequest:
             self._query_template['findings'][0]['judgmentSource']['include'].append(args)
 
     def findings_exclude_judgment_source(self, *args):
+        """
+           :param args: exclude an arbitrary number of third-party party ids.
+           This function can be chained with other functions.
+           :return: CaseQueryRequest object
+           """
         if isinstance(args, tuple):
             for value in args:
                 self._query_template['findings'][0]['judgmentSource']['exclude'].append(value)

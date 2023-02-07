@@ -1,9 +1,4 @@
-import json
 from configparser import ConfigParser
-
-import pytest
-import pprint
-
 from src.lexmachinaSync.client import LexMachinaClient
 
 

@@ -6,7 +6,7 @@ class QueryDistrictCase:
         self.district_case_query = BaseRequest(config)
 
     def query_one_page(self, query):
-        response = self.district_case_query.post(path="/query-district-cases", data=query)
+        response = self.district_case_query._post(path="/query-district-cases", data=query)
         if response:
             return response.get("caseIds")
         return []
