@@ -10,7 +10,7 @@ class LexMachinaClient(BaseRequest):
         self.config_file_path = config_file_path
         self.client_id = client_id
         self.client_secret = client_secret
-        self.query = QueryDistrictCase()
+        self.query = QueryDistrictCase(config=self.config_file_path)
 
     def get_district_cases(self, cases: int):
         response = self.get(path='district-cases', args=cases)

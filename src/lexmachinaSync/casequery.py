@@ -437,11 +437,11 @@ class CaseQueryRequest:
         return self
 
     def parties_include_third_party(self, *args):
-        '''
+        """
          :param args: include an arbitrary number of third-party party ids.
          This function can be chained with other functions.
          :return: CaseQueryRequest object
-         '''
+         """
         if isinstance(args, tuple):
             for value in args:
                 self._query_template['parties']['includeThirdParty'].append(value)
@@ -450,11 +450,11 @@ class CaseQueryRequest:
         return self
 
     def parties_exclude_third_party(self, *args):
-        '''
+        """
          :param args: exclude an arbitrary number of third-party party ids.
          This function can be chained with other functions.
          :return: CaseQueryRequest object
-         '''
+         """
 
         if isinstance(args, tuple):
             for value in args:
@@ -464,25 +464,25 @@ class CaseQueryRequest:
         return self
 
     def include_resolutions(self, summary, specific):
-        '''
+        """
         :param summary: Include a resolution summary
         :param specific: Include specific resolution info
         These can be found with the '/list-case-resolutions endpoint.
-        This function can be changd with other functions
+        This function can be chained with other functions
         :return: CaseQueryRequest object
-        '''
+        """
         resolution = {"summary": summary, "specific": specific}
         self._query_template['resolutions']['include'].append(resolution)
         return self
 
     def exclude_resolutions(self, summary, specific):
-        '''
+        """
         :param summary: Exclude a resolution summary
         :param specific: Exclude specific resolution info
-        These can be found with the '/list-case-resolutions endpoint
+        These can be found with the '/list-case-resolutions endpoint.
+        This function can be chained with other functions
         :return: CaseQueryRequest object
-        '''
-
+        """
         resolution = {"summary": summary, "specific": specific}
         self._query_template['resolutions']['exclude'].append(resolution)
         return self
@@ -506,14 +506,14 @@ class CaseQueryRequest:
     def findings_include_judgment_source(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self._query_template['rineintw'][0]['judgmentSource']['include'].append(value)
+                self._query_template['findings'][0]['judgmentSource']['include'].append(value)
         else:
             self._query_template['findings'][0]['judgmentSource']['include'].append(args)
 
     def findings_exclude_judgment_source(self, *args):
         if isinstance(args, tuple):
             for value in args:
-                self._query_template['rineintw'][0]['judgmentSource']['exclude'].append(value)
+                self._query_template['findings'][0]['judgmentSource']['exclude'].append(value)
         else:
             self._query_template['findings'][0]['judgmentSource']['exclude'].append(args)
 
@@ -567,17 +567,32 @@ class CaseQueryRequest:
         self._query_template['remedies'][0]['nameType']['exclude'].append(name_type)
         return self
 
-    def add_remedies_date(self, value, operator):
-        self.set_date(value, self._query_template['remedies'][0]['date'], operator)
+    def add_remedies_date(self, date, operator):
+        """
+        :param date: date in format YYYY-MM-DD
+        :param operator: options are onOrBefore or onOrAfter. Choose to set date to either value.
+        :return: CaseQueryRequest
+        """
+        self.set_date(date, self._query_template['remedies'][0]['date'], operator)
         return self
 
     def set_damages_minimum_amount(self, amount):
+        """
+        :param amount: provide a minimum amount of damages.
+        This function can be chained with other functions
+        :return: CaseQueryRequest
+        """
         if amount <= 0 or isinstance(amount, str):
             raise ValueError("Damages amount must be a number greater than 0")
         self._query_template['damages'][0]['minimumAmount'] = amount
         return self
 
     def include_patents(self, *args):
+        """
+         :param args: include an arbitrary number of patent ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         """
         if isinstance(args, tuple):
             for value in args:
                 self._query_template['patents']['include'].append(value)
@@ -585,6 +600,11 @@ class CaseQueryRequest:
             self._query_template['patents']['include'].append(args)
 
     def exclude_patents(self, *args):
+        """
+         :param args: exclude an arbitrary number of patent ids.
+         This function can be chained with other functions.
+         :return: CaseQueryRequest object
+         """
         if isinstance(args, tuple):
             for value in args:
                 self._query_template['patents']['exclude'].append(value)
