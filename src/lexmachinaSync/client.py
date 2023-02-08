@@ -13,98 +13,143 @@ class LexMachinaClient(BaseRequest):
         self.query = QueryDistrictCase(config=self.config_file_path)
 
     def get_district_cases(self, cases: int):
-        response = self.get(path='district-cases', args=cases)
+        """
+        
+        :param cases: int of a case ID
+        :return: JSON case structure
+        """
+        response = self._get(path='district-cases', args=cases)
         return response
 
-    def query_district_case(self, query, options=None):
-        return self.query.query_district_case(query, options)
+    def query_district_case(self, query, options=None, page_size=100):
+        return self.query.query_district_case(query, options, page_size)
 
     def get_parties(self, parties: List[str]):
+        """
+
+        :param parties: provide a single value or a list of values
+        :return: JSON string with a name and partyID
+        """
         if isinstance(parties, list):
-            response = self.get(path='parties', params={"partyIds": parties})
+            response = self._get(path='parties', params={"partyIds": parties})
         else:
-            response = self.get(path='parties', args=parties)
+            response = self._get(path='parties', args=parties)
         return response
 
     def search_parties(self, q: str, page_number: int = 1, page_size: int = 500):
-        response = self.get(path='search-parties', params={"q": q,
+        """
+
+        :param q: search string
+        :param page_number: what page number to return
+        :param page_size: how many results to return per page
+        :return: JSON
+        """
+        response = self._get(path='search-parties', params={"q": q,
                                                            "pageNumber": page_number,
                                                            "pageSize": page_size})
         return response
 
     def get_attorneys(self, attorneys: List[int]):
+        """
+        :param attorneys: provide a single value or a list of values
+        :return: JSON string with a name and partyID
+        """
         if isinstance(attorneys, list):
-            response = self.get(path='attorneys', params={"attorneyIds": attorneys})
+            response = self._get(path='attorneys', params={"attorneyIds": attorneys})
         else:
-            response = self.get(path='attorneys', args=attorneys)
+            response = self._get(path='attorneys', args=attorneys)
         return response
 
     def search_attorneys(self, q: str, page_number: int = 1, page_size: int = 500):
-        response = self.get(path='search-attorneys', params={"q": q,
+        """
+        :param q: search string
+        :param page_number: what page number to return
+        :param page_size: how many results to return per page
+        :return: JSON
+        """
+        response = self._get(path='search-attorneys', params={"q": q,
                                                              "pageNumber": page_number,
                                                              "pageSize": page_size})
         return response
 
     def get_law_firms(self, law_firms: List[int]):
+        """
+        :param law_firms: provide a single value or a list of values
+        :return: JSON string with a name and partyID
+        """
         if isinstance(law_firms, list):
-            response = self.get(path='law-firms', params={"lawFirmIds": law_firms})
+            response = self._get(path='law-firms', params={"lawFirmIds": law_firms})
         else:
-            response = self.get(path='law-firms', args=law_firms)
+            response = self._get(path='law-firms', args=law_firms)
         return response
 
-    def search_law_firms(self, q: str, page_number: int = 1, page_size: int = 500):
-        response = self.get(path='search-law-firms', params={"q": q,
+    def search_law_firms(self, q: str, page_number: int = 1, page_size: int = 500) -> str:
+        """
+        :param q: search string
+        :param page_number: what page number to return
+        :param page_size: how many results to return per page
+        :return: JSON
+        """
+        response = self._get(path='search-law-firms', params={"q": q,
                                                              "pageNumber": page_number,
                                                              "pageSize": page_size})
         return response
 
-    def get_federal_judges(self, federal_judges: List[int]):
+    def get_federal_judges(self, federal_judges: List[int]) -> str:
+        """
+        :param federal_judges: provide a single value or a list of values
+        :return: JSON string
+        """
         if isinstance(federal_judges, list):
-            response = self.get(path='federal-judges', params={"federalJudgeIds": federal_judges})
+            response = self._get(path='federal-judges', params={"federalJudgeIds": federal_judges})
         else:
-            response = self.get(path='federal-judges', args=federal_judges)
+            response = self._get(path='federal-judges', args=federal_judges)
         return response
 
-    def get_magistrate_judges(self, magistrate_judges: str):
-        response = self.get(path='magistrate-judges', args=magistrate_judges)
+    def get_magistrate_judges(self, magistrate_judges: str) -> str:
+        response = self._get(path='magistrate-judges', args=magistrate_judges)
         return response
 
-    def search_judges(self, q: str):
-        response = self.get(path='search-judges', params={"q": q})
+    def search_judges(self, q: str) -> str:
+        response = self._get(path='search-judges', params={"q": q})
         return response
 
-    def get_patents(self, patents: List[str]):
+    def get_patents(self, patents: List[str]) -> str:
+        """
+        :param patents: provide a single value or a list of values
+        :return: JSON
+        """
         if isinstance(patents, list):
-            response = self.get(path='patents', params={"patentNumbers": patents})
+            response = self._get(path='patents', params={"patentNumbers": patents})
         else:
-            response = self.get(path='patents', args=patents)
+            response = self._get(path='patents', args=patents)
         return response
 
-    def list_case_resolutions(self):
-        return self.list(path='list-case-resolutions')
+    def list_case_resolutions(self) -> str:
+        return self._list(path='list-case-resolutions')
 
-    def list_case_tags(self):
-        return self.list(path='list-case-tags')
+    def list_case_tags(self) -> str:
+        return self._list(path='list-case-tags')
 
-    def list_case_types(self):
-        return self.list(path='list-case-types')
+    def list_case_types(self) -> str:
+        return self._list(path='list-case-types')
 
-    def list_courts(self):
-        return self.list(path='list-courts')
+    def list_courts(self) -> str:
+        return self._list(path='list-courts')
 
-    def list_damages(self):
-        return self.list(path='list-damages')
+    def list_damages(self) -> str:
+        return self._list(path='list-damages')
 
-    def list_events(self):
-        return self.list(path='list-events')
+    def list_events(self) -> str:
+        return self._list(path='list-events')
 
-    def list_judgment_sources(self):
-        return self.list(path='list-judgment-sources')
+    def list_judgment_sources(self) -> str:
+        return self._list(path='list-judgment-sources')
 
-    def list(self, path):
-        response = self.get(path=path)
+    def _list(self, path):
+        response = self._get(path=path)
         return response
 
     def health(self):
-        response = self.get(path="health")
+        response = self._get(path="health")
         return response

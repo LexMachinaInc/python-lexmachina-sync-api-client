@@ -11,22 +11,25 @@ class QueryDistrictCase:
             return response.get("caseIds")
         return []
 
-    def query_all_pages(self, query):
-        query_results = query.execute()
+    def query_all_pages(self, query, page_size):
         cases = []
-        query.set_page_size(10)
+        if page_size > 100:
+            raise ValueError("Page size must be <= 100")
+        query.set_page_size(page_size)
+        query_results = query.execute()
         while True:
             page_cases = self.query_one_page(query_results)
-            cases.extend(page_cases)
-            query.next_page()
+            if page_cases:
+                cases.extend(page_cases)
+                query.next_page()
             if not page_cases:
                 break
         return cases
 
-    def query_district_case(self, query, options):
+    def query_district_case(self, query, options, page_size):
         query_results = query.execute()
         if options and options['pageThrough']:
-            return self.query_all_pages(query)
+            return self.query_all_pages(query, page_size)
         else:
             return self.query_one_page(query_results)
 

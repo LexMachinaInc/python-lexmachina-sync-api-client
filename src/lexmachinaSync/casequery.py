@@ -5,14 +5,15 @@ def empty(x):
     return x is None or x == {} or x == [] or x == ''
 
 
-class CaseQueryRequest:
+class CaseQueryRequest(dict):
     def __init__(self):
+        super().__init__(self)
         self._query_template = {
             'caseStatus': '',
-            'caseTypes': {'include': [], 'exclude': []},
+            "caseTypes": {"include": [], "exclude": []},
             'caseTags': {'include': [], 'exclude': []},
-            'dates': {
-                'filed': {'onOrAfter': '', 'onOrBefore': ''},
+            "dates": {
+                "filed": {"onOrAfter": "", "onOrBefore": ""},
                 'terminated': {'onOrAfter': '', 'onOrBefore': ''},
                 'trial': {'onOrAfter': '', 'onOrBefore': ''},
                 'lastDocket': {'onOrAfter': '', 'onOrBefore': ''}
@@ -36,7 +37,7 @@ class CaseQueryRequest:
                           'awardedAgainstParties': []}],
             'damages': [{'judgmentSource': {'include': [], 'exclude': []}, 'nameType': {'include': [], 'exclude': []},
                          'date': {'onOrAfter': '', 'onOrBefore': ''}, 'awardedToParties': [],
-                         'awardedAgainstParties': [], 'minimumAmount': 0}],
+                         'awardedAgainstParties': [], 'minimumAmount': ''}],
             'patents': {'include': [], 'exclude': []},
             'mdl': {'include': [], 'exclude': []},
             'ordering': 'ByFirstFiled',
@@ -90,6 +91,9 @@ class CaseQueryRequest:
     def set_page_size(self, size):
         self._query_template['pageSize'] = size
         return self
+
+    def get_page(self):
+        return self._query_template['page']
 
     def include_case_types(self, *args):
         '''
