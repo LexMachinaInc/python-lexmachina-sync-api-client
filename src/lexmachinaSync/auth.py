@@ -9,7 +9,7 @@ class Auth:
         self.config_file_path = config_file_path
         self.client_id = client_id
         self.client_secret = client_secret
-        self.token_url = "https://api.lexmachina.com/oauth/client_credential/accesstoken"
+        self.token_url = "https://api.beta.lexmachina.com/oauth2/token"
         self.headers = {"Content-Type": "application/x-www-form-urlencoded"}
 
     def get_token(self):
