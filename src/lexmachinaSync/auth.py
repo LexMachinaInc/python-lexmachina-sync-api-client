@@ -9,32 +9,24 @@ class Auth:
         self.config_file_path = config_file_path
         self.client_id = client_id
         self.client_secret = client_secret
-        self.token_url = "https://api.beta.lexmachina.com/oauth2/token"
         self.headers = {"Content-Type": "application/x-www-form-urlencoded"}
 
     def get_token(self):
-        config = configparser.ConfigParser()
-        if not self.config_file_path:
-            config_file = Path("./config/config.ini")
-        else:
-            config_file = Path(self.config_file_path)
+        config, config_file = self.config_reader()
         with requests.Session() as session:
+            token_url = config.get("URLS", "token_url")
             if self.client_id is None and self.client_secret is None:
-                if config_file.is_file():
-                    config.read(config_file)
-                else:
-                    raise FileNotFoundError("config.ini file not found, please provide path to file")
                 if config.has_section("TOKEN") and config.get("TOKEN", "ACCESS_TOKEN") != '':
                     now = datetime.utcnow().timestamp()
                 else:
-                    return self.renew_token(config, config_file, session)
+                    return self.renew_token(config, config_file, session, token_url)
 
                 if not now - float(config.get("TOKEN", "ISSUED_AT")) >= 3599:
                     return config.get("TOKEN", "ACCESS_TOKEN")
                 else:
-                    return self.renew_token(config, config_file, session)
+                    return self.renew_token(config, config_file, session, token_url)
             else:
-                with session.post(self.token_url, headers=self.headers, data={
+                with session.post(token_url, headers=self.headers, data={
                     "grant_type": "client_credentials",
                     "client_id": self.client_id,
                     "client_secret": self.client_secret
@@ -45,8 +37,20 @@ class Auth:
                     else:
                         return {"error": response.json()}
 
-    def renew_token(self, config, config_file, session):
-        with session.post(self.token_url, headers=self.headers, data={
+    def config_reader(self):
+        config = configparser.ConfigParser()
+        if not self.config_file_path:
+            config_file = Path("./config/config.ini")
+        else:
+            config_file = Path(self.config_file_path)
+        if config_file.is_file():
+            config.read(config_file)
+        else:
+            raise FileNotFoundError("config.ini file not found, please provide path to file")
+        return config, config_file
+
+    def renew_token(self, config, config_file, session, token_url):
+        with session.post(token_url, headers=self.headers, data={
             "grant_type": "client_credentials",
             "client_id": config.get("CREDENTIALS", "client_id"),
             "client_secret": config.get("CREDENTIALS", "client_secret")
