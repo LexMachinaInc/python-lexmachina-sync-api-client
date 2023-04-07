@@ -161,7 +161,7 @@ class LexMachinaClient(BaseRequest):
         response = self._get(path=path, version=version)
         return response.json()
 
-    def health(self, url, version: str = "/") -> str:
+    def health(self, version: str = "/") -> str:
         response = self._get(path="health", version=version)
         return response.text
 
