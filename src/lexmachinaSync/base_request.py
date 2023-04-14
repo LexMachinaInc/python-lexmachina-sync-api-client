@@ -8,7 +8,7 @@ from .auth import Auth
 
 
 class BaseRequest(Auth):
-    def _get(self, version: str, path=None, args=None, params=None):
+    def _get(self, path=None, args=None, params=None):
         config, config_file = self.config_reader()
         try:
             with requests.Session() as session:
@@ -16,27 +16,22 @@ class BaseRequest(Auth):
                 url = config.get("URLS", "base_url")
                 headers = {"Authorization": f"Bearer {token}", "User-Agent": "lexmachina-python-client-0.0.2"}
                 if args is None:
-                    if version != "/":
-                        url = f"{url}{version}/{path}"
-                    else:
-                        url = f"{url}{version}{path}"
-                elif version != "/":
-                    url = f"{url}{version}/{path}/{args}"
+                    url = f"{url}/{path}"
                 else:
-                    url = f"{url}{version}{path}/{args}"
+                    url = f"{url}/{path}/{args}"
                 with session.get(url, headers=headers,
                                  params=params) as response:
                     return response
         except JSONDecodeError:
             return response.text
 
-    def _post(self, version: str, path=None, data=None):
+    def _post(self, path=None, data=None):
         with requests.Session() as session:
             config, config_file = self.config_reader()
             token = self.get_token()
             url = config.get("URLS", "base_url")
             headers = {"Authorization": f"Bearer {token}", "User-Agent": "lexmachina-python-client-0.0.2"}
-            url = f"{url}{version}{path}"
+            url = f"{url}/{path}"
             try:
 
                 with session.post(

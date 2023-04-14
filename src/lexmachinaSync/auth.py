@@ -14,7 +14,7 @@ class Auth:
     def get_token(self):
         config, config_file = self.config_reader()
         with requests.Session() as session:
-            token_url = config.get("URLS", "token_url")
+            token_url = config.get("URLS", "base_url") + config.get("URLS", "token_url")
             if self.client_id is None and self.client_secret is None:
                 if config.has_section("TOKEN") and config.get("TOKEN", "ACCESS_TOKEN") != '':
                     now = datetime.utcnow().timestamp()
