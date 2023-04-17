@@ -3,7 +3,7 @@ import json
 
 import pytest
 
-from src.lexmachinaSync.client import LexMachinaClient
+from lexmachina._sync.client import LexMachinaClient
 
 
 class TestGetJudges:

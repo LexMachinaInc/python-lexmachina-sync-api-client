@@ -7,10 +7,10 @@ from .query_district_cases import QueryDistrictCase
 class LexMachinaClient(BaseRequest):
     def __init__(self, config_file_path=None, client_id=None, client_secret=None):
         super().__init__(config_file_path, client_id, client_secret)
-        self.config_file_path = config_file_path
-        self.client_id = client_id
-        self.client_secret = client_secret
-        self.query = QueryDistrictCase(config=self.config_file_path)
+        self._config_file_path = config_file_path
+        self._client_id = client_id
+        self._client_secret = client_secret
+        self.query = QueryDistrictCase(config=self._config_file_path)
 
     def get_district_cases(self, cases: int) -> dict:
         """
@@ -18,12 +18,10 @@ class LexMachinaClient(BaseRequest):
         :param cases: int of a case ID
         :return: JSON case structure
         """
-        response = self._get(path='district-cases', args=cases)
-        return response.json()
+        return self._get(path='district-cases', args=cases).json()
 
     def get_state_cases(self, cases: int) -> dict:
-        response = self._get(path="state-cases", args=cases)
-        return response.json()
+        return self._get(path="state-cases", args=cases)
 
     def query_district_case(self, query, options=None, page_size=100):
         return self.query.query_district_case(query, options, page_size)
@@ -48,10 +46,9 @@ class LexMachinaClient(BaseRequest):
         :param page_size: how many results to return per page
         :return: JSON
         """
-        response = self._get(path='search-parties', params={"q": q,
+        return self._get(path='search-parties', params={"q": q,
                                                             "pageNumber": page_number,
-                                                            "pageSize": page_size})
-        return response.json()
+                                                            "pageSize": page_size}).json()
 
     def get_attorneys(self, attorneys: List[int]):
         """
@@ -71,10 +68,9 @@ class LexMachinaClient(BaseRequest):
         :param page_size: how many results to return per page
         :return: JSON
         """
-        response = self._get(path='search-attorneys', params={"q": q,
+        return self._get(path='search-attorneys', params={"q": q,
                                                               "pageNumber": page_number,
-                                                              "pageSize": page_size})
-        return response.json()
+                                                              "pageSize": page_size}).json()
 
     def get_law_firms(self, law_firms: List[int]) -> dict:
         """
@@ -94,10 +90,9 @@ class LexMachinaClient(BaseRequest):
         :param page_size: how many results to return per page
         :return: JSON
         """
-        response = self._get(path='search-law-firms', params={"q": q,
+        return self._get(path='search-law-firms', params={"q": q,
                                                               "pageNumber": page_number,
-                                                              "pageSize": page_size})
-        return response.json()
+                                                              "pageSize": page_size}).json()
 
     def get_federal_judges(self, federal_judges: List[int]) -> dict:
         """
@@ -111,14 +106,10 @@ class LexMachinaClient(BaseRequest):
         return response.json()
 
     def get_magistrate_judges(self, magistrate_judges: str) -> dict:
-
-        response = self._get(path='magistrate-judges', args=magistrate_judges)
-        return response.json()
+        return self._get(path='magistrate-judges', args=magistrate_judges).json()
 
     def search_judges(self, q: str) -> dict:
-
-        response = self._get(path='search-judges', params={"q": q})
-        return response.json()
+        return  self._get(path='search-judges', params={"q": q}).json()
 
     def get_patents(self, patents: List[str]) -> dict:
         """

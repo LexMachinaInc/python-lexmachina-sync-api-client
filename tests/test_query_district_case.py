@@ -1,6 +1,6 @@
 from configparser import ConfigParser
-from src.lexmachinaSync.client import LexMachinaClient
-from src.lexmachinaSync.casequery import CaseQueryRequest
+from lexmachina._sync.client import LexMachinaClient
+from lexmachina._sync.casequery import CaseQueryRequest
 
 
 class TestQueryDistrictCase:

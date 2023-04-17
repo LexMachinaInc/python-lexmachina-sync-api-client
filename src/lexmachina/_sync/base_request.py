@@ -26,8 +26,8 @@ class BaseRequest(Auth):
             return response.text
 
     def _post(self, path=None, data=None):
+        config, config_file = self.config_reader()
         with requests.Session() as session:
-            config, config_file = self.config_reader()
             token = self.get_token()
             url = config.get("URLS", "base_url")
             headers = {"Authorization": f"Bearer {token}", "User-Agent": "lexmachina-python-client-0.0.2"}

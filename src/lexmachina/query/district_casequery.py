@@ -5,7 +5,7 @@ def empty(x):
     return x is None or x == {} or x == [] or x == ''
 
 
-class CaseQueryRequest:
+class DistrictCaseQueryRequest:
     def __init__(self):
         self._query_template = {
             'caseStatus': '',
