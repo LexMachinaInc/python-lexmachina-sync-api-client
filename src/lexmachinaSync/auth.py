@@ -7,15 +7,15 @@ from pathlib import Path
 class Auth:
     def __init__(self, config_file_path=None, client_id=None, client_secret=None) -> None:
         self.config_file_path = config_file_path
-        self.client_id = client_id
-        self.client_secret = client_secret
-        self.headers = {"Content-Type": "application/x-www-form-urlencoded"}
+        self._client_id = client_id
+        self._client_secret = client_secret
+        self._headers = {"Content-Type": "application/x-www-form-urlencoded"}
 
     def get_token(self):
         config, config_file = self.config_reader()
         with requests.Session() as session:
             token_url = config.get("URLS", "base_url") + config.get("URLS", "token_url")
-            if self.client_id is None and self.client_secret is None:
+            if self._client_id is None and self._client_secret is None:
                 if config.has_section("TOKEN") and config.get("TOKEN", "ACCESS_TOKEN") != '':
                     now = datetime.utcnow().timestamp()
                 else:
@@ -26,10 +26,10 @@ class Auth:
                 else:
                     return self.renew_token(config, config_file, session, token_url)
             else:
-                with session.post(token_url, headers=self.headers, data={
+                with session.post(token_url, headers=self._headers, data={
                     "grant_type": "client_credentials",
-                    "client_id": self.client_id,
-                    "client_secret": self.client_secret
+                    "client_id": self._client_id,
+                    "client_secret": self._client_secret
                 }) as response:
                     if response.status_code == 200:
                         access_token = response.json()
@@ -50,7 +50,7 @@ class Auth:
         return config, config_file
 
     def renew_token(self, config, config_file, session, token_url):
-        with session.post(token_url, headers=self.headers, data={
+        with session.post(token_url, headers=self._headers, data={
             "grant_type": "client_credentials",
             "client_id": config.get("CREDENTIALS", "client_id"),
             "client_secret": config.get("CREDENTIALS", "client_secret")
