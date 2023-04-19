@@ -144,13 +144,10 @@ class LexMachinaClient(BaseRequest):
         return self._list(path='list-judgment-sources')
 
     def _list(self, path) -> dict:
-        response = self._get(path=path)
-        return response.json()
+        return self._get(path=path).json()
 
-    def health(self, version: str = "/") -> str:
-        response = self._get(path="health")
-        return response.text
+    def health(self) -> str:
+        return self._get(path="health").text
 
     def open_api(self) -> dict:
-        response = self._get(path="openapi.json")
-        return response.json()
+        return self._get(path="openapi.json").json()
