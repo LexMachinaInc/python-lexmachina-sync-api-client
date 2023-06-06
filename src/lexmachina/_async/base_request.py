@@ -12,7 +12,7 @@ class BaseRequest(Auth):
         try:
             async with aiohttp.ClientSession() as session:
                 url = config.get("URLS", "base_url")
-                headers = {"Authorization": f"Bearer {await self._get_token()}", "User-Agent": "lexmachina-python-client-0.0.2"}
+                headers = {"Authorization": f"Bearer {await self._get_token()}", "User-Agent": "lexmachina-python-async-client-0.0.2"}
                 if args is None:
                     url = f"{url}/{path}"
                 else:
@@ -27,7 +27,7 @@ class BaseRequest(Auth):
         config, config_file = self.config_reader()
         async with aiohttp.ClientSession() as session:
             url = config.get("URLS", "base_url")
-            headers = {"Authorization": f"Bearer {await self._get_token()}", "User-Agent": "lexmachina-python-client-0.0.2"}
+            headers = {"Authorization": f"Bearer {await self._get_token()}", "User-Agent": "lexmachina-python-async-client-0.0.2"}
             url = f"{url}/{path}"
             try:
 
