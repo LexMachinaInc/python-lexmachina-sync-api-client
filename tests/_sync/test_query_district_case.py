@@ -1,11 +1,11 @@
 from configparser import ConfigParser
 from lexmachina._sync.client import LexMachinaClient
-from lexmachina._sync.casequery import CaseQueryRequest
+from lexmachina.query.district_casequery import DistrictCaseQueryRequest
 
 
 class TestQueryDistrictCase:
     client = LexMachinaClient("config.ini")
-    query = CaseQueryRequest()
+    query = DistrictCaseQueryRequest()
     config = ConfigParser()
     config.read("config.ini")
 

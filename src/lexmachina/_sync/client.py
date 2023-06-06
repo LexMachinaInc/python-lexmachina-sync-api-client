@@ -167,7 +167,7 @@ class LexMachinaClient(BaseRequest):
         return self._get(path=path)
 
     def health(self) -> str:
-        return self._get(path="health").text
+        return self._get(path="health")
 
     def open_api(self) -> dict:
         return self._get(path="openapi.json")
