@@ -29,7 +29,7 @@ class LexMachinaAsyncClient(BaseRequest):
             response = await self._get(path='parties', params={"partyIds": parties})
         else:
             response = await self._get(path='parties', args=parties)
-        return await response
+        return response
 
     async def search_parties(self, q: str, page_number: int = 1, page_size: int = 500):
         return await self._get(path='search-parties', params={"q": q,

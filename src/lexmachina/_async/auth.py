@@ -50,7 +50,7 @@ class Auth:
         return config, config_file
 
     async def renew_token(self, config, config_file, session, token_url):
-        async with session.post(token_url, headers=self.headers, data={
+        async with session.post(token_url, headers=self._headers, data={
             "grant_type": "client_credentials",
             "client_id": config.get("CREDENTIALS", "client_id"),
             "client_secret": config.get("CREDENTIALS", "client_secret")

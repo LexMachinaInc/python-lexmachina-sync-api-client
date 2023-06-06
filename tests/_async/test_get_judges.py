@@ -17,7 +17,7 @@ class TestGetJudges:
     @pytest.mark.parametrize("federal_judges", INVALID_IDS)
     async def test_get_federal_judges_integer_invalid(self, federal_judges):
         response = await self.client.get_federal_judges(federal_judges=federal_judges)
-        assert response.get("detail") == "Invalid judge ID"
+        assert response.get("detail") == "Invalid federal judge ID"
 
     @pytest.mark.asyncio
     @pytest.mark.parametrize("federal_judges", VALID_IDS)
@@ -28,7 +28,7 @@ class TestGetJudges:
     @pytest.mark.parametrize("federal_judges", [INVALID_IDS])
     async def test_get_federal_judges_integer_list_invalid(self, federal_judges):
         response = await self.client.get_federal_judges(federal_judges=federal_judges)
-        assert response.get("detail") == "Invalid judge IDs"
+        assert response.get("detail") == "Invalid federal judge IDs"
 
     @pytest.mark.asyncio
     @pytest.mark.parametrize("federal_judges", [VALID_IDS])

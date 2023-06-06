@@ -1,3 +1,4 @@
+import pprint
 from datetime import datetime
 
 
@@ -462,6 +463,7 @@ class DistrictCaseQueryRequest:
         """
         if amount <= 0 or isinstance(amount, str):
             raise ValueError("Damages amount must be a number greater than 0")
+        print(pprint.pformat(self._query_template))
         self._query_template['damages'][0]['minimumAmount'] = amount
         return self
 

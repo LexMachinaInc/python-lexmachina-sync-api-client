@@ -23,4 +23,4 @@ class TestGetDistrictCase:
     @pytest.mark.parametrize("cases", [66])
     async def test_get_district_case_positive(self, cases):
         response = await self.client.get_district_cases(cases=cases)
-        assert response['caseId'] == cases
+        assert response['districtCaseId'] == cases

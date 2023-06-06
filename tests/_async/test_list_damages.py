@@ -8,7 +8,7 @@ class TestListDamages:
 
     @pytest.mark.asyncio
     async def test_list_damages(self):
-        response = await self.client.list_damages()
-        assert "Prejudgment Interest" in response['General']
-        assert "Statutory Damages (Copyright)" in response['Copyright']
-        assert "Special Damages" in response['False Claims']
+        response = await self.client.list_damages_federal()
+        assert "Prejudgment Interest" in response['damagesByPraticeArea']['General']
+        assert "Statutory Damages (Copyright)" in response['damagesByPraticeArea']['Copyright']
+        assert "Special Damages (False Claims)" in response['damagesByPraticeArea']['False Claims']
