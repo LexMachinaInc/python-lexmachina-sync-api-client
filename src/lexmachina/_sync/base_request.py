@@ -31,7 +31,6 @@ class BaseRequest(Auth):
             headers = {"Authorization": f"Bearer {self.get_token()}", "User-Agent": "lexmachina-python-client-0.0.2"}
             url = f"{url}/{path}"
             try:
-
                 with session.post(
                         url, headers=headers, json=data
                 ) as response:

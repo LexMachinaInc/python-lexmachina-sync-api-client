@@ -1,7 +1,7 @@
 from typing import List
 
 from .base_request import BaseRequest
-from .query_district_cases import QueryDistrictCase
+from .query_cases import QueryCase
 
 
 class LexMachinaClient(BaseRequest):
@@ -10,7 +10,7 @@ class LexMachinaClient(BaseRequest):
         self._config_file_path = config_file_path
         self._client_id = client_id
         self._client_secret = client_secret
-        self.query = QueryDistrictCase(config=self._config_file_path)
+        self.query = QueryCase(config=self._config_file_path)
 
     def get_district_cases(self, cases: int) -> dict:
         """
@@ -24,10 +24,10 @@ class LexMachinaClient(BaseRequest):
         return self._get(path="state-cases", args=cases)
 
     def query_state_cases_case(self, query, options=None, page_size=100):
-        return self.query.query_district_case(query=query, options=options, page_size=page_size, endpoint='state-cases')
+        return self.query.query_case(query=query, options=options, page_size=page_size, endpoint='state-cases')
 
     def query_district_case(self, query, options=None, page_size=100):
-        return self.query.query_district_case(query=query, options=options, page_size=page_size, endpoint='district-cases')
+        return self.query.query_case(query=query, options=options, page_size=page_size, endpoint='district-cases')
 
     def get_parties(self, parties: List[str]) -> dict:
         """
@@ -108,6 +108,17 @@ class LexMachinaClient(BaseRequest):
             response = self._get(path='federal-judges', args=federal_judges)
         return response
 
+    def get_state_judges(self, state_judges: List[int]) -> dict:
+        """
+        :param state_judges: provide a single value or a list of values
+        :return: JSON string
+        """
+        if isinstance(state_judges, list):
+            response = self._get(path='state-judges', params={"stateJudgeIds": state_judges})
+        else:
+            response = self._get(path='state-judges', args=state_judges)
+        return response
+
     def get_magistrate_judges(self, magistrate_judges: str) -> dict:
         return self._get(path='magistrate-judges', args=magistrate_judges)
 
@@ -125,26 +136,32 @@ class LexMachinaClient(BaseRequest):
             response = self._get(path='patents', args=patents)
         return response
 
-    def list_case_resolutions(self) -> dict:
-        return self._list(path='list-case-resolutions')
+    def list_case_resolutions(self, court_type) -> dict:
+        return self._list(path=f'list-case-resolutions/{court_type}')
 
-    def list_case_tags(self) -> dict:
-        return self._list(path='list-case-tags')
+    def list_case_tags(self, court_type) -> dict:
+        return self._list(path=f'list-case-tags/{court_type}')
 
-    def list_case_types(self) -> dict:
-        return self._list(path='list-case-types')
+    def list_case_types(self, court_type) -> dict:
+        return self._list(path=f'list-case-types/{court_type}')
 
-    def list_courts(self) -> dict:
-        return self._list(path='list-courts')
+    def list_courts(self, court_type) -> dict:
+        return self._list(path=f'list-courts/{court_type}')
 
-    def list_damages(self) -> dict:
-        return self._list(path='list-damages')
+    def list_damages_federal_district(self) -> dict:
+        return self._list(path='list-damages/FederalDistrict')
 
-    def list_events(self) -> dict:
-        return self._list(path='list-events')
+    def list_damages_statet(self) -> dict:
+        return self._list(path='list-damages/State')
 
-    def list_judgment_sources(self) -> dict:
-        return self._list(path='list-judgment-sources')
+    def list_events(self, court_type) -> dict:
+        return self._list(path=f'list-events/{court_type}')
+
+    def list_federal_district_judgment_sources(self) -> dict:
+        return self._list(path='list-judgment-sources/FederalDistrict')
+
+    def list_state_judgment_sources(self) -> dict:
+        return self._list(path='list-judgment-sources/State')
 
     def _list(self, path) -> dict:
         return self._get(path=path)

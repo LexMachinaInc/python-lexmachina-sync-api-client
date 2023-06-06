@@ -1,15 +1,15 @@
 from .base_request import BaseRequest
 
 
-class QueryDistrictCase:
+class QueryCase:
     def __init__(self, config=None):
-        self.district_case_query = BaseRequest(config)
+        self.case_query = BaseRequest(config)
 
     def query_one_page(self, query, endpoint):
         if endpoint == 'district-cases':
-            response = self.district_case_query._post(path="query-district-cases", data=query)
+            response = self.case_query._post(path="query-district-cases", data=query)
         elif endpoint == 'state-cases':
-            response = self.district_case_query._post(path="query-state-cases", data=query)
+            response = self.case_query._post(path="query-state-cases", data=query)
         if response:
             return response.get("cases")
         return []
@@ -29,7 +29,7 @@ class QueryDistrictCase:
                 break
         return cases
 
-    def query_district_case(self, query, endpoint, options, page_size):
+    def query_case(self, query, endpoint, options, page_size):
         query_results = query.execute()
         if options and options['pageThrough']:
             return self.query_all_pages(query, endpoint, page_size)
