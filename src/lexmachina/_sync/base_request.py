@@ -12,25 +12,23 @@ class BaseRequest(Auth):
         config, config_file = self.config_reader()
         try:
             with requests.Session() as session:
-                token = self.get_token()
                 url = config.get("URLS", "base_url")
-                headers = {"Authorization": f"Bearer {token}", "User-Agent": "lexmachina-python-client-0.0.2"}
+                headers = {"Authorization": f"Bearer {self.get_token()}", "User-Agent": "lexmachina-python-client-0.0.2"}
                 if args is None:
                     url = f"{url}/{path}"
                 else:
                     url = f"{url}/{path}/{args}"
                 with session.get(url, headers=headers,
                                  params=params) as response:
-                    return response
+                    return response.json()
         except JSONDecodeError:
             return response.text
 
     def _post(self, path=None, data=None):
         config, config_file = self.config_reader()
         with requests.Session() as session:
-            token = self.get_token()
             url = config.get("URLS", "base_url")
-            headers = {"Authorization": f"Bearer {token}", "User-Agent": "lexmachina-python-client-0.0.2"}
+            headers = {"Authorization": f"Bearer {self.get_token()}", "User-Agent": "lexmachina-python-client-0.0.2"}
             url = f"{url}/{path}"
             try:
 

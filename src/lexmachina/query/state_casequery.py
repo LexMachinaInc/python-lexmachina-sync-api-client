@@ -1,3 +1,4 @@
+import pprint
 from datetime import datetime
 
 
@@ -5,43 +6,37 @@ def empty(x):
     return x is None or x == {} or x == [] or x == ''
 
 
-class DistrictCaseQueryRequest:
+class StateCaseQueryRequest:
     def __init__(self):
         self._query_template = {
-            'caseStatus': '',
-            "caseTypes": {"include": [], "exclude": []},
-            'caseTags': {'include': [], 'exclude': []},
-            "dates": {
-                "filed": {"onOrAfter": "", "onOrBefore": ""},
-                'terminated': {'onOrAfter': '', 'onOrBefore': ''},
-                'trial': {'onOrAfter': '', 'onOrBefore': ''},
-                'lastDocket': {'onOrAfter': '', 'onOrBefore': ''}
-            },
-            'judges': {'include': [], 'exclude': []},
-            'magistrates': {'include': [], 'exclude': []},
-            'events': {'includeEventTypes': [], 'excludeEventTypes': []},
-            'lawFirms': {'include': [], 'exclude': [], 'includePlaintiff': [], 'excludePlaintiff': [],
-                         'includeDefendant': [], 'excludeDefendant': [], 'includeThirdParty': [],
-                         'excludeThirdParty': []},
-            'parties': {'include': [], 'exclude': [], 'includePlaintiff': [], 'excludePlaintiff': [],
-                        'includeDefendant': [], 'excludeDefendant': [], 'includeThirdParty': [],
-                        'excludeThirdParty': []},
-            'courts': {'include': [], 'exclude': []},
-            'resolutions': {'include': [], 'exclude': []},
-            'findings': [{'judgmentSource': {'include': [], 'exclude': []}, 'nameType': {'include': [], 'exclude': []},
-                          'date': {'onOrAfter': '', 'onOrBefore': ''}, 'awardedToParties': [],
-                          'awardedAgainstParties': [], 'patentInvalidityReasons': {'include': []}}],
-            'remedies': [{'judgmentSource': {'include': [], 'exclude': []}, 'nameType': {'include': [], 'exclude': []},
-                          'date': {'onOrAfter': '', 'onOrBefore': ''}, 'awardedToParties': [],
-                          'awardedAgainstParties': []}],
-            'damages': [{'judgmentSource': {'include': [], 'exclude': []}, 'nameType': {'include': [], 'exclude': []},
-                         'date': {'onOrAfter': '', 'onOrBefore': ''}, 'awardedToParties': [],
-                         'awardedAgainstParties': [], 'minimumAmount': ''}],
-            'patents': {'include': [], 'exclude': []},
-            'mdl': {'include': [], 'exclude': []},
-            'ordering': 'ByFirstFiled',
-            'page': 1,
-            'pageSize': 5
+                "courts": { "state": "" , "include": [], "exclude": []},
+                "caseStatus": "",
+                "caseTypes": { "include": [],"exclude": [] },
+                "caseTags": { "include": [], "exclude": [] },
+                "dates": {
+                    "filed": { "onOrAfter": "", "onOrBefore": "" },
+                    "terminated": { "onOrAfter": "", "onOrBefore": "" },
+                    "trial": { "onOrAfter": "", "onOrBefore": "" },
+                    "lastDocket": { "onOrAfter": "", "onOrBefore": "" }
+                },
+                "judges": { "include": [], "exclude": [] },
+                "events": { "include": [], "exclude": [] },
+                "lawFirms": {
+                    "include": [],"exclude": [], "includePlaintiff": [], "excludePlaintiff": [], "includeDefendant": [], "excludeDefendant": [], "includeThirdParty": [], "excludeThirdParty": []
+                },
+                "attorneys": { "include": [], "exclude": [], "includePlaintiff": [], "excludePlaintiff": [], "includeDefendant": [], "excludeDefendant": [], "includeThirdParty": [], "excludeThirdParty": [] },
+                "parties": { "include": [], "exclude": [], "includePlaintiff": [], "excludePlaintiff": [], "includeDefendant": [], "excludeDefendant": [], "includeThirdParty": [], "excludeThirdParty": [] },
+                "resolutions": { "include": [ { "summary": "", "specific": "" } ], "exclude": [ { "summary": "", "specific": "" } ] },
+                "damages": [ {
+                    "judgmentSource": { "include": [], "exclude": [] },
+                    "name": { "include": [], "exclude": [] },
+                    "date": { "onOrAfter": "", "onOrBefore": "" }, "awardedToParties": [], "awardedAgainstParties": [], "minimumAmount": ""} ],
+                "rulings": [ {
+                    "judgmentEvent": { "include": [], "exclude": [] }, "awardedToParties": [], "awardedAgainstParties": [],
+                    "date": { "onOrAfter": "", "onOrBefore": "" } } ],
+            "ordering": "ByFirstFiled",
+            "page": 1,
+            "pageSize": 5
         }
 
     def _remove_empty_elements(self, data):
@@ -58,6 +53,16 @@ class DistrictCaseQueryRequest:
         except ValueError:
             raise ValueError("Incorrect date format, dates should be 'YYYY-MM-DD'")
         return True
+
+
+    def set_terminated_date(self, date, operator='terminated'):
+        self.set_date(date, self._query_template['dates']['terminated'], operator)
+        print(f'{self._query_template}')
+        return self
+
+    def set_case_status(self, status):
+        self._query_template['caseStatus'] = status
+        return self
 
     def set_date(self, date, field, operator):
         '''
@@ -159,6 +164,10 @@ class DistrictCaseQueryRequest:
         :return: CaseQueryRequest object
         '''
         [self._query_template['courts']['include'].append(value) for value in args]
+        return self
+
+    def include_state(self, state):
+        self._query_template['courts'].update({"state": state})
         return self
 
     def exclude_courts(self, *args):
@@ -315,7 +324,7 @@ class DistrictCaseQueryRequest:
          :return: CaseQueryRequest object
          '''
 
-        [self._query_template['parties']['excludePlaintiff'].append(value) for value in set(args)]
+        [self._query_template['parties']['excludePlaintiff'].append(value) for value in args]
         return self
 
     def parties_include_defendant(self, *args):
@@ -481,14 +490,6 @@ class DistrictCaseQueryRequest:
          :return: CaseQueryRequest object
          """
         [self._query_template['patents']['exclude'].append(value) for value in args]
-        return self
-
-    def include_mdl(self, *args):
-        [self._query_template['mdl']['include'].append(value) for value in args]
-        return self
-
-    def exclude_mdl(self, *args):
-        [self._query_template['mdl']['exclude'].append(value) for value in args]
         return self
 
     def execute(self):
