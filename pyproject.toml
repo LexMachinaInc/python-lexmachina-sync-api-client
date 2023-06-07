@@ -11,13 +11,14 @@ authors = [
 description = "LexMachina API python sdk"
 readme = "README.md"
 requires-python = ">=3.8"
-dependencies = ['requests >= 2.28.1']
+dependencies = ['requests >= 2.28.1', 'aiohttp >= 3.8.3']
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: Apache-2.0",
     "Operating System :: OS Independent",
 ]
-
+[project.optional-dependencies]
+tests = ["pytest >=7.2.1", "pytest-asyncio >= 0.21.0"]
 [project.urls]
 "Homepage" = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client"
 "Bug Tracker" = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/issues"
