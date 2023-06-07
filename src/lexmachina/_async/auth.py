@@ -35,7 +35,7 @@ class Auth:
                         access_token = await response.json()
                         return access_token['access_token']
                     else:
-                        return {"error": response.json()}
+                        return {"error": await response.json()}
 
     def config_reader(self):
         config = configparser.ConfigParser()
