@@ -55,7 +55,9 @@ class Auth:
             "client_id": config.get("CREDENTIALS", "client_id"),
             "client_secret": config.get("CREDENTIALS", "client_secret")
         }) as response:
-            if response.status == 200:
+            if not response.status == 200:
+                raise Exception(await response.json())
+            else:
                 access_token = await response.json()
                 if not config.has_section("TOKEN"):
                     config.add_section("TOKEN")
@@ -64,5 +66,3 @@ class Auth:
                 with open(config_file, "w") as configfile:
                     config.write(configfile)
                 return access_token['access_token']
-            else:
-                return {"error": await response.json()}
