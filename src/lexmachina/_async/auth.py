@@ -26,16 +26,29 @@ class Auth:
                 else:
                     return await self.renew_token(config, config_file, session, token_url)
             else:
-                async with session.post(token_url, headers=self._headers, data={
-                    "grant_type": "client_credentials",
+                config["CREDENTIALS"] = {
                     "client_id": self._client_id,
                     "client_secret": self._client_secret
+                }
+                with open(config_file, 'w') as file:
+                    config.write(file)
+                async with session.post(token_url, headers=self._headers, data={
+                    "grant_type": "client_credentials",
+                    "client_id":config.get("CREDENTIALS", "client_id"),
+                    "client_secret": config.get("CREDENTIALS", "client_secret")
                 }) as response:
-                    if response.status == 200:
-                        access_token = await response.json()
-                        return access_token['access_token']
+                    if not response.status == 200:
+                        raise Exception(await response.json())
+
                     else:
-                        return {"error": await response.json()}
+                        access_token = await response.json()
+                        config["TOKEN"] = {
+                            "issued_at": str(datetime.utcnow().timestamp()),
+                            "access_token": access_token['access_token']
+                        }
+                        with open(config_file, 'w') as file:
+                            config.write(file)
+                        return access_token['access_token']
 
     def config_reader(self):
         config = configparser.ConfigParser()
@@ -43,10 +56,14 @@ class Auth:
             config_file = Path("./config/config.ini")
         else:
             config_file = Path(self._config_file_path)
-        if config_file.is_file():
-            config.read(config_file)
+        if not config_file.is_file():
+            config_file.touch(exist_ok=True)
+            config['URLS'] = {"base_url": "https://api.lexmachina.com",
+                              "token_url": "/oauth2/token"}
+            with open(config_file, 'w') as file_object:
+                config.write(file_object)
         else:
-            raise FileNotFoundError("config.ini file not found, please provide path to file")
+            config.read(config_file)
         return config, config_file
 
     async def renew_token(self, config, config_file, session, token_url):
