@@ -8,7 +8,7 @@ This package provides a client to access the Lex Machina API for legal analytics
 1. Create a new venv with the command `python3 -m venv /path/to/new/virtual/environment`
 2. Run `python3 -m pip install --upgrade pip setuptools wheel`
 3. Install package with `pip3 install -e .`
-1. Create an app and get the client key and secret via the [directions here](https://developer.lexmachina.com/get-your-api-keys).
+1. Create an app and get the client key and secret via the [directions here](https://developer.lexmachina.com/default/docs/generating_oauth_credentials).
 
 1. In your project directory create a directory `config` and inside that create a file named config.ini . Populate using the below values and the key and secret from above:
 
