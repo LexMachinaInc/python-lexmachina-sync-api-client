@@ -10,18 +10,21 @@ This package provides a client to access the Lex Machina API for legal analytics
 3. Install package with `pip3 install -e .`
 1. Create an app and get the client key and secret via the [directions here](https://developer.lexmachina.com/default/docs/generating_oauth_credentials).
 
-1. In your project directory create a directory `config` and inside that create a file named config.ini . Populate using the below values and the key and secret from above:
+1. In your project directory create a directory `config` and inside that create a file named config.ini . Populate using the below values and the key and secret from above. The below values for URLS should be used if you are using Lex Machina's production API. If you are testing this out with the [sandbox API](https://developer.lexmachina.com/default/documentation/lexmachina-sandbox) then you should use `base_url = https://api.sandbox.lexmachina.com`
 
-```
-[CREDENTIALS]
-client_id = "CLIENT_ID"
-client_secret ="CLIENT_SECRET"
+    ```
+    [URLS]
+    token_url = /oauth2/token
+    base_url = https://api.lexmachina.com
 
-```
+    [CREDENTIALS]
+    client_id = "CLIENT_ID"
+    client_secret ="CLIENT_SECRET"
+    ```
 
 1. To execute API calls you will use the LexMachinaClient of this package. This is discussed in detail later.
 
-For each of these, you first create the object then call the functions on that object.
+    For each of these, you first create the object then call the functions on that object.
 
 
 # Lex Machina Client
