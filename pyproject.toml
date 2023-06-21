@@ -14,7 +14,7 @@ requires-python = ">=3.8"
 dependencies = ['requests >= 2.28.1', 'aiohttp >= 3.8.3']
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache-2.0",
+    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
 ]
 [project.optional-dependencies]
