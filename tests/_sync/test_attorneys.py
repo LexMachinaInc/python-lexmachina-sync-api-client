@@ -3,7 +3,7 @@ from configparser import ConfigParser
 
 import pytest
 
-from lexmachina._sync.client import LexMachinaClient
+from lexmachina import LexMachinaClient
 
 
 class TestGetAttorneys:

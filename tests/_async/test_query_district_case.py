@@ -4,8 +4,8 @@ from configparser import ConfigParser
 import pytest
 import pprint
 
-from lexmachina.query.district_casequery import DistrictCaseQueryRequest
-from src.lexmachina._async.client import LexMachinaAsyncClient as LexMachinaClient
+from lexmachina import DistrictCaseQueryRequest
+from lexmachina import LexMachinaAsyncClient as LexMachinaClient
 
 
 class TestQueryDistrictCase:

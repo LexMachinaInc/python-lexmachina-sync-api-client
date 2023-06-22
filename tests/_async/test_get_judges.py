@@ -3,7 +3,7 @@ import json
 
 import pytest
 
-from src.lexmachina._async.client import LexMachinaAsyncClient as LexMachinaClient
+from lexmachina import LexMachinaAsyncClient as LexMachinaClient
 
 class TestGetJudges:
     client = LexMachinaClient("config.ini")
