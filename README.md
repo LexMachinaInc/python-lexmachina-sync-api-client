@@ -38,6 +38,9 @@ The LexMachinaClient object is the main way to interact with the Lex Machina API
 If called with no parameter in the constructor, the config file will be loaded from the `config` directory created earlier.
  
 ```python
+
+from lexmachina import LexMachinaClient
+
 client = LexMachinaClient()
 ```
 
