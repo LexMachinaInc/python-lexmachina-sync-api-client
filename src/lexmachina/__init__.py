@@ -6,7 +6,7 @@ from lexmachina.query.state_casequery import StateCaseQueryRequest
 
 __all__ = [
     'LexMachinaClient',
-    'LexMachinaAsyncClient'
+    'LexMachinaAsyncClient',
     'DistrictCaseQueryRequest',
     'StateCaseQueryRequest'
 ]
