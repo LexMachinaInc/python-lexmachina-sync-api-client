@@ -8,12 +8,10 @@ class QueryCase:
     def query_one_page(self, query, endpoint):
         if endpoint == 'district-cases':
             response = self.case_query._post(path="query-district-cases", data=query)
-            print(response)
         elif endpoint == 'state-cases':
             response = self.case_query._post(path="query-state-cases", data=query)
         if response:
             return response.get("cases")
-        print("testing")
         return []
 
     def query_all_pages(self, query, endpoint, page_size):

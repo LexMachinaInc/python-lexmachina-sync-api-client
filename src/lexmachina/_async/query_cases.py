@@ -8,7 +8,6 @@ class QueryCase:
     async def query_one_page(self, query, endpoint):
         if endpoint == 'district-cases':
             response = await self.case_query._post(path="query-district-cases", data=query)
-            print(response)
         elif endpoint =='state-cases':
             response = await self.case_query._post(path="query-state-cases", data=query)
         if response:
