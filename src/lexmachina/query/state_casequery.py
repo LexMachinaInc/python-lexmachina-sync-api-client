@@ -57,7 +57,6 @@ class StateCaseQueryRequest:
 
     def set_terminated_date(self, date, operator='terminated'):
         self.set_date(date, self._query_template['dates']['terminated'], operator)
-        print(f'{self._query_template}')
         return self
 
     def set_case_status(self, status):
