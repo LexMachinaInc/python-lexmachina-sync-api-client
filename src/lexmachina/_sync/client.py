@@ -154,7 +154,7 @@ class LexMachinaClient(BaseRequest):
     def list_damages_federal_district(self) -> dict:
         return self._list(path='list-damages/FederalDistrict')
 
-    def list_damages_statet(self) -> dict:
+    def list_damages_state(self) -> dict:
         return self._list(path='list-damages/State')
 
     def list_events(self, court_type) -> dict:
@@ -165,6 +165,14 @@ class LexMachinaClient(BaseRequest):
 
     def list_state_judgment_sources(self) -> dict:
         return self._list(path='list-judgment-sources/State')
+    def list_originating_venues_federal(self):
+        return self._list(path='list-originating-venues/FederalAppeals')
+
+    def list_appellate_decisions_federal(self):
+        return self._list(path='list-appellate-decisions/FederalDistrict')
+
+    def list_supreme_court_decisions_federal(self):
+        return self._list(path='list-supreme-court-decisions/FederalAppeals')
 
     def _list(self, path) -> dict:
         return self._get(path=path)
