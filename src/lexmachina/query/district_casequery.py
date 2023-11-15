@@ -1,4 +1,3 @@
-import pprint
 from datetime import datetime
 
 
@@ -154,20 +153,20 @@ class DistrictCaseQueryRequest:
         return self
 
     def include_courts(self, *args):
-        '''
+        """
         :param args: include an arbitrary number of court ids
         This function can be chained with other functions.
         :return: CaseQueryRequest object
-        '''
+        """
         [self._query_template['courts']['include'].append(value) for value in args]
         return self
 
     def exclude_courts(self, *args):
-        '''
+        """
         :param args: exclude an arbitrary number of court ids
         This function can be chained with other functions.
         :return: CaseQueryRequest object
-        '''
+        """
         [self._query_template['courts']['exclude'].append(value) for value in args]
         return self
 

@@ -1,3 +1,5 @@
+import os
+
 import aiohttp
 import configparser
 from datetime import datetime
@@ -57,6 +59,7 @@ class Auth:
         else:
             config_file = Path(self._config_file_path)
         if not config_file.is_file():
+            os.makedirs("./config")
             config_file.touch(exist_ok=True)
             config['URLS'] = {"base_url": "https://api.lexmachina.com",
                               "token_url": "/oauth2/token"}

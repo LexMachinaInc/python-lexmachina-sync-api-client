@@ -18,11 +18,17 @@ class LexMachinaAsyncClient(BaseRequest):
     async def get_state_cases(self, cases: int) -> dict:
         return await self._get(path="state-cases", args=cases)
 
+
+    async def get_appeals_cases(self, cases: int) -> dict:
+        return await self._get(path='appeals-cases', args=cases)
     async def query_state_cases_case(self, query, options=None, page_size=100):
         return await self.query.query_case(query=query, options=options, page_size=page_size, endpoint='state-cases')
 
     async def query_district_case(self, query, options=None, page_size=100):
         return await self.query.query_case('district-cases', query, options, page_size)
+
+    async def query_appeals_case(self, query, options=None, page_size=100):
+        return await self.query.query_case('appeals-cases', query, options, page_size)
 
     async def get_parties(self, parties: List[str]):
         if isinstance(parties, list):
@@ -115,6 +121,16 @@ class LexMachinaAsyncClient(BaseRequest):
 
     async def list_judgment_sources_state(self):
         return await self._list(path='list-judgment-sources/State')
+
+    async def list_originating_venues_federal(self):
+        return await self._list(path='list-originating-venues/FederalAppeals')
+
+    async def list_appellate_decisions_federal(self):
+        return await self._list(path='list-appellate-decisions/FederalDistrict')
+
+    async def list_supreme_court_decisions_federal(self):
+        return await self._list(path='list-supreme-court-decisions/FederalAppeals')
+
     async def _list(self, path):
         return await self._get(path=path)
 

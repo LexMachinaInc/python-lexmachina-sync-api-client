@@ -23,11 +23,14 @@ class LexMachinaClient(BaseRequest):
     def get_state_cases(self, cases: int) -> dict:
         return self._get(path="state-cases", args=cases)
 
-    def query_state_cases_case(self, query, options=None, page_size=100):
+    def query_state_cases(self, query, options=None, page_size=100):
         return self.query.query_case(query=query, options=options, page_size=page_size, endpoint='state-cases')
 
     def query_district_case(self, query, options=None, page_size=100):
         return self.query.query_case(query=query, options=options, page_size=page_size, endpoint='district-cases')
+
+    def query_appeals_case(self, query, options=None, page_size=100):
+        return self.query.query_case(query=query, options=options, page_size=page_size, endpoint='appeals-cases')
 
     def get_parties(self, parties: List[str]) -> dict:
         """
@@ -75,7 +78,7 @@ class LexMachinaClient(BaseRequest):
                                                               "pageNumber": page_number,
                                                               "pageSize": page_size})
 
-    def get_law_firms(self, law_firms: List[int]) -> dict:
+    def get_law_firms(self, law_firms: list[int]) -> dict:
         """
         :param law_firms: provide a single value or a list of values
         :return: JSON string with a name and partyID
