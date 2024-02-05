@@ -1,3 +1,6 @@
+# Don't accidentally track config info 
+config/config.ini
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

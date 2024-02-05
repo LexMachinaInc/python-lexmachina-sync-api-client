@@ -10,6 +10,8 @@ class QueryCase:
             response = self.case_query._post(path="query-district-cases", data=query)
         elif endpoint == 'state-cases':
             response = self.case_query._post(path="query-state-cases", data=query)
+        elif endpoint == 'appeals-cases':
+            response = self.case_query._post(path="query-appeals-cases", data=query)
         if response:
             return response.get("cases")
         return []
