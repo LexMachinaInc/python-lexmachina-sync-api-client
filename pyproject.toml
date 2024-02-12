@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lexmachina-client"
-version = "1.1.0"
+version = "1.2.0"
 authors = [
-  { name="LexMachina", email="dslusher@lexmachina.com" },
+    { name = "LexMachina", email = "support@lexmachina.com" },
 ]
 description = "LexMachina API python SDK"
 readme = "README.md"
