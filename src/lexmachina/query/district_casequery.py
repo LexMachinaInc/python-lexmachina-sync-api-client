@@ -19,7 +19,7 @@ class DistrictCaseQueryRequest:
             },
             'judges': {'include': [], 'exclude': []},
             'magistrates': {'include': [], 'exclude': []},
-            'events': {'includeEventTypes': [], 'excludeEventTypes': []},
+            'events': {'include': [], 'exclude': []},
             'lawFirms': {'include': [], 'exclude': [], 'includePlaintiff': [], 'excludePlaintiff': [],
                          'includeDefendant': [], 'excludeDefendant': [], 'includeThirdParty': [],
                          'excludeThirdParty': []},
@@ -195,7 +195,7 @@ class DistrictCaseQueryRequest:
         This function can be chained with other functions.
         :return: CaseQueryRequest object
         '''
-        [self._query_template['events']['includeEventTypes'].append(value) for value in args]
+        [self._query_template['events']['include'].append(value) for value in args]
         return self
 
     def exclude_event_types(self, *args):
@@ -205,7 +205,7 @@ class DistrictCaseQueryRequest:
          This function can be chained with other functions.
          :return: CaseQueryRequest object
          '''
-        [self._query_template['events']['excludeEventTypes'].append(value) for value in args]
+        [self._query_template['events']['exclude'].append(value) for value in args]
         return self
 
     def include_law_firms(self, *args):
