@@ -25,6 +25,6 @@ async def test_query_district_case_page_size_100():
 
 @pytest.mark.asyncio
 async def test_query_district_case_events():
-    query = DistrictCaseQueryRequest().include_event_types("Trial")
+    query = DistrictCaseQueryRequest().include_event_types("Filed")
     response = await client.query_district_case(query)
     assert len(response) == 5

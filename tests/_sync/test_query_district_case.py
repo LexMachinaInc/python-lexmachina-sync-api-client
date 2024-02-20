@@ -19,6 +19,6 @@ def test_query_district_case_page_size_100():
     assert len(response) == 100
 
 def test_query_district_case_events():
-    query = DistrictCaseQueryRequest().include_event_types("Trial")
+    query = DistrictCaseQueryRequest().include_event_types("Filed")
     response = client.query_district_case(query)
     assert len(response) == 5
