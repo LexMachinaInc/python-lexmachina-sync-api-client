@@ -5,6 +5,9 @@ from .query_cases import QueryCase
 
 
 class LexMachinaAsyncClient(BaseRequest):
+    from warnings import warn
+    warn('This version of the client is deprecated. For future feature support migrtate to v2.', DeprecationWarning, stacklevel=2)
+
     def __init__(self, config_file_path=None, client_id=None, client_secret=None):
         super().__init__(config_file_path, client_id, client_secret)
         self._config_file_path = config_file_path
