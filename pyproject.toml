@@ -1,24 +1,71 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
-name = "lexmachina-client"
-version = "1.2.1"
-authors = [
-    { name = "LexMachina", email = "support@lexmachina.com" },
-]
+name = "lexmachina-client-test"
+dynamic = ["version"]
 description = "LexMachina API python SDK"
-readme = "README.md"
+readme = "src/lexmachina_README.md"
 requires-python = ">=3.8"
-dependencies = ['requests >= 2.28.1', 'aiohttp >= 3.8.3']
+license = "Apache-2.0"
+license-files = ["LICEN[CS]E*"]
+keywords = []
+authors = [{ name = "LexMachina", email = "support@lexmachina.com" }]
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache Software License",
-    "Operating System :: OS Independent",
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
 ]
+dependencies = [
+  "requests >= 2.28.1",
+  "aiohttp >= 3.8.3",
+  "urllib3 >= 1.25.3, < 3.0.0",
+  "python-dateutil >= 2.8.2",
+  "pydantic >= 2",
+  "typing-extensions >= 4.7.1",
+]
+
+[project.urls]
+Documentation = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client"
+Issues = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/issues"
+Source = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client"
+
+[tool.hatch.version]
+path = "src/lexmachina/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = ["mypy>=1.0.0"]
+
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/lexmachina tests}"
+
+[tool.coverage.run]
+source_pkgs = ["lexmachina", "tests"]
+branch = true
+parallel = true
+omit = ["src/lexmachina/__about__.py"]
+
+[tool.coverage.paths]
+lexmachina = ["src/lexmachina", "*/lexmachina/src/lexmachina"]
+tests = ["tests", "*/lexmachina/tests"]
+
+[tool.coverage.report]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
+
 [project.optional-dependencies]
 tests = ["pytest >=7.2.1", "pytest-asyncio >= 0.21.0"]
-[project.urls]
-"Homepage" = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client"
-"Bug Tracker" = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/issues"
+dev = ['ipython >= 8.14.0', 'jupyterlab >= 4.0.0']
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lexmachina"]
+exclude = ["*.ipynb", "**/config", "**/tests", "**/notebooks", "**/examples"]
