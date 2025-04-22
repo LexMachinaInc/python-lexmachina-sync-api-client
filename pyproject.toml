@@ -40,6 +40,7 @@ dependencies = [
 Documentation = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client"
 Issues = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/issues"
 Source = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client"
+Changelog = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/blob/main/CHANGELOG.md"
 
 [tool.hatch.version]
 path = "src/lexmachina/__about__.py"
