@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.2.8"
+__version__ = "2.0.0.20250318"
 
 # import apis into sdk package
 from lexmachina.api.alerts_api import AlertsApi

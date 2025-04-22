@@ -7,7 +7,7 @@
 aiohappyeyeballs==2.6.1
     # via aiohttp
 aiohttp==3.11.16
-    # via lexmachina-client-test (pyproject.toml)
+    # via lexmachina-client (pyproject.toml)
 aiosignal==1.3.2
     # via aiohttp
 annotated-types==0.7.0
@@ -41,24 +41,24 @@ propcache==0.3.1
     #   aiohttp
     #   yarl
 pydantic==2.11.3
-    # via lexmachina-client-test (pyproject.toml)
+    # via lexmachina-client (pyproject.toml)
 pydantic-core==2.33.1
     # via pydantic
 pytest==8.3.5
     # via
-    #   lexmachina-client-test (pyproject.toml)
+    #   lexmachina-client (pyproject.toml)
     #   pytest-asyncio
 pytest-asyncio==0.26.0
-    # via lexmachina-client-test (pyproject.toml)
+    # via lexmachina-client (pyproject.toml)
 python-dateutil==2.9.0.post0
-    # via lexmachina-client-test (pyproject.toml)
+    # via lexmachina-client (pyproject.toml)
 requests==2.32.3
-    # via lexmachina-client-test (pyproject.toml)
+    # via lexmachina-client (pyproject.toml)
 six==1.17.0
     # via python-dateutil
 typing-extensions==4.13.2
     # via
-    #   lexmachina-client-test (pyproject.toml)
+    #   lexmachina-client (pyproject.toml)
     #   pydantic
     #   pydantic-core
     #   typing-inspection
@@ -66,7 +66,7 @@ typing-inspection==0.4.0
     # via pydantic
 urllib3==2.4.0
     # via
-    #   lexmachina-client-test (pyproject.toml)
+    #   lexmachina-client (pyproject.toml)
     #   requests
 yarl==1.19.0
     # via aiohttp

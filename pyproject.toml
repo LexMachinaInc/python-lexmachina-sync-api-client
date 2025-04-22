@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "lexmachina-client-test"
+name = "lexmachina-client"
 dynamic = ["version"]
 description = "LexMachina API python SDK"
 readme = "src/lexmachina_README.md"

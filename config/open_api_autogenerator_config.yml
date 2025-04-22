@@ -2,6 +2,6 @@ basePath: "https://api.lexmachina.com"
 disallowAdditionalPropertiesIfNotPresent: False
 generateSourceCodeOnly: True
 packageName: lexmachina
-packageVersion: "1.2.8"
+packageVersion: "2.0.0.20250318"
 packageUrl: "https://pypi.org/project/lexmachina-client/"
 projectName: python-lexmachina-api-client
