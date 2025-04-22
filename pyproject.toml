@@ -24,6 +24,8 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
   "License :: OSI Approved :: Apache Software License",
   "Operating System :: OS Independent",
+  "Intended Audience :: Legal Industry",
+  "Intended Audience :: Developers",
 ]
 dependencies = [
   "requests >= 2.28.1",
