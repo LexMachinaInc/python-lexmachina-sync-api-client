@@ -2,13 +2,13 @@ Adding search results to a spreadsheet
 ======================================
 
 
-In the quickstart, we looked for an individual case. In this example, we'll look at a group of cases to see if we can glean any interest information.
+In the quickstart, we looked for an individual case. In this example, we'll look at a group of cases to see if we can glean any interesting information about the group of cases as a whole.
 
 
-For this example, we'll look for Antitrust cases terminated in 2024, do some light analysis, and then add the cases to a spreadsheet.
+For this example, we'll look for Antitrust cases terminated in 2024, do some light analysis, and then the cases and analysis to a spreadsheet.
 
 
-In the quickstart, you saw how we created an API client object using a context manager and then an object with access to the Federal District case endpoints:
+In the quickstart, you saw how we created an API client object using a context manager. We then used the API client to create an object with access to the Federal District case API endpoints:
 
 .. code-block:: python
 
@@ -24,7 +24,7 @@ In the quickstart, you saw how we created an API client object using a context m
         fed_dist_case_api_instance = lexmachina.FederalDistrictCasesApi(api_client)
 
 
-To simplify the code blocks used in this example, we'll simply refer to the ``fed_dist_case_api_instance`` created in the context manager.
+To simplify the code blocks used in this example, we'll simply refer to the ``fed_dist_case_api_instance`` created in the code block above.
 
 
 First, we'll create a query for Antitrust cases terminated in 2024. The API returns results in "pages" with each page showing a maximum of 100 results. If your search returns more than 100 results, you'll need to page through them.
@@ -45,10 +45,10 @@ First, we'll create a query for Antitrust cases terminated in 2024. The API retu
         },
         "page": 1,
         "pageSize": 100
-        }
+    }
 
 
-We then page through the results to get the resulting case ids. Some queries return a lot of cases, so we added a print to assure ourselves something is happening while we wait.
+Below, we iterate over pages and save the resulting case ids to a list. While this query returns under 700 cases, some queries return a lot of cases, so we use a print to assure ourselves something is happening while we wait.
 
 
 .. code-block:: python
@@ -71,7 +71,7 @@ We then page through the results to get the resulting case ids. Some queries ret
             done_paging=True
 
 
-We can then get case data for each of case ids. While we could use list comprehension for this, for this example we'll use a loop so we can add prints to assure ourselves something is happening.
+Armed with case ids, we can then get case data for each of those cases. While we could use more efficient list comprehension, for this example we'll use a loop so we can add prints and assure ourselves something is happening while we wait.
 
 
 .. code-block:: python
