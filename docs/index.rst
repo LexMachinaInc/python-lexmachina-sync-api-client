@@ -8,5 +8,6 @@ lexmachina-client documentation
    installation
    quickstart
    spreadsheet_example
+   
    :caption: Contents:
 

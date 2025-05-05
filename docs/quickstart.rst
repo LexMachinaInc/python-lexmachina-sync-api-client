@@ -24,7 +24,6 @@ In the first code block, you will see the following steps:
     )
 
     with lexmachina.ApiClient(configuration) as api_client:
-
         fed_dist_case_api_instance = lexmachina.FederalDistrictCasesApi(api_client)
         case_search_results = fed_dist_case_api_instance.find_district_case_by_number(
             case_numbers=["9:02-cv-00058"], court="txed"
