@@ -48,7 +48,7 @@ First, we'll create a query for Antitrust cases terminated in 2024. The API retu
     }
 
 
-Below, we iterate over pages and save the resulting case ids to a list. While this query returns under 700 cases, some queries return a lot of cases, so we use a print to assure ourselves something is happening while we wait.
+Below, we iterate over pages and save the resulting case ids to a list. While this query returns under 700 cases, some queries return a lot of cases, so we use a print to provide progress updates.
 
 
 .. code-block:: python
@@ -71,7 +71,7 @@ Below, we iterate over pages and save the resulting case ids to a list. While th
             done_paging=True
 
 
-Armed with case ids, we can then get case data for each of those cases. While we could use more efficient list comprehension, for this example we'll use a loop so we can add prints and assure ourselves something is happening while we wait.
+Armed with case ids, we can then get case data for each of those cases. While we could use more efficient list comprehension, for this example we'll use a loop so we can use a print to get updates on progress.
 
 
 .. code-block:: python
@@ -82,6 +82,110 @@ Armed with case ids, we can then get case data for each of those cases. While we
         case_data.append(fed_dist_case_api_instance.get_district_case(case_id))
         if len(case_data) % 50 == 0:
              print(f'{len(case_data)} out of {len(case_ids)} processed')
+
+
+We can now do some analysis. First we'll check which judges saw the most of these cases. 
+We'll also get info on how long these cases lasted.
+
+.. code-block:: python
+
+    from collections import defaultdict
+
+    cases_by_judge = defaultdict(list)
+
+    for c in case_data:
+        for j in c.judges:
+            cases_by_judge[(j.name, j.federal_judge_id)].append(
+                dict(case_id=c.district_case_id, duration=c.dates.terminated - c.dates.filed)
+            )
+
+
+The above shows that 378 judges saw these 671 cases.
+
+Next, we'll get some timing info:
+
+
+.. code-block:: python
+
+    all_durations = []
+
+    for case_group in cases_by_judge.values():
+        all_durations += [c['duration'].days for c in case_group]
+    
+
+If we import the ``statistics`` library, we can check out the mean and median values:
+
+.. code-block:: python
+
+    round(statistics.mean(sorted_all_durations))
+    1084
+
+    statistics.median(sorted_all_durations)
+    451
+
+
+Next, let's check how long these durations were for the judges who saw the most cases.
+
+First let's sort judges by case counts:
+
+.. code-block:: python
+    
+    case_count_by_judges = [
+        (judge_info, len(cases_by_judge[judge_info]))
+        for judge_info in cases_by_judge
+    ]
+
+    sorted_case_counts_by_judges = sorted(
+        case_count_by_judges, key=lambda x: x[-1], reverse=True
+    )
+
+
+To see the duration stats for the top five judges:
+
+.. code-block:: python
+
+    for j in sorted_case_counts_by_judges[:5]:
+        judge_cases = cases_by_judge[j[0]]
+        judge_durations = [c['duration'].days for c in judge_cases]
+        print('--------------------')
+        print(f'judge name: {j[0][0]}')
+        print(f'total num cases: {j[1]}')
+        print(f'average duration: {round(statistics.mean(judge_durations))}')
+        print(f'median duration: {statistics.median(judge_durations)}')
+    
+
+    --------------------
+    judge name: Edgardo Ramos
+    total num cases: 37
+    average duration: 133
+    median duration: 95
+    --------------------
+    judge name: Waverly David Crenshaw Jr.
+    total num cases: 34
+    average duration: 280
+    median duration: 307.0
+    --------------------
+    judge name: Sarah Elizabeth Pitlyk
+    total num cases: 30
+    average duration: 1146
+    median duration: 1178.0
+    --------------------
+    judge name: P. Kevin Castel
+    total num cases: 23
+    average duration: 823
+    median duration: 912
+    --------------------
+    judge name: Sara Elizabeth Lioi
+    total num cases: 23
+    average duration: 65
+    median duration: 71
+
+
+    
+
+
+
+
 
 
 
