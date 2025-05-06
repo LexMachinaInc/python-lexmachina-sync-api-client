@@ -1,7 +1,7 @@
 Quickstart
 ==========
 
-After following the installation instructions and setting your bearer token in the environment variable ``BEARER_TOKEN``, you are ready to start!
+After following the :doc:`installation` instructions and setting your bearer token in the environment variable ``BEARER_TOKEN``, you are ready to start!
 
 For this example, we'll search for a case and get its details.
 
@@ -92,7 +92,8 @@ This example uses the case number search endpoint to find the case id, but there
 To know your search options, it helps to be familiar with the user-facing Lex Machina website. We recognize that, for new users, the search options are not always immediately obvious. If you would like any help using the Lex Machina API, please contact support@lexmachina.com. 
 
 
-
+Next: :doc:`spreadsheet_example`
+Previous: :doc:`installation`
 
 
 

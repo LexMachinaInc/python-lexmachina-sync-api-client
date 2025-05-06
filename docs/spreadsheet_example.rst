@@ -2,7 +2,7 @@ Adding search results to a spreadsheet
 ======================================
 
 
-In the quickstart, we looked for an individual case. In this example, we'll look at a group of cases to see if we can glean any interesting information about the group of cases as a whole.
+In the :doc:`quickstart `, we looked for an individual case. In this example, we'll look at a group of cases to see if we can glean any interesting information about the group of cases as a whole.
 
 
 For this example, we'll look for Antitrust cases terminated in 2024, do some light analysis, and then the cases and analysis to a spreadsheet.
@@ -86,16 +86,4 @@ Armed with case ids, we can then get case data for each of those cases. While we
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Previous: :doc:`quickstart`
