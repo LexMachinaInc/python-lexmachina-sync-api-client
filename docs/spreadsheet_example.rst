@@ -142,7 +142,7 @@ First let's sort judges by case counts:
     )
 
 
-To see the duration stats for the top five judges:
+Now let's check duration stats for the top five judges:
 
 .. code-block:: python
 
@@ -214,13 +214,15 @@ First, lets create the rows. We'll first determine which columns we want and the
                         c.district_case_id,
                         c.case_no,
                         c.title,
-                        (law_firm.name, law_firm.law_firm_id),
-                        (party.name, party.party_id),
+                        law_firm.name,
+                        law_firm.law_firm_id,
+                        party.name,
+                        party.party_id,
                         party.role
+                    )
                 )
-                )
-
-And checking a few of them, including the header to make sure we added it.
+            
+Now we'll spot check a few of them, including the header to make sure we added it.
 
 
 .. code-block:: python
@@ -269,7 +271,7 @@ And checking a few of them, including the header to make sure we added it.
     'Plaintiff')
 
 
-Now let's add these rows to a spreadsheet. We could have created this list directly in the previous step, but it's useful to make sure things look good first in a readable way.
+Now let's add these rows to a spreadsheet.
 
 For this example we'll be using `openpyxl <https://openpyxl.readthedocs.io/en/stable/index.html>`_, which you can install using ``pip install openpyxl``.
 
@@ -290,8 +292,7 @@ For this example we'll be using `openpyxl <https://openpyxl.readthedocs.io/en/st
 
 The rows are then saved to the spreadsheet in your working directory.
 
-
-
+The API returns a lot of data for each case, including data on resolution, damages, and remedies. If you want any help figuring out how to get the information you want, please contact support@lexmachina.com.
 
 
 Previous: :doc:`quickstart`
