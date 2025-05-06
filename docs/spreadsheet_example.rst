@@ -2,13 +2,13 @@ Adding search results to a spreadsheet
 ======================================
 
 
-In the :doc:`quickstart `, we looked for an individual case. In this example, we'll look at a group of cases to see if we can glean any interesting information about the group of cases as a whole.
+In the :doc:`quickstart`, we looked for an individual case. In this example, we'll look at a group of cases to see if we can glean any interesting information about the group of cases as a whole.
 
 
-For this example, we'll look for Antitrust cases terminated in 2024, do some light analysis, and then the cases and analysis to a spreadsheet.
+For this example, we'll look at Antitrust cases terminated in 2024, do some light analysis, and add the cases to a spreadsheet. A jupyter notebook with this code can be found in `the examples folder <https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/tree/main/examples>`_
 
 
-In the quickstart, you saw how we created an API client object using a context manager. We then used the API client to create an object with access to the Federal District case API endpoints:
+In the :doc:`quickstart`, you saw how we created an API client object using a context manager. We then used the API client to create an object with access to the Federal District case API endpoints:
 
 .. code-block:: python
 
@@ -117,6 +117,8 @@ If we import the ``statistics`` library, we can check out the mean and median va
 
 .. code-block:: python
 
+    import statistics
+
     round(statistics.mean(sorted_all_durations))
     1084
 
@@ -181,10 +183,112 @@ To see the duration stats for the top five judges:
     median duration: 71
 
 
+Now lets add the cases to a spreadsheet. 
+
+For this example, since we focused on judges until now, for the spreadsheet let's focus on something different and say we are most interested in analyzing which law firms and the roles they represented. 
+
+First, lets create the rows. We'll first determine which columns we want and then add that info for each row.
+
+.. code-block:: python
+
+    column_names = [
+        'case id',
+        'case number',
+        'case title',
+        'law_firm',
+        'law_firm_id',
+        'party',
+        'party_id',
+        'role'
+    ]
+
+    rows = []
+    rows.append(column_names)
+
+    for c in case_data:
+        for law_firm in c.law_firms:
+            for party_id in law_firm.client_party_ids:
+                party = parties_by_id_by_case_id[c.district_case_id][party_id]
+                rows.append(
+                    (
+                        c.district_case_id,
+                        c.case_no,
+                        c.title,
+                        (law_firm.name, law_firm.law_firm_id),
+                        (party.name, party.party_id),
+                        party.role
+                )
+                )
+
+And checking a few of them, including the header to make sure we added it.
+
+
+.. code-block:: python
+
+    len(rows)
+    19083
+
+    rows[0]
+    ['case id',
+    'case number',
+    'case title',
+    'law_firm',
+    'law_firm_id',
+    'party',
+    'party_id',
+    'role']
+
+    rows[1]
+    (97091,
+    '2:06-cv-01833-MSG',
+    'VISTA HEALTHPLAN, INC. v. CEPHALON, INC. et al',
+    'Kessler Topaz Meltzer & Check',
+    27,
+    'SHIRLEY PANEBIANO',
+    257121,
+    'Plaintiff')
+
+    rows[10000]
+    (2005150350,
+    '3:20-cv-05792-JD',
+    'In re Google Play Developer Antitrust Litigation',
+    "O'Melveny & Myers",
+    227639559,
+    'Google Asia Pacific PTE. Limited',
+    52824280,
+    'Defendant')
+
+    rows[-1]
+    (2034774512,
+    '3:24-cv-09118-VC',
+    'Kushner et al v. Chunghwa Picture Tubes, Ltd. et al',
+    'Goldman Scarlato & Penny',
+    15211344,
+    'Barry Kushner',
+    10805,
+    'Plaintiff')
+
+
+Now let's add these rows to a spreadsheet. We could have created this list directly in the previous step, but it's useful to make sure things look good first in a readable way.
+
+For this example we'll be using `openpyxl <https://openpyxl.readthedocs.io/en/stable/index.html>`_, which you can install using ``pip install openpyxl``.
+
+
+.. code-block:: python
+
+    from openpyxl import Workbook
+
+    wb = Workbook()
+    ws = wb.active
+
+    for r in rows:
+        ws.append(r)
     
+    wb.save("antitrust_terminated_2024_law_firms.xlsx")
+    wb.close()
 
 
-
+The rows are then saved to the spreadsheet in your working directory.
 
 
 
