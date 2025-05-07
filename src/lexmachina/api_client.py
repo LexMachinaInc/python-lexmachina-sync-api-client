@@ -97,8 +97,7 @@ class ApiClient:
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        self.rest_client.pool_manager.clear()
-        self.configuration = None
+        pass
 
     @property
     def user_agent(self):
