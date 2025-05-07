@@ -21,6 +21,7 @@ In the :doc:`quickstart`, you saw how we created an API client object which we t
     )
 
     api_client = lexmachina.ApiClient(configuration)
+
     fed_dist_case_api_instance = lexmachina.FederalDistrictCasesApi(api_client)
 
 
@@ -290,6 +291,3 @@ For this example we'll be using `openpyxl <https://openpyxl.readthedocs.io/en/st
 The rows are then saved to the spreadsheet in your working directory.
 
 The API returns a lot of data for each case, including data on resolution, damages, and remedies. If you want any help figuring out how to get the information you want, please contact support@lexmachina.com.
-
-
-Previous: :doc:`quickstart`

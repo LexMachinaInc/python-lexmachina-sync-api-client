@@ -24,6 +24,3 @@ Then set that bearer token in the environment variable:
 .. code-block:: bash
 
     $ export BEARER_TOKEN=<bearer token>
-
-
-Next: :doc:`quickstart`

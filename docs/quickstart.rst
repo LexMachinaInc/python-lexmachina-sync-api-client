@@ -94,11 +94,6 @@ This example uses the case number search endpoint to find the case id, but there
 To know your search options, it helps to be familiar with the user-facing Lex Machina website. We recognize that, for new users, the search options are not always immediately obvious. If you would like any help using the Lex Machina API, please contact support@lexmachina.com. 
 
 
-Next: :doc:`spreadsheet_example`
-Previous: :doc:`installation`
-
-
-
 
 
 
