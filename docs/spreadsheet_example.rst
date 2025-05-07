@@ -8,7 +8,7 @@ In the :doc:`quickstart`, we looked for an individual case. In this example, we'
 For this example, we'll look at Antitrust cases terminated in 2024, do some light analysis, and add the cases to a spreadsheet. A jupyter notebook with this code can be found in `the examples folder <https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/tree/main/examples>`_
 
 
-In the :doc:`quickstart`, you saw how we created an API client object using a context manager. We then used the API client to create an object with access to the Federal District case API endpoints:
+In the :doc:`quickstart`, you saw how we created an API client object which we then used to create an object with access to the Federal District case API endpoints:
 
 .. code-block:: python
 
@@ -20,14 +20,11 @@ In the :doc:`quickstart`, you saw how we created an API client object using a co
         access_token=os.environ["BEARER_TOKEN"]
     )
 
-    with lexmachina.ApiClient(configuration) as api_client:
-        fed_dist_case_api_instance = lexmachina.FederalDistrictCasesApi(api_client)
+    api_client = lexmachina.ApiClient(configuration)
+    fed_dist_case_api_instance = lexmachina.FederalDistrictCasesApi(api_client)
 
 
-To simplify the code blocks used in this example, we'll simply refer to the ``fed_dist_case_api_instance`` created in the code block above.
-
-
-First, we'll create a query for Antitrust cases terminated in 2024. The API returns results in "pages" with each page showing a maximum of 100 results. If your search returns more than 100 results, you'll need to page through them.
+To get started on our cases search, we'll create a query for Antitrust cases terminated in 2024 in the form of a dictionary. The API returns results in "pages" with each page showing a maximum of 100 results. If your search returns more than 100 results, you'll need to page through them. You'll see in the example below we request the first page to start.
 
 .. code-block:: python
 
