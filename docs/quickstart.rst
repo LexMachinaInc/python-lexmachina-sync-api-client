@@ -5,13 +5,13 @@ After following the :doc:`installation` instructions and setting your bearer tok
 
 For this example, we'll search for a case and get its details.
 
-To get detailed information on an individual case, we'll need the Lex Machina id for that case. One way to get the case's id is to search for it by case number.
+To get detailed information on an individual case, we'll need the Lex Machina id for that case. One way to get the Lex Machina case id is to search for it by case number.
 
 In the first code block, you will see the following steps:
 
 #. We configure the client. This requires you first get a bearer token and set its value to the environment variable ``BEARER_TOKEN``.
 #. Using the configured client, we create an object with access to the Federal District Case endpoints.
-#. We do a case number search. For this example, we search for the Samsung Electronics v. Sandisk Corporation, case number 9:02-cv-00058-JH. The case number search ignores judge initials at the end of a case number so they've been left out in the search example below. But they could be left in and the results would be the same. We further refine the search by using the optional court filter to limit our search to cases in the U.S. District Court for the Eastern District of Texas.
+#. We do a case number search. For this example, we search for the Samsung Electronics v. Sandisk Corporation case with case number 9:02-cv-00058-JH. The case number search ignores judge initials at the end of a case number so they've been left out in the search example below. But they could be left in and the results would be the same. We further refine the search by using the optional court filter to limit our search to cases in the U.S. District Court for the Eastern District of Texas.
 
 .. code-block:: python
 
@@ -55,8 +55,6 @@ We can see from the output above the Lex Machina id for the case is 88. We will 
 
 
 .. code-block:: python
-    
-    fed_dist_case_api_instance = lexmachina.FederalDistrictCasesApi(api_client)
     
     apple_v_sandisk_case = fed_dist_case_api_instance.get_district_case(88)
 

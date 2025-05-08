@@ -5,7 +5,7 @@ Adding search results to a spreadsheet
 In the :doc:`quickstart`, we looked for an individual case. In this example, we'll look at a group of cases to see if we can glean any interesting information about the group of cases as a whole.
 
 
-For this example, we'll look at Antitrust cases terminated in 2024, do some light analysis, and add the cases to a spreadsheet. A jupyter notebook with this code can be found in `the examples folder <https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/tree/main/examples>`_
+For this example, we'll look at Antitrust cases terminated in 2024, do some light analysis, and add the cases to a spreadsheet. A jupyter notebook with this code can be found in `the examples folder (NOTE: not yet there) <https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/tree/main/examples>`_
 
 
 In the :doc:`quickstart`, you saw how we created an API client object which we then used to create an object with access to the Federal District case API endpoints:
@@ -82,7 +82,7 @@ Armed with case ids, we can then get case data for each of those cases. While we
              print(f'{len(case_data)} out of {len(case_ids)} processed')
 
 
-We can now do some analysis. First we'll check which judges saw the most of these cases. 
+We can now do some analysis. First we'll check which judges saw the most cases among Antitrust cases that terminated in 2024.
 We'll also get info on how long these cases lasted.
 
 .. code-block:: python
@@ -98,7 +98,7 @@ We'll also get info on how long these cases lasted.
             )
 
 
-The above shows that 378 judges saw these 671 cases.
+If we check the length of keys in ``cases_by_judge``, we'll see that 378 judges saw these 671 cases.
 
 Next, we'll get some timing info:
 
@@ -111,16 +111,16 @@ Next, we'll get some timing info:
         all_durations += [c['duration'].days for c in case_group]
     
 
-If we import the ``statistics`` library, we can check out the mean and median values:
+If we import the ``statistics`` library, we can check out the mean and median timing values for all Antitrust cases terminated in 2024 (timing is in days):
 
 .. code-block:: python
 
     import statistics
 
-    round(statistics.mean(sorted_all_durations))
+    round(statistics.mean(all_durations))
     1084
 
-    statistics.median(sorted_all_durations)
+    statistics.median(all_durations)
     451
 
 
@@ -140,7 +140,7 @@ First let's sort judges by case counts:
     )
 
 
-Now let's check duration stats for the top five judges:
+And then check duration stats for the top five judges:
 
 .. code-block:: python
 
@@ -183,7 +183,7 @@ Now let's check duration stats for the top five judges:
 
 Now lets add the cases to a spreadsheet. 
 
-For this example, since we focused on judges until now, for the spreadsheet let's focus on something different and say we are most interested in analyzing which law firms and the roles they represented. 
+For this example, since we focused on judges until now, for the spreadsheet let's focus on law firms and the roles of the parties they represented.
 
 First, lets create the rows. We'll first determine which columns we want and then add that info for each row.
 
