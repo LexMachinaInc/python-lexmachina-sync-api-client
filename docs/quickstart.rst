@@ -9,7 +9,8 @@ To get detailed information on an individual case, we'll need the Lex Machina id
 
 In the first code block, you will see the following steps:
 
-#. We configure the client. This requires you first get a bearer token and set its value to the environment variable ``BEARER_TOKEN``.
+#. We configure the client. In this example we set the value of the bearer token in an environment variable (mostly to prevent contributors to this documentation from accidentally exposing credentials), but you could also feed the value directly to ``access_token``.
+
 #. Using the configured client, we create an object with access to the Federal District Case endpoints.
 #. We do a case number search. For this example, we search for the Samsung Electronics v. Sandisk Corporation case with case number 9:02-cv-00058-JH. The case number search ignores judge initials at the end of a case number so they've been left out in the search example below. But they could be left in and the results would be the same. We further refine the search by using the optional court filter to limit our search to cases in the U.S. District Court for the Eastern District of Texas.
 

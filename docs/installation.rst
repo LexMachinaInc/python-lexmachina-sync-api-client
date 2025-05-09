@@ -8,7 +8,7 @@ Install using pip within a virtual environment:
   $ pip install lexmachina-client
 
 
-The examples in the :doc:`quickstart` and :doc:`spreadsheet_example` assume a valid bearer token is set in the environment variable ``BEARER_TOKEN``. You can get a bearer token by using the ``/oauth2/token`` endpoint:
+The examples in :doc:`quickstart` and :doc:`spreadsheet_example` assume a valid bearer token is set in the environment variable ``BEARER_TOKEN``. You can get a bearer token by using the ``/oauth2/token`` endpoint:
 
 .. code-block:: bash
 

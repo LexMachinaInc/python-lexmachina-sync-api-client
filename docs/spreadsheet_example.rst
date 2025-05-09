@@ -1,12 +1,10 @@
-Adding search results to a spreadsheet
-======================================
+Adding Case Data to a Spreadsheet
+=================================
 
 
-In the :doc:`quickstart`, we looked for an individual case. In this example, we'll look at a group of cases to see if we can glean any interesting information about the group of cases as a whole.
+In this example, we will look at Antitrust cases that terminated in 2024, do some light timing analysis, and add data on those cases to a spreadsheet.
 
-
-For this example, we'll look at Antitrust cases terminated in 2024, do some light analysis, and add the cases to a spreadsheet. A jupyter notebook with this code can be found in `the examples folder (NOTE: not yet there) <https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/tree/main/examples>`_
-
+We'll be using `openpyxl <https://openpyxl.readthedocs.io/en/stable/index.html>`_ to add data to an Excel file. You can install this package with the command ``pip install openpyxl``.
 
 In the :doc:`quickstart`, you saw how we created an API client object which we then used to create an object with access to the Federal District case API endpoints:
 
@@ -65,7 +63,7 @@ Below, we iterate over pages and save the resulting case ids to a list. While th
             query['page'] = current_page + 1
     
         else:
-            print(f'Antitrust cases terminated in 2024 has length {len(case_ids)}')
+            print(f'Number of Antitrust cases terminated in 2024: {len(case_ids)}')
             done_paging=True
 
 
@@ -78,7 +76,7 @@ Armed with case ids, we can then get case data for each of those cases. While we
 
     for case_id in case_ids:
         case_data.append(fed_dist_case_api_instance.get_district_case(case_id))
-        if len(case_data) % 50 == 0:
+        if len(case_data) % 20 == 0:
              print(f'{len(case_data)} out of {len(case_ids)} processed')
 
 
@@ -98,10 +96,24 @@ We'll also get info on how long these cases lasted.
             )
 
 
-If we check the length of keys in ``cases_by_judge``, we'll see that 378 judges saw these 671 cases.
+If we check the length of keys in ``cases_by_judge``, we'll see that 378 judges saw these 671 cases. We'll also check one of the judges to see how the data is represented. We see timing is represented in days.
+
+.. code-block:: python
+
+    len(cases_by_judge)
+    378
+
+    list(cases_by_judge)[:5]
+    [('Mitchell S. Goldberg', 3193),
+    ('Edmond E-Min Chang', 3342),
+    ('Miriam Goldman Cedarbaum', 406),
+    ('Lorna Gail Schofield', 3451),
+    ('Joel A. Pisano', 2851)]
+
+    cases_by_judge[('Lorna Gail Schofield', 3451)]
+    [{'case_id': 2000009555, 'duration': datetime.timedelta(days=4981)}]
 
 Next, we'll get some timing info:
-
 
 .. code-block:: python
 
@@ -138,7 +150,6 @@ First let's sort judges by case counts:
     sorted_case_counts_by_judges = sorted(
         case_count_by_judges, key=lambda x: x[-1], reverse=True
     )
-
 
 And then check duration stats for the top five judges:
 
@@ -185,7 +196,35 @@ Now lets add the cases to a spreadsheet.
 
 For this example, since we focused on judges until now, for the spreadsheet let's focus on law firms and the roles of the parties they represented.
 
-First, lets create the rows. We'll first determine which columns we want and then add that info for each row.
+
+First we'll check the structure of the law firm and party data provided:
+
+
+.. code-block:: python
+
+    case_data[0].law_firms[:3]
+    [LawFirm(name='Kessler Topaz Meltzer & Check', law_firm_id=27, client_party_ids=[257121, 52552843, 231694, 37904, 23356662, 20047290, 24917852, 37648157]),
+    LawFirm(name='Hagens Berman Sobol Shapiro', law_firm_id=30, client_party_ids=[231694]),
+    LawFirm(name='Berger Montague', law_firm_id=51, client_party_ids=[231694])]
+
+    case_data[0].parties[:3]
+    [Party(name='Pennsylvania Employees Benefit Trust Fund', party_id=37904, role='Plaintiff'),
+    Party(name='Cephalon, Inc.', party_id=20036179, role='Defendant'),
+    Party(name='Vista Health Plan, Inc.', party_id=20047290, role='Plaintiff')]
+
+
+To translate party ids provided in law firm information to party names, we will create a dictionary mapping party ids to party names:
+
+.. code-block:: python
+
+    parties_by_id_by_case_id = {}
+
+    for c in case_data:
+        parties_by_id_by_case_id[c.district_case_id] = {}
+        for p in c.parties:
+            parties_by_id_by_case_id[c.district_case_id][p.party_id] = p
+
+Now we are ready to create our spreadsheet rows! We'll first determine which columns we want and then add that info for each row.
 
 .. code-block:: python
 
@@ -221,7 +260,6 @@ First, lets create the rows. We'll first determine which columns we want and the
                 )
             
 Now we'll spot check a few of them, including the header to make sure we added it.
-
 
 .. code-block:: python
 
@@ -270,9 +308,6 @@ Now we'll spot check a few of them, including the header to make sure we added i
 
 
 Now let's add these rows to a spreadsheet.
-
-For this example we'll be using `openpyxl <https://openpyxl.readthedocs.io/en/stable/index.html>`_, which you can install using ``pip install openpyxl``.
-
 
 .. code-block:: python
 
