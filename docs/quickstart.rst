@@ -13,6 +13,8 @@ In the first code block, you will see the following steps:
 #. Using the configured client, we create an object with access to the Federal District Case endpoints.
 #. We do a case number search. For this example, we search for the Samsung Electronics v. Sandisk Corporation case with case number 9:02-cv-00058-JH. The case number search ignores judge initials at the end of a case number so they've been left out in the search example below. But they could be left in and the results would be the same. We further refine the search by using the optional court filter to limit our search to cases in the U.S. District Court for the Eastern District of Texas.
 
+Now to get started. In a jupyter notebook or ``ipython`` try out the following:
+
 .. code-block:: python
 
     import lexmachina
@@ -35,21 +37,23 @@ In the first code block, you will see the following steps:
 When we look at ``case_search_results``, this search conveniently returns just one result (if we had left out the court filter, it would have returned three results):
 
 .. code-block:: python
- 
-     [
-        DistrictCaseNumberSearchResult(
-            total_count=1,
-            input_case_number='9:02-cv-00058',
-            input_court='txed',
-            matches=[
-                DistrictCaseNumberReference(
-                    url='https://api.lexmachina.com/district-cases/88',
-                    district_case_id=88,
-                    case_number='9:02-cv-00058',
-                    court='U.S. District Court for the Eastern District of Texas',
-                    title='Samsung Electronics v. Sandisk Corporation'
-                )
-            ]
+
+    case_search_results
+    [
+    DistrictCaseNumberSearchResult(
+        total_count=1,
+        input_case_number='9:02-cv-00058',
+        input_court='txed',
+        matches=[
+            DistrictCaseNumberReference(
+                url='https://api.lexmachina.com/district-cases/88',
+                district_case_id=88,
+                case_number='9:02-cv-00058',
+                court='U.S. District Court for the Eastern District of Texas',
+                title='Samsung Electronics v. Sandisk Corporation'
+            )
+        ]
+    ]
 
 We can see from the output above the Lex Machina id for the case is 88. We will use that in the endpoint to get data on an individual case:
 
