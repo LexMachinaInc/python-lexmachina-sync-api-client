@@ -37,7 +37,7 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client"
+Documentation = "https://lexmachinaincpython-lexmachina-sync-api-client.readthedocs.io/en/latest/"
 Issues = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/issues"
 Source = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client"
 Changelog = "https://github.com/LexMachinaInc/python-lexmachina-sync-api-client/blob/main/CHANGELOG.md"
@@ -66,7 +66,8 @@ exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
 
 [project.optional-dependencies]
 tests = ["pytest >=7.2.1", "pytest-asyncio >= 0.21.0"]
-dev = ['ipython >= 8.14.0', 'jupyterlab >= 4.0.0']
+dev = ["ipython >= 8.14.0", "jupyterlab >= 4.0.0"]
+docs = ["sphinx>=8.2.3", "sphinx-rtd-theme>=3.0.2"]
 
 
 [tool.hatch.build.targets.wheel]
