@@ -13,9 +13,6 @@ Name | Type | Description | Notes
 **docket_entry_filed** | **date** |  | 
 **negated** | **date** |  | [optional] 
 **reinstated** | **date** |  | [optional] 
-**docket_entry_id** | **int** |  | 
-**negated_docket_entry_id** | **int** |  | [optional] 
-**reinstated_docket_entry_id** | **int** |  | [optional] 
 
 ## Example
 

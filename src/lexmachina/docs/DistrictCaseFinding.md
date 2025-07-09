@@ -16,9 +16,6 @@ Name | Type | Description | Notes
 **specific_reasons** | **List[str]** |  | [optional] [default to []]
 **negated** | **date** |  | [optional] 
 **reinstated** | **date** |  | [optional] 
-**docket_entry_id** | **int** |  | 
-**negated_docket_entry_id** | **int** |  | [optional] 
-**reinstated_docket_entry_id** | **int** |  | [optional] 
 
 ## Example
 

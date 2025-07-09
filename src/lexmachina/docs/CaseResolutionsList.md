@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **court** | [**Court**](Court.md) |  | 
-**case_resolutions** | [**List[PossibleCaseResolution]**](PossibleCaseResolution.md) |  | 
+**case_resolutions** | [**List[CaseResolution]**](CaseResolution.md) |  | 
 
 ## Example
 

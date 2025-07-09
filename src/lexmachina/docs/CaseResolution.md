@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **summary** | **str** |  | 
 **specific** | **str** |  | 
-**docket_entry_filed** | **date** |  | 
 
 ## Example
 

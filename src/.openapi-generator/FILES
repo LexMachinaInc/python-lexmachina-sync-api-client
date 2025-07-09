@@ -87,7 +87,6 @@ lexmachina/docs/DistrictCaseQueryResult.md
 lexmachina/docs/DistrictCaseReference.md
 lexmachina/docs/DistrictCaseRemediesByStatus.md
 lexmachina/docs/DistrictCaseRemedy.md
-lexmachina/docs/DistrictCaseResolution.md
 lexmachina/docs/Docket.md
 lexmachina/docs/DocketEntriesIncludedInOutput.md
 lexmachina/docs/DocketEntry.md
@@ -189,7 +188,6 @@ lexmachina/docs/PatentFilter.md
 lexmachina/docs/PatentFindings.md
 lexmachina/docs/PatentInvalidityReasonsFilter.md
 lexmachina/docs/PatentsApi.md
-lexmachina/docs/PossibleCaseResolution.md
 lexmachina/docs/PriorArt.md
 lexmachina/docs/ResolutionsFilter.md
 lexmachina/docs/ResponseGetAttorneyAttorneysAttorneyIdGet.md
@@ -205,7 +203,6 @@ lexmachina/docs/StateCaseDates.md
 lexmachina/docs/StateCaseQuery.md
 lexmachina/docs/StateCaseQueryResult.md
 lexmachina/docs/StateCaseReference.md
-lexmachina/docs/StateCaseResolution.md
 lexmachina/docs/StateCaseRulingsByStatus.md
 lexmachina/docs/StateCasesApi.md
 lexmachina/docs/StateCourt.md
@@ -286,7 +283,6 @@ lexmachina/models/district_case_query_result.py
 lexmachina/models/district_case_reference.py
 lexmachina/models/district_case_remedies_by_status.py
 lexmachina/models/district_case_remedy.py
-lexmachina/models/district_case_resolution.py
 lexmachina/models/docket.py
 lexmachina/models/docket_entries_included_in_output.py
 lexmachina/models/docket_entry.py
@@ -370,7 +366,6 @@ lexmachina/models/patent_data.py
 lexmachina/models/patent_filter.py
 lexmachina/models/patent_findings.py
 lexmachina/models/patent_invalidity_reasons_filter.py
-lexmachina/models/possible_case_resolution.py
 lexmachina/models/prior_art.py
 lexmachina/models/ptab_claim_findings.py
 lexmachina/models/ptab_decision_ground.py
@@ -391,7 +386,6 @@ lexmachina/models/state_case_dates.py
 lexmachina/models/state_case_query.py
 lexmachina/models/state_case_query_result.py
 lexmachina/models/state_case_reference.py
-lexmachina/models/state_case_resolution.py
 lexmachina/models/state_case_rulings_by_status.py
 lexmachina/models/state_court.py
 lexmachina/models/state_court_filter.py
