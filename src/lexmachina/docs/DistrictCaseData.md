@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **case_type** | **List[str]** |  | 
 **case_tags** | **List[str]** |  | 
 **dates** | [**DistrictCaseDates**](DistrictCaseDates.md) |  | 
-**resolution** | [**CaseResolution**](CaseResolution.md) |  | [optional] 
+**resolution** | [**DistrictCaseResolution**](DistrictCaseResolution.md) |  | [optional] 
 **events** | [**List[CaseEvent]**](CaseEvent.md) |  | 
 **judges** | [**List[FederalJudge]**](FederalJudge.md) |  | 
 **magistrate_judges** | [**List[MagistrateJudge]**](MagistrateJudge.md) |  | 

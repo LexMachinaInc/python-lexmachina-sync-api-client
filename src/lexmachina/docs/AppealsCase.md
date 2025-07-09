@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appeals_case_id** | **int** |  | 
 **appeals_case_url** | **str** |  | 
-**resolution** | [**CaseResolution**](CaseResolution.md) |  | [optional] 
+**resolution** | [**DistrictCaseResolution**](DistrictCaseResolution.md) |  | [optional] 
 **filed_on** | **date** |  | 
 **terminated** | **date** |  | [optional] 
 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **case_type** | **List[str]** |  | 
 **case_tags** | **List[str]** |  | 
 **dates** | [**StateCaseDates**](StateCaseDates.md) |  | 
-**resolution** | [**CaseResolution**](CaseResolution.md) |  | [optional] 
+**resolution** | [**StateCaseResolution**](StateCaseResolution.md) |  | [optional] 
 **events** | [**List[CaseEvent]**](CaseEvent.md) |  | 
 **judges** | [**List[StateJudge]**](StateJudge.md) |  | 
 **rulings** | [**StateCaseRulingsByStatus**](StateCaseRulingsByStatus.md) |  | 
