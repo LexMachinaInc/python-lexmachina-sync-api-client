@@ -86,8 +86,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**401** | Expired or Missing Access Token |  -  |
-**422** | Validation Error |  -  |
+**404** | Not found |  -  |
+**422** | Error - 422 |  -  |
+**401** | Invalid or expired token |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -170,8 +171,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**401** | Expired or Missing Access Token |  -  |
-**422** | Validation Error |  -  |
+**404** | Not found |  -  |
+**401** | Invalid or expired token |  -  |
+**422** | Error - 422 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -262,8 +264,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**401** | Expired or Missing Access Token |  -  |
-**422** | Invalid Input |  -  |
+**422** | Error - 422 |  -  |
+**401** | Invalid or expired token |  -  |
+**404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

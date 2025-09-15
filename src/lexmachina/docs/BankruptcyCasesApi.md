@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_bankruptcy_case**
-> BankruptcyCaseData get_bankruptcy_case(bankruptcy_case_id)
+> BankruptcyCaseData get_bankruptcy_case(bankruptcy_case_id, docket_retrieval=docket_retrieval)
 
 Get Bankruptcy Case
 
@@ -47,10 +47,11 @@ with lexmachina.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lexmachina.BankruptcyCasesApi(api_client)
     bankruptcy_case_id = 56 # int | 
+    docket_retrieval = 'docket_retrieval_example' # str | 'all' to retrieve docket entries for the case, if not provided no docket entries will be retrieved. (optional)
 
     try:
         # Get Bankruptcy Case
-        api_response = api_instance.get_bankruptcy_case(bankruptcy_case_id)
+        api_response = api_instance.get_bankruptcy_case(bankruptcy_case_id, docket_retrieval=docket_retrieval)
         print("The response of BankruptcyCasesApi->get_bankruptcy_case:\n")
         pprint(api_response)
     except Exception as e:
@@ -65,6 +66,7 @@ with lexmachina.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankruptcy_case_id** | **int**|  | 
+ **docket_retrieval** | **str**| &#39;all&#39; to retrieve docket entries for the case, if not provided no docket entries will be retrieved. | [optional] 
 
 ### Return type
 
