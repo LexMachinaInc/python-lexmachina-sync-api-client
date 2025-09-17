@@ -191,6 +191,7 @@ lexmachina/docs/PatentInvalidityReasonsFilter.md
 lexmachina/docs/PatentsApi.md
 lexmachina/docs/PossibleCaseResolution.md
 lexmachina/docs/PriorArt.md
+lexmachina/docs/RemediesList.md
 lexmachina/docs/ResolutionsFilter.md
 lexmachina/docs/ResponseGetAttorneyAttorneysAttorneyIdGet.md
 lexmachina/docs/ResponseGetLawFirmLawFirmsLawFirmIdGet.md
@@ -378,6 +379,7 @@ lexmachina/models/ptab_patent.py
 lexmachina/models/ptab_petition_stage_ground.py
 lexmachina/models/ptab_trial_data.py
 lexmachina/models/ptab_trial_dates.py
+lexmachina/models/remedies_list.py
 lexmachina/models/resolutions_filter.py
 lexmachina/models/response_get_attorney_attorneys_attorney_id_get.py
 lexmachina/models/response_get_law_firm_law_firms_law_firm_id_get.py

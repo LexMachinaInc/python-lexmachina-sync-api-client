@@ -17,18 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from lexmachina.models.court import Court
 from typing import Optional, Set
 from typing_extensions import Self
 
-class JudgmentEventFilter(BaseModel):
+class RemediesList(BaseModel):
     """
-    JudgmentEventFilter
+    RemediesList
     """ # noqa: E501
-    include: Optional[List[StrictStr]] = None
-    exclude: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["include", "exclude"]
+    court: Optional[Court] = None
+    remedies_by_remedy_type: Dict[str, List[StrictStr]] = Field(alias="remediesByRemedyType")
+    __properties: ClassVar[List[str]] = ["court", "remediesByRemedyType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +49,7 @@ class JudgmentEventFilter(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of JudgmentEventFilter from a JSON string"""
+        """Create an instance of RemediesList from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,21 +70,14 @@ class JudgmentEventFilter(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if include (nullable) is None
-        # and model_fields_set contains the field
-        if self.include is None and "include" in self.model_fields_set:
-            _dict['include'] = None
-
-        # set to None if exclude (nullable) is None
-        # and model_fields_set contains the field
-        if self.exclude is None and "exclude" in self.model_fields_set:
-            _dict['exclude'] = None
-
+        # override the default output from pydantic by calling `to_dict()` of court
+        if self.court:
+            _dict['court'] = self.court.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of JudgmentEventFilter from a dict"""
+        """Create an instance of RemediesList from a dict"""
         if obj is None:
             return None
 
@@ -91,8 +85,8 @@ class JudgmentEventFilter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "include": obj.get("include"),
-            "exclude": obj.get("exclude")
+            "court": Court.from_dict(obj["court"]) if obj.get("court") is not None else None,
+            "remediesByRemedyType": obj.get("remediesByRemedyType")
         })
         return _obj
 

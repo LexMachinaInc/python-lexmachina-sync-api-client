@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **get_appeals_case**
-> AppealsCaseData get_appeals_case(appeals_case_id)
+> AppealsCaseData get_appeals_case(appeals_case_id, docket_retrieval=docket_retrieval)
 
 Get Appeals Case
 
@@ -52,10 +52,11 @@ with lexmachina.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lexmachina.FederalAppealsCasesApi(api_client)
     appeals_case_id = 56 # int | 
+    docket_retrieval = 'docket_retrieval_example' # str | 'all' to retrieve docket entries for the case, if not provided no docket entries will be retrieved. (optional)
 
     try:
         # Get Appeals Case
-        api_response = api_instance.get_appeals_case(appeals_case_id)
+        api_response = api_instance.get_appeals_case(appeals_case_id, docket_retrieval=docket_retrieval)
         print("The response of FederalAppealsCasesApi->get_appeals_case:\n")
         pprint(api_response)
     except Exception as e:
@@ -70,6 +71,7 @@ with lexmachina.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appeals_case_id** | **int**|  | 
+ **docket_retrieval** | **str**| &#39;all&#39; to retrieve docket entries for the case, if not provided no docket entries will be retrieved. | [optional] 
 
 ### Return type
 
@@ -165,8 +167,9 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**401** | Expired or Missing Access Token |  -  |
-**422** | Invalid Input |  -  |
+**401** | Invalid or expired token |  -  |
+**404** | Not found |  -  |
+**422** | Error - 422 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -240,8 +243,9 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**401** | Expired or Missing Access Token |  -  |
-**422** | Invalid Input |  -  |
+**401** | Invalid or expired token |  -  |
+**404** | Not found |  -  |
+**422** | Error - 422 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -316,8 +320,9 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**401** | Expired or Missing Access Token |  -  |
-**422** | Invalid Input |  -  |
+**401** | Invalid or expired token |  -  |
+**404** | Not found |  -  |
+**422** | Error - 422 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -391,8 +396,9 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**401** | Expired or Missing Access Token |  -  |
-**422** | Invalid Input |  -  |
+**401** | Invalid or expired token |  -  |
+**404** | Not found |  -  |
+**422** | Error - 422 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
