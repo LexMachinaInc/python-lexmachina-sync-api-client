@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **appeals_cases** | [**List[AppealsCase]**](AppealsCase.md) |  | 
 **docket** | [**Docket**](Docket.md) |  | 
 **complaint_summary** | [**ComplaintSummary**](ComplaintSummary.md) |  | 
+**nature_of_suit** | [**NatureOfSuit**](NatureOfSuit.md) |  | [optional] 
 
 ## Example
 
