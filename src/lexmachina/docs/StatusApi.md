@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_health**
-> object get_health()
+> HealthStatus get_health()
 
 Get Health
 
@@ -20,6 +20,7 @@ Gets the current health of the API.
 
 ```python
 import lexmachina
+from lexmachina.models.health_status import HealthStatus
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -61,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**object**
+[**HealthStatus**](HealthStatus.md)
 
 ### Authorization
 
@@ -76,9 +77,7 @@ This endpoint does not need any parameter.
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Expired or Missing Access Token |  -  |
-**404** | Not Found |  -  |
+**200** | Successful Response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

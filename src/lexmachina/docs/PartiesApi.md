@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_parties**](PartiesApi.md#get_parties) | **GET** /parties | Get Parties
 [**get_party**](PartiesApi.md#get_party) | **GET** /parties/{party_id} | Get Party
+[**get_party_groups**](PartiesApi.md#get_party_groups) | **GET** /party-groups | Get Party Groups
 [**search_parties**](PartiesApi.md#search_parties) | **GET** /search-parties | Search Parties
 
 
@@ -174,6 +175,83 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 **401** | Invalid or expired token |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_party_groups**
+> List[PartyGroup] get_party_groups()
+
+Get Party Groups
+
+Gets a list of all party groups the user has created.
+
+### Example
+
+* Bearer Authentication (JwtAccessBearer):
+
+```python
+import lexmachina
+from lexmachina.models.party_group import PartyGroup
+from lexmachina.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.lexmachina.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lexmachina.Configuration(
+    host = "https://api.lexmachina.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JwtAccessBearer
+configuration = lexmachina.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with lexmachina.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lexmachina.PartiesApi(api_client)
+
+    try:
+        # Get Party Groups
+        api_response = api_instance.get_party_groups()
+        print("The response of PartiesApi->get_party_groups:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PartiesApi->get_party_groups: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List[PartyGroup]**](PartyGroup.md)
+
+### Authorization
+
+[JwtAccessBearer](../README.md#JwtAccessBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Invalid or expired token |  -  |
+**404** | Not found |  -  |
+**422** | Error - 422 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

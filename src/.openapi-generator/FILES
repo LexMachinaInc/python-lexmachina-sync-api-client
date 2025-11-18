@@ -1,6 +1,7 @@
 lexmachina/__init__.py
 lexmachina/api/__init__.py
 lexmachina/api/alerts_api.py
+lexmachina/api/analytics_api.py
 lexmachina/api/attorneys_api.py
 lexmachina/api/authorization_api.py
 lexmachina/api/bankruptcy_cases_api.py
@@ -26,6 +27,7 @@ lexmachina/configuration.py
 lexmachina/docs/AdministrativeLawJudge.md
 lexmachina/docs/AdministrativePatentJudge.md
 lexmachina/docs/AdministrativePatentJudgeDetail.md
+lexmachina/docs/Aggregation.md
 lexmachina/docs/Alert.md
 lexmachina/docs/AlertItem.md
 lexmachina/docs/AlertRunData.md
@@ -33,6 +35,8 @@ lexmachina/docs/AlertRunResult.md
 lexmachina/docs/AlertsApi.md
 lexmachina/docs/Amount.md
 lexmachina/docs/Amountperdefendant.md
+lexmachina/docs/AnalyticTypes.md
+lexmachina/docs/AnalyticsApi.md
 lexmachina/docs/AppealsAttorneyFilter.md
 lexmachina/docs/AppealsCase.md
 lexmachina/docs/AppealsCaseData.md
@@ -58,7 +62,9 @@ lexmachina/docs/BankruptcyCasesApi.md
 lexmachina/docs/BankruptcyJudge.md
 lexmachina/docs/BankruptcyJudgeData.md
 lexmachina/docs/BankruptcyJudgeResult.md
+lexmachina/docs/CaseAnalyticResult.md
 lexmachina/docs/CaseCountByCourt.md
+lexmachina/docs/CaseCountByType.md
 lexmachina/docs/CaseDatesFilter.md
 lexmachina/docs/CaseEvent.md
 lexmachina/docs/CaseQueryApi.md
@@ -67,13 +73,16 @@ lexmachina/docs/CaseResolutionsList.md
 lexmachina/docs/CaseStatus.md
 lexmachina/docs/CaseTagsFilter.md
 lexmachina/docs/CaseTagsList.md
+lexmachina/docs/CaseTypeAggregation.md
 lexmachina/docs/CaseTypesFilter.md
 lexmachina/docs/CaseTypesList.md
 lexmachina/docs/ComplaintSummary.md
+lexmachina/docs/CountsPerRole.md
 lexmachina/docs/Court.md
 lexmachina/docs/Court1.md
 lexmachina/docs/CourtFilter.md
 lexmachina/docs/CourtType.md
+lexmachina/docs/DistrictCaseAnalyticFromQuery.md
 lexmachina/docs/DistrictCaseDamages.md
 lexmachina/docs/DistrictCaseDamagesByStatus.md
 lexmachina/docs/DistrictCaseData.md
@@ -113,6 +122,7 @@ lexmachina/docs/GetAttorneys200ResponseInner.md
 lexmachina/docs/GetLawFirms200ResponseInner.md
 lexmachina/docs/GetParties200ResponseInner.md
 lexmachina/docs/HTTPValidationError.md
+lexmachina/docs/HealthStatus.md
 lexmachina/docs/ITCDocument.md
 lexmachina/docs/ITCDocumentData.md
 lexmachina/docs/ITCDocumentEntityData.md
@@ -141,6 +151,8 @@ lexmachina/docs/JudgmentEventsList.md
 lexmachina/docs/JudgmentSourceFilter.md
 lexmachina/docs/JudgmentSourcesList.md
 lexmachina/docs/LawFirm.md
+lexmachina/docs/LawFirmAggregation.md
+lexmachina/docs/LawFirmCountByRole.md
 lexmachina/docs/LawFirmData.md
 lexmachina/docs/LawFirmFilter.md
 lexmachina/docs/LawFirmReference.md
@@ -158,6 +170,7 @@ lexmachina/docs/MultiDistrictLitigation.md
 lexmachina/docs/MultidistrictLitigationFilter.md
 lexmachina/docs/NameFilter.md
 lexmachina/docs/NameTypeFilter.md
+lexmachina/docs/NatureOfSuit.md
 lexmachina/docs/Ordering.md
 lexmachina/docs/Orders.md
 lexmachina/docs/OriginatingCaseTypesFilter.md
@@ -177,8 +190,11 @@ lexmachina/docs/PTABTrialDates.md
 lexmachina/docs/PTABTrialsApi.md
 lexmachina/docs/PartiesApi.md
 lexmachina/docs/Party.md
+lexmachina/docs/PartyAggregation.md
+lexmachina/docs/PartyCountByRole.md
 lexmachina/docs/PartyData.md
 lexmachina/docs/PartyFilter.md
+lexmachina/docs/PartyGroup.md
 lexmachina/docs/PartyReference.md
 lexmachina/docs/PartyResult.md
 lexmachina/docs/PartySearchResults.md
@@ -231,12 +247,14 @@ lexmachina/models/__init__.py
 lexmachina/models/administrative_law_judge.py
 lexmachina/models/administrative_patent_judge.py
 lexmachina/models/administrative_patent_judge_detail.py
+lexmachina/models/aggregation.py
 lexmachina/models/alert.py
 lexmachina/models/alert_item.py
 lexmachina/models/alert_run_data.py
 lexmachina/models/alert_run_result.py
 lexmachina/models/amount.py
 lexmachina/models/amountperdefendant.py
+lexmachina/models/analytic_types.py
 lexmachina/models/appeals_attorney_filter.py
 lexmachina/models/appeals_case.py
 lexmachina/models/appeals_case_data.py
@@ -259,7 +277,9 @@ lexmachina/models/bankruptcy_case_dates.py
 lexmachina/models/bankruptcy_judge.py
 lexmachina/models/bankruptcy_judge_data.py
 lexmachina/models/bankruptcy_judge_result.py
+lexmachina/models/case_analytic_result.py
 lexmachina/models/case_count_by_court.py
+lexmachina/models/case_count_by_type.py
 lexmachina/models/case_dates_filter.py
 lexmachina/models/case_event.py
 lexmachina/models/case_resolution.py
@@ -267,13 +287,16 @@ lexmachina/models/case_resolutions_list.py
 lexmachina/models/case_status.py
 lexmachina/models/case_tags_filter.py
 lexmachina/models/case_tags_list.py
+lexmachina/models/case_type_aggregation.py
 lexmachina/models/case_types_filter.py
 lexmachina/models/case_types_list.py
 lexmachina/models/complaint_summary.py
+lexmachina/models/counts_per_role.py
 lexmachina/models/court.py
 lexmachina/models/court1.py
 lexmachina/models/court_filter.py
 lexmachina/models/court_type.py
+lexmachina/models/district_case_analytic_from_query.py
 lexmachina/models/district_case_damages.py
 lexmachina/models/district_case_damages_by_status.py
 lexmachina/models/district_case_data.py
@@ -307,6 +330,7 @@ lexmachina/models/frequency.py
 lexmachina/models/get_attorneys200_response_inner.py
 lexmachina/models/get_law_firms200_response_inner.py
 lexmachina/models/get_parties200_response_inner.py
+lexmachina/models/health_status.py
 lexmachina/models/http_validation_error.py
 lexmachina/models/individual_damages_filter.py
 lexmachina/models/individual_findings_filter.py
@@ -334,6 +358,8 @@ lexmachina/models/judgment_events_list.py
 lexmachina/models/judgment_source_filter.py
 lexmachina/models/judgment_sources_list.py
 lexmachina/models/law_firm.py
+lexmachina/models/law_firm_aggregation.py
+lexmachina/models/law_firm_count_by_role.py
 lexmachina/models/law_firm_data.py
 lexmachina/models/law_firm_filter.py
 lexmachina/models/law_firm_reference.py
@@ -349,6 +375,7 @@ lexmachina/models/multi_district_litigation.py
 lexmachina/models/multidistrict_litigation_filter.py
 lexmachina/models/name_filter.py
 lexmachina/models/name_type_filter.py
+lexmachina/models/nature_of_suit.py
 lexmachina/models/ordering.py
 lexmachina/models/orders.py
 lexmachina/models/originating_case_types_filter.py
@@ -360,8 +387,11 @@ lexmachina/models/originating_judge_filter.py
 lexmachina/models/originating_venues_filter.py
 lexmachina/models/originating_venues_list.py
 lexmachina/models/party.py
+lexmachina/models/party_aggregation.py
+lexmachina/models/party_count_by_role.py
 lexmachina/models/party_data.py
 lexmachina/models/party_filter.py
+lexmachina/models/party_group.py
 lexmachina/models/party_reference.py
 lexmachina/models/party_result.py
 lexmachina/models/party_search_results.py
