@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **appealability_rulings** | **List[str]** |  | 
 **case_resolution** | [**CaseResolution**](CaseResolution.md) |  | [optional] 
 **supreme_court_and_rehearing_decisions** | [**List[SupremeCourtOrRehearingDecision]**](SupremeCourtOrRehearingDecision.md) |  | 
+**docket** | [**Docket**](Docket.md) |  | 
 
 ## Example
 
