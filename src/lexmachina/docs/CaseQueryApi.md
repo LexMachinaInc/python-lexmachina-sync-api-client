@@ -106,7 +106,7 @@ Queries federal district court cases.
 
 - **data**: the district case query
 
-See [https://developer.lexmachina.com/posts/query/query_usage_portal_post/](https://developer.lexmachina.com/posts/query/query_usage_portal_post/] for query formation.
+See [Querying district cases](https://developer.lexmachina.com/api-reference/district-cases/querying-district-cases/) for documentation.
 
 The results will contain a list of cases, each with a specificed url and Lex Machina districtCaseId.
 

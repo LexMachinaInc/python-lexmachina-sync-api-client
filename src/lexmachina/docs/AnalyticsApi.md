@@ -87,8 +87,10 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**422** | Validation Error |  -  |
+**200** | Success |  -  |
+**401** | Invalid or expired token |  -  |
+**404** | Not found |  -  |
+**422** | Error - 422 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -128,7 +130,7 @@ configuration = lexmachina.Configuration(
 with lexmachina.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lexmachina.AnalyticsApi(api_client)
-    district_case_analytic_from_query = lexmachina.DistrictCaseAnalyticFromQuery() # DistrictCaseAnalyticFromQuery | 
+    district_case_analytic_from_query = {"analyticType": "LawFirmCountByRole", "districtCaseQuery": {"courts": {"include": ["njd"]}, "caseTypes": {"include": ["Contracts"]}, "dates": {"filed": {"onOrAfter": "2019-01-01", "onOrBefore": "2019-12-31"}, "terminated": {"onOrAfter": "2021-01-01", "onOrBefore": "2021-12-31"}}}} # DistrictCaseAnalyticFromQuery | 
 
     try:
         # Analyze District Cases From Query
@@ -165,8 +167,10 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**422** | Validation Error |  -  |
+**200** | Success |  -  |
+**401** | Invalid or expired token |  -  |
+**404** | Not found |  -  |
+**422** | Error - 422 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

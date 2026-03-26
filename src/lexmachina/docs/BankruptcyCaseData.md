@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **parties** | [**List[Party]**](Party.md) |  | 
 **assets** | **str** |  | [optional] 
 **liabilities** | **str** |  | [optional] 
+**docket** | [**Docket**](Docket.md) |  | 
 
 ## Example
 
