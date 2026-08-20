@@ -374,6 +374,11 @@ Authentication schemes defined for the API:
 - **Type**: Bearer authentication
 
 
+## v1.x Client
+
+v1.x of the Python client was deprecated in April 2024. If you are still using a 1.x version, please upgrade to the latest 2.x version. If for some reason you will want to use a deprecated version, the last version can be found [here](https://pypi.org/project/lexmachina-client/1.2.1/).
+
+
 ## Contact
 
 Send any questions to support@lexmachina.com.
