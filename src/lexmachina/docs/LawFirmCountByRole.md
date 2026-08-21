@@ -26,6 +26,6 @@ law_firm_count_by_role_dict = law_firm_count_by_role_instance.to_dict()
 # create an instance of LawFirmCountByRole from a dict
 law_firm_count_by_role_from_dict = LawFirmCountByRole.from_dict(law_firm_count_by_role_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

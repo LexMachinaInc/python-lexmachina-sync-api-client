@@ -25,6 +25,6 @@ magistrate_judge_dict = magistrate_judge_instance.to_dict()
 # create an instance of MagistrateJudge from a dict
 magistrate_judge_from_dict = MagistrateJudge.from_dict(magistrate_judge_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

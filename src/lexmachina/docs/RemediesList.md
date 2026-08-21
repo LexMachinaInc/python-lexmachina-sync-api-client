@@ -25,6 +25,6 @@ remedies_list_dict = remedies_list_instance.to_dict()
 # create an instance of RemediesList from a dict
 remedies_list_from_dict = RemediesList.from_dict(remedies_list_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

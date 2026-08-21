@@ -26,6 +26,6 @@ itc_document_list_dict = itc_document_list_instance.to_dict()
 # create an instance of ITCDocumentList from a dict
 itc_document_list_from_dict = ITCDocumentList.from_dict(itc_document_list_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

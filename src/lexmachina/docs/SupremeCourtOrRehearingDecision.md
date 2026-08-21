@@ -27,6 +27,6 @@ supreme_court_or_rehearing_decision_dict = supreme_court_or_rehearing_decision_i
 # create an instance of SupremeCourtOrRehearingDecision from a dict
 supreme_court_or_rehearing_decision_from_dict = SupremeCourtOrRehearingDecision.from_dict(supreme_court_or_rehearing_decision_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

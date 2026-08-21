@@ -38,6 +38,6 @@ appeals_case_query_dict = appeals_case_query_instance.to_dict()
 # create an instance of AppealsCaseQuery from a dict
 appeals_case_query_from_dict = AppealsCaseQuery.from_dict(appeals_case_query_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

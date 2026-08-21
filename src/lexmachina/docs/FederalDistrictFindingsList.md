@@ -27,6 +27,6 @@ federal_district_findings_list_dict = federal_district_findings_list_instance.to
 # create an instance of FederalDistrictFindingsList from a dict
 federal_district_findings_list_from_dict = FederalDistrictFindingsList.from_dict(federal_district_findings_list_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

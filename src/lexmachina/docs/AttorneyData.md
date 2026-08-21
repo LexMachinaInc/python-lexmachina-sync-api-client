@@ -25,6 +25,6 @@ attorney_data_dict = attorney_data_instance.to_dict()
 # create an instance of AttorneyData from a dict
 attorney_data_from_dict = AttorneyData.from_dict(attorney_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

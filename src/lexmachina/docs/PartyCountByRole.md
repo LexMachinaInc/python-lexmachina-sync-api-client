@@ -26,6 +26,6 @@ party_count_by_role_dict = party_count_by_role_instance.to_dict()
 # create an instance of PartyCountByRole from a dict
 party_count_by_role_from_dict = PartyCountByRole.from_dict(party_count_by_role_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

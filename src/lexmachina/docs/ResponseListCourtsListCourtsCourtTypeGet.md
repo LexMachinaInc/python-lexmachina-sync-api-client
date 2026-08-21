@@ -23,6 +23,6 @@ response_list_courts_list_courts_court_type_get_dict = response_list_courts_list
 # create an instance of ResponseListCourtsListCourtsCourtTypeGet from a dict
 response_list_courts_list_courts_court_type_get_from_dict = ResponseListCourtsListCourtsCourtTypeGet.from_dict(response_list_courts_list_courts_court_type_get_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

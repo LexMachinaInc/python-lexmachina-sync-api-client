@@ -24,6 +24,6 @@ district_case_query_result_dict = district_case_query_result_instance.to_dict()
 # create an instance of DistrictCaseQueryResult from a dict
 district_case_query_result_from_dict = DistrictCaseQueryResult.from_dict(district_case_query_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 
