@@ -25,6 +25,6 @@ supreme_court_decisions_filter_dict = supreme_court_decisions_filter_instance.to
 # create an instance of SupremeCourtDecisionsFilter from a dict
 supreme_court_decisions_filter_from_dict = SupremeCourtDecisionsFilter.from_dict(supreme_court_decisions_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

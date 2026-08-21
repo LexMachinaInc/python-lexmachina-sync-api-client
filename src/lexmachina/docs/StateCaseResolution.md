@@ -27,6 +27,6 @@ state_case_resolution_dict = state_case_resolution_instance.to_dict()
 # create an instance of StateCaseResolution from a dict
 state_case_resolution_from_dict = StateCaseResolution.from_dict(state_case_resolution_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

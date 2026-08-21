@@ -25,6 +25,6 @@ prior_art_dict = prior_art_instance.to_dict()
 # create an instance of PriorArt from a dict
 prior_art_from_dict = PriorArt.from_dict(prior_art_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

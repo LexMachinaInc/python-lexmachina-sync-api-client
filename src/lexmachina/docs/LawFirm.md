@@ -26,6 +26,6 @@ law_firm_dict = law_firm_instance.to_dict()
 # create an instance of LawFirm from a dict
 law_firm_from_dict = LawFirm.from_dict(law_firm_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

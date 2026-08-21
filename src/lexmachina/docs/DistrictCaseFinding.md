@@ -37,6 +37,6 @@ district_case_finding_dict = district_case_finding_instance.to_dict()
 # create an instance of DistrictCaseFinding from a dict
 district_case_finding_from_dict = DistrictCaseFinding.from_dict(district_case_finding_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -25,6 +25,6 @@ uspto_patent_technology_center_dict = uspto_patent_technology_center_instance.to
 # create an instance of USPTOPatentTechnologyCenter from a dict
 uspto_patent_technology_center_from_dict = USPTOPatentTechnologyCenter.from_dict(uspto_patent_technology_center_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

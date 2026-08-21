@@ -35,6 +35,6 @@ district_case_damages_dict = district_case_damages_instance.to_dict()
 # create an instance of DistrictCaseDamages from a dict
 district_case_damages_from_dict = DistrictCaseDamages.from_dict(district_case_damages_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

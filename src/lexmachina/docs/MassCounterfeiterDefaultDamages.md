@@ -24,6 +24,6 @@ mass_counterfeiter_default_damages_dict = mass_counterfeiter_default_damages_ins
 # create an instance of MassCounterfeiterDefaultDamages from a dict
 mass_counterfeiter_default_damages_from_dict = MassCounterfeiterDefaultDamages.from_dict(mass_counterfeiter_default_damages_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

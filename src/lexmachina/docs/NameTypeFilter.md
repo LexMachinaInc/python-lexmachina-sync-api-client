@@ -25,6 +25,6 @@ name_type_filter_dict = name_type_filter_instance.to_dict()
 # create an instance of NameTypeFilter from a dict
 name_type_filter_from_dict = NameTypeFilter.from_dict(name_type_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

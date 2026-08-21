@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **query_district_cases**
 > DistrictCaseQueryResult query_district_cases(district_case_query)
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **query_state_cases**
 > StateCaseQueryResult query_state_cases(state_case_query)
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -271,5 +271,5 @@ Name | Type | Description  | Notes
 **401** | Invalid or expired token |  -  |
 **404** | Not found |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

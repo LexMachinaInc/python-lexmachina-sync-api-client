@@ -24,6 +24,6 @@ patent_invalidity_reasons_filter_dict = patent_invalidity_reasons_filter_instanc
 # create an instance of PatentInvalidityReasonsFilter from a dict
 patent_invalidity_reasons_filter_from_dict = PatentInvalidityReasonsFilter.from_dict(patent_invalidity_reasons_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

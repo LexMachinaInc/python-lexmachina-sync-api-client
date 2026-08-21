@@ -26,6 +26,6 @@ patent_findings_dict = patent_findings_instance.to_dict()
 # create an instance of PatentFindings from a dict
 patent_findings_from_dict = PatentFindings.from_dict(patent_findings_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

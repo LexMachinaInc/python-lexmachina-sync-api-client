@@ -27,6 +27,6 @@ ptab_decision_ground_dict = ptab_decision_ground_instance.to_dict()
 # create an instance of PTABDecisionGround from a dict
 ptab_decision_ground_from_dict = PTABDecisionGround.from_dict(ptab_decision_ground_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

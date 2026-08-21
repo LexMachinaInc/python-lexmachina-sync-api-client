@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 **422** | Error - 422 |  -  |
 **401** | Invalid or expired token |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_attorneys**
 > List[GetAttorneys200ResponseInner] get_attorneys(attorney_ids)
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 **401** | Invalid or expired token |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_bankruptcy_judge**
 > BankruptcyJudgeData get_bankruptcy_judge(bankruptcy_judge_id)
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_bankruptcy_judges**
 > List[BankruptcyJudgeData] get_bankruptcy_judges(bankruptcy_judge_ids)
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_federal_judge**
 > FederalJudgeData get_federal_judge(federal_judge_id)
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_federal_judges**
 > List[FederalJudgeData] get_federal_judges(federal_judge_ids)
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_law_firm**
 > ResponseGetLawFirmLawFirmsLawFirmIdGet get_law_firm(law_firm_id)
@@ -585,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 **422** | Error - 422 |  -  |
 **401** | Invalid or expired token |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_law_firms**
 > List[GetLawFirms200ResponseInner] get_law_firms(law_firm_ids)
@@ -670,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -686,7 +686,7 @@ Name | Type | Description  | Notes
 **401** | Invalid or expired token |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_magistrate**
 > MagistrateJudgeData get_magistrate(magistrate_judge_id)
@@ -753,7 +753,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -769,7 +769,7 @@ Name | Type | Description  | Notes
 **422** | Error - 422 |  -  |
 **401** | Invalid or expired token |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_magistrates**
 > List[MagistrateJudgeData] get_magistrates(magistrate_judge_ids)
@@ -836,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -852,7 +852,7 @@ Name | Type | Description  | Notes
 **401** | Invalid or expired token |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_parties**
 > List[GetParties200ResponseInner] get_parties(party_ids)
@@ -921,7 +921,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -937,7 +937,7 @@ Name | Type | Description  | Notes
 **401** | Invalid or expired token |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_party**
 > ResponseGetPartyPartiesPartyIdGet get_party(party_id)
@@ -1004,7 +1004,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -1020,7 +1020,7 @@ Name | Type | Description  | Notes
 **422** | Error - 422 |  -  |
 **401** | Invalid or expired token |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_state_judge**
 > StateJudgeData get_state_judge(state_judge_id)
@@ -1087,7 +1087,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -1103,7 +1103,7 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_state_judges**
 > List[StateJudgeData] get_state_judges(state_judge_ids)
@@ -1170,7 +1170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -1186,5 +1186,5 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

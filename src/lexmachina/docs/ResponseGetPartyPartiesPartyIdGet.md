@@ -27,6 +27,6 @@ response_get_party_parties_party_id_get_dict = response_get_party_parties_party_
 # create an instance of ResponseGetPartyPartiesPartyIdGet from a dict
 response_get_party_parties_party_id_get_from_dict = ResponseGetPartyPartiesPartyIdGet.from_dict(response_get_party_parties_party_id_get_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -24,6 +24,6 @@ amount_dict = amount_instance.to_dict()
 # create an instance of Amount from a dict
 amount_from_dict = Amount.from_dict(amount_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

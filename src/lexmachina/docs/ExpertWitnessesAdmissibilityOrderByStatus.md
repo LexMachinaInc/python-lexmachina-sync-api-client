@@ -26,6 +26,6 @@ expert_witnesses_admissibility_order_by_status_dict = expert_witnesses_admissibi
 # create an instance of ExpertWitnessesAdmissibilityOrderByStatus from a dict
 expert_witnesses_admissibility_order_by_status_from_dict = ExpertWitnessesAdmissibilityOrderByStatus.from_dict(expert_witnesses_admissibility_order_by_status_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

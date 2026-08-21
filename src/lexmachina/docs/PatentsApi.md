@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 **401** | Invalid or expired token |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_patents**
 > List[PatentData] get_patents(patent_numbers)
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -172,5 +172,5 @@ Name | Type | Description  | Notes
 **401** | Invalid or expired token |  -  |
 **422** | Error - 422 |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

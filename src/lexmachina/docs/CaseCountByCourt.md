@@ -25,6 +25,6 @@ case_count_by_court_dict = case_count_by_court_instance.to_dict()
 # create an instance of CaseCountByCourt from a dict
 case_count_by_court_from_dict = CaseCountByCourt.from_dict(case_count_by_court_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

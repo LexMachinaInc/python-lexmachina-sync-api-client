@@ -27,6 +27,6 @@ response_get_attorney_attorneys_attorney_id_get_dict = response_get_attorney_att
 # create an instance of ResponseGetAttorneyAttorneysAttorneyIdGet from a dict
 response_get_attorney_attorneys_attorney_id_get_from_dict = ResponseGetAttorneyAttorneysAttorneyIdGet.from_dict(response_get_attorney_attorneys_attorney_id_get_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 
