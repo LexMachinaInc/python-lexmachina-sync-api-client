@@ -27,6 +27,6 @@ rulings_dict = rulings_instance.to_dict()
 # create an instance of Rulings from a dict
 rulings_from_dict = Rulings.from_dict(rulings_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -28,6 +28,6 @@ district_case_number_reference_dict = district_case_number_reference_instance.to
 # create an instance of DistrictCaseNumberReference from a dict
 district_case_number_reference_from_dict = DistrictCaseNumberReference.from_dict(district_case_number_reference_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

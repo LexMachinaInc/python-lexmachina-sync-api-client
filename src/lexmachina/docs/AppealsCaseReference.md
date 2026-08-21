@@ -25,6 +25,6 @@ appeals_case_reference_dict = appeals_case_reference_instance.to_dict()
 # create an instance of AppealsCaseReference from a dict
 appeals_case_reference_from_dict = AppealsCaseReference.from_dict(appeals_case_reference_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

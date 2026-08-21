@@ -25,6 +25,6 @@ judgment_event_filter_dict = judgment_event_filter_instance.to_dict()
 # create an instance of JudgmentEventFilter from a dict
 judgment_event_filter_from_dict = JudgmentEventFilter.from_dict(judgment_event_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

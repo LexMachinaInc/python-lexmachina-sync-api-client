@@ -27,6 +27,6 @@ response_get_law_firm_law_firms_law_firm_id_get_dict = response_get_law_firm_law
 # create an instance of ResponseGetLawFirmLawFirmsLawFirmIdGet from a dict
 response_get_law_firm_law_firms_law_firm_id_get_from_dict = ResponseGetLawFirmLawFirmsLawFirmIdGet.from_dict(response_get_law_firm_law_firms_law_firm_id_get_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

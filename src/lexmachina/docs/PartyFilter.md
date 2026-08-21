@@ -31,6 +31,6 @@ party_filter_dict = party_filter_instance.to_dict()
 # create an instance of PartyFilter from a dict
 party_filter_from_dict = PartyFilter.from_dict(party_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

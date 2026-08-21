@@ -25,6 +25,6 @@ expert_witness_dict = expert_witness_instance.to_dict()
 # create an instance of ExpertWitness from a dict
 expert_witness_from_dict = ExpertWitness.from_dict(expert_witness_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

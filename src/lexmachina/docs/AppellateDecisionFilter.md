@@ -25,6 +25,6 @@ appellate_decision_filter_dict = appellate_decision_filter_instance.to_dict()
 # create an instance of AppellateDecisionFilter from a dict
 appellate_decision_filter_from_dict = AppellateDecisionFilter.from_dict(appellate_decision_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

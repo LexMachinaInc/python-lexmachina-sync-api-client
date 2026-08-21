@@ -25,6 +25,6 @@ itc_investigation_dates_dict = itc_investigation_dates_instance.to_dict()
 # create an instance of ITCInvestigationDates from a dict
 itc_investigation_dates_from_dict = ITCInvestigationDates.from_dict(itc_investigation_dates_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

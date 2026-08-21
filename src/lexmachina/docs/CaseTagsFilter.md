@@ -25,6 +25,6 @@ case_tags_filter_dict = case_tags_filter_instance.to_dict()
 # create an instance of CaseTagsFilter from a dict
 case_tags_filter_from_dict = CaseTagsFilter.from_dict(case_tags_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

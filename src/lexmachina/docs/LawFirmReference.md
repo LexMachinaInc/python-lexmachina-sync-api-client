@@ -28,6 +28,6 @@ law_firm_reference_dict = law_firm_reference_instance.to_dict()
 # create an instance of LawFirmReference from a dict
 law_firm_reference_from_dict = LawFirmReference.from_dict(law_firm_reference_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

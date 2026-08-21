@@ -25,6 +25,6 @@ judgment_events_list_dict = judgment_events_list_instance.to_dict()
 # create an instance of JudgmentEventsList from a dict
 judgment_events_list_from_dict = JudgmentEventsList.from_dict(judgment_events_list_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

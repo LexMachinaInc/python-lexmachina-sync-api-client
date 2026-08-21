@@ -28,6 +28,6 @@ appeals_case_dict = appeals_case_instance.to_dict()
 # create an instance of AppealsCase from a dict
 appeals_case_from_dict = AppealsCase.from_dict(appeals_case_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

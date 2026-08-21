@@ -25,6 +25,6 @@ district_case_analytic_from_query_dict = district_case_analytic_from_query_insta
 # create an instance of DistrictCaseAnalyticFromQuery from a dict
 district_case_analytic_from_query_from_dict = DistrictCaseAnalyticFromQuery.from_dict(district_case_analytic_from_query_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

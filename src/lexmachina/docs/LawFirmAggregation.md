@@ -24,6 +24,6 @@ law_firm_aggregation_dict = law_firm_aggregation_instance.to_dict()
 # create an instance of LawFirmAggregation from a dict
 law_firm_aggregation_from_dict = LawFirmAggregation.from_dict(law_firm_aggregation_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

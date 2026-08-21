@@ -25,6 +25,6 @@ district_case_reference_dict = district_case_reference_instance.to_dict()
 # create an instance of DistrictCaseReference from a dict
 district_case_reference_from_dict = DistrictCaseReference.from_dict(district_case_reference_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

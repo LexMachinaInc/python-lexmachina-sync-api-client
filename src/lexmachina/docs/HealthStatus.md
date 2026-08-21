@@ -26,6 +26,6 @@ health_status_dict = health_status_instance.to_dict()
 # create an instance of HealthStatus from a dict
 health_status_from_dict = HealthStatus.from_dict(health_status_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -25,6 +25,6 @@ case_count_by_type_dict = case_count_by_type_instance.to_dict()
 # create an instance of CaseCountByType from a dict
 case_count_by_type_from_dict = CaseCountByType.from_dict(case_count_by_type_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -27,6 +27,6 @@ complaint_summary_dict = complaint_summary_instance.to_dict()
 # create an instance of ComplaintSummary from a dict
 complaint_summary_from_dict = ComplaintSummary.from_dict(complaint_summary_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

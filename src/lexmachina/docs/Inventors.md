@@ -27,6 +27,6 @@ inventors_dict = inventors_instance.to_dict()
 # create an instance of Inventors from a dict
 inventors_from_dict = Inventors.from_dict(inventors_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

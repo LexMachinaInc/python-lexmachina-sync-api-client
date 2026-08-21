@@ -25,6 +25,6 @@ originating_venues_filter_dict = originating_venues_filter_instance.to_dict()
 # create an instance of OriginatingVenuesFilter from a dict
 originating_venues_filter_from_dict = OriginatingVenuesFilter.from_dict(originating_venues_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -24,6 +24,6 @@ administrative_law_judge_dict = administrative_law_judge_instance.to_dict()
 # create an instance of AdministrativeLawJudge from a dict
 administrative_law_judge_from_dict = AdministrativeLawJudge.from_dict(administrative_law_judge_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

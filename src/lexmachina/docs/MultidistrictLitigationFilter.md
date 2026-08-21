@@ -25,6 +25,6 @@ multidistrict_litigation_filter_dict = multidistrict_litigation_filter_instance.
 # create an instance of MultidistrictLitigationFilter from a dict
 multidistrict_litigation_filter_from_dict = MultidistrictLitigationFilter.from_dict(multidistrict_litigation_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

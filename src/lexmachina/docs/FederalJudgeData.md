@@ -29,6 +29,6 @@ federal_judge_data_dict = federal_judge_data_instance.to_dict()
 # create an instance of FederalJudgeData from a dict
 federal_judge_data_from_dict = FederalJudgeData.from_dict(federal_judge_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 
