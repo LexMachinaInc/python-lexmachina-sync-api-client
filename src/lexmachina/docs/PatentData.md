@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **abstract** | **str** |  | [optional] 
 **inventors** | [**Inventors**](Inventors.md) |  | 
 **district_court_cases** | [**PatentCaseInformation**](PatentCaseInformation.md) |  | 
+**orange_book** | [**List[OrangebookPatent]**](OrangebookPatent.md) |  | 
 
 ## Example
 

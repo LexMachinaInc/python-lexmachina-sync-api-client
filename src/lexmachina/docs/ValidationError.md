@@ -5,9 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**loc** | [**List[ValidationErrorLocInner]**](ValidationErrorLocInner.md) |  | 
+**loc** | [**List[LocationInner]**](LocationInner.md) |  | 
 **msg** | **str** |  | 
 **type** | **str** |  | 
+**input** | **object** |  | [optional] 
+**ctx** | **object** |  | [optional] 
 
 ## Example
 

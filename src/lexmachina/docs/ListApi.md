@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_courts**
-> ResponseListCourtsListCourtsCourtTypeGet list_courts(court_type)
+> ResponseListCourts list_courts(court_type)
 
 List Courts
 
@@ -441,7 +441,7 @@ Lists courts for a given court type. For use with querying or determining which 
 ```python
 import lexmachina
 from lexmachina.models.court_type import CourtType
-from lexmachina.models.response_list_courts_list_courts_court_type_get import ResponseListCourtsListCourtsCourtTypeGet
+from lexmachina.models.response_list_courts import ResponseListCourts
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseListCourtsListCourtsCourtTypeGet**](ResponseListCourtsListCourtsCourtTypeGet.md)
+[**ResponseListCourts**](ResponseListCourts.md)
 
 ### Authorization
 

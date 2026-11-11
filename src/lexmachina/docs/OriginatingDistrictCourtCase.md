@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **district_case_id** | **int** |  | 
 **district_case_url** | **str** |  | 
-**judges** | [**List[OriginatingDistrictCourtCaseJudgesInner]**](OriginatingDistrictCourtCaseJudgesInner.md) |  | 
+**judges** | [**List[JudgesInner]**](JudgesInner.md) |  | 
 **case_types** | **List[str]** |  | 
 
 ## Example
