@@ -1,6 +1,6 @@
 {
   "openapi": "3.1.0",
-  "info": { "title": "Lex Machina API", "version": "20260324" },
+  "info": { "title": "Lex Machina API", "version": "20261103" },
   "paths": {
     "/analyze-district-cases/from-query": {
       "post": {
@@ -1579,6 +1579,61 @@
         }
       }
     },
+    "/find-appeals-cases": {
+      "get": {
+        "tags": ["Federal Appeals Cases", "Find"],
+        "summary": "Find Appeals Case By Number",
+        "description": "Finds Lex Machina case ids for specified federal court of appeals case numbers.\n\n- **case_numbers**: case number search strings\n- **court**: optional court to limit results\n\nMatches results for each individual case number is cut off at 1000 match results.\n\nBecause case number formats vary, and because the case number for the same case can change over time, the search tries to err on the side of being more inclusive.\nSo, this may return more results than you expect.\n\nThe court param is optional and can be any of the name versions given by the /list-courts endpoint (must match capitalization).\nProviding a value for the court param will filter all case number searches in the request for cases within that court.",
+        "operationId": "find_appeals_case_by_number",
+        "security": [{ "JwtAccessBearer": [] }],
+        "parameters": [
+          {
+            "name": "caseNumbers",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "type": "string" },
+              "title": "Casenumbers"
+            }
+          },
+          {
+            "name": "court",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [{ "type": "string" }, { "type": "null" }],
+              "title": "Court"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AppealsCaseNumberSearchResult"
+                  },
+                  "title": "Response Find Appeals Case By Number"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/find-district-cases": {
       "get": {
         "tags": ["Federal District Cases", "Find"],
@@ -1618,7 +1673,7 @@
                   "items": {
                     "$ref": "#/components/schemas/DistrictCaseNumberSearchResult"
                   },
-                  "title": "Response Find District Case By Number Find District Cases Get"
+                  "title": "Response Find District Case By Number"
                 },
                 "examples": {
                   "Search for Two Case Numbers": {
@@ -1730,7 +1785,7 @@
                 "schema": {
                   "items": { "$ref": "#/components/schemas/Alert" },
                   "type": "array",
-                  "title": "Response Get Alerts Alerts Get"
+                  "title": "Response Get Alerts"
                 },
                 "examples": {
                   "a list of alerts": {
@@ -2593,7 +2648,7 @@
                     { "$ref": "#/components/schemas/AttorneyData" },
                     { "$ref": "#/components/schemas/AttorneyReference" }
                   ],
-                  "title": "Response Get Attorney Attorneys  Attorney Id  Get"
+                  "title": "Response Get Attorney"
                 },
                 "examples": {
                   "Single Attorney": {
@@ -2715,7 +2770,7 @@
                       { "$ref": "#/components/schemas/AttorneyReference" }
                     ]
                   },
-                  "title": "Response Get Attorneys Attorneys Get"
+                  "title": "Response Get Attorneys"
                 },
                 "examples": {
                   "Multiple Attorneys": {
@@ -3076,7 +3131,7 @@
                   "items": {
                     "$ref": "#/components/schemas/BankruptcyJudgeData"
                   },
-                  "title": "Response Get Bankruptcy Judges Bankruptcy Judges Get"
+                  "title": "Response Get Bankruptcy Judges"
                 },
                 "examples": {
                   "Multiple Bankruptcy Judges": {
@@ -5846,7 +5901,7 @@
                 "schema": {
                   "type": "array",
                   "items": { "$ref": "#/components/schemas/FederalJudgeData" },
-                  "title": "Response Get Federal Judges Federal Judges Get"
+                  "title": "Response Get Federal Judges"
                 },
                 "examples": {
                   "Multiple Federal Judges": {
@@ -6210,7 +6265,7 @@
                     { "$ref": "#/components/schemas/LawFirmData" },
                     { "$ref": "#/components/schemas/LawFirmReference" }
                   ],
-                  "title": "Response Get Law Firm Law Firms  Law Firm Id  Get"
+                  "title": "Response Get Law Firm"
                 },
                 "examples": {
                   "Single Lawfirm": {
@@ -6332,7 +6387,7 @@
                       { "$ref": "#/components/schemas/LawFirmReference" }
                     ]
                   },
-                  "title": "Response Get Law Firms Law Firms Get"
+                  "title": "Response Get Law Firms"
                 },
                 "examples": {
                   "Successful Resolve": {
@@ -6554,7 +6609,7 @@
                   "items": {
                     "$ref": "#/components/schemas/MagistrateJudgeData"
                   },
-                  "title": "Response Get Magistrates Magistrate Judges Get"
+                  "title": "Response Get Magistrates"
                 },
                 "examples": {
                   "Multiple Magistrate Judges": {
@@ -6667,7 +6722,7 @@
                     { "$ref": "#/components/schemas/PartyData" },
                     { "$ref": "#/components/schemas/PartyReference" }
                   ],
-                  "title": "Response Get Party Parties  Party Id  Get"
+                  "title": "Response Get Party"
                 },
                 "examples": {
                   "Single Party": {
@@ -6786,7 +6841,7 @@
                       { "$ref": "#/components/schemas/PartyReference" }
                     ]
                   },
-                  "title": "Response Get Parties Parties Get"
+                  "title": "Response Get Parties"
                 },
                 "examples": {
                   "Multiple Parties": {
@@ -7005,7 +7060,7 @@
                 "schema": {
                   "type": "array",
                   "items": { "$ref": "#/components/schemas/PatentData" },
-                  "title": "Response Get Patents Patents Get"
+                  "title": "Response Get Patents"
                 },
                 "examples": {
                   "Multiple Patents": {
@@ -9107,7 +9162,7 @@
                 "schema": {
                   "type": "array",
                   "items": { "$ref": "#/components/schemas/StateJudgeData" },
-                  "title": "Response Get State Judges State Judges Get"
+                  "title": "Response Get State Judges"
                 },
                 "examples": {
                   "Multiple State Judges": {
@@ -9307,7 +9362,7 @@
                 "schema": {
                   "items": { "type": "string" },
                   "type": "array",
-                  "title": "Response List Appellate Decisions List Appellate Decisions Federaldistrict Get"
+                  "title": "Response List Appellate Decisions"
                 },
                 "examples": {
                   "FederalDistrict List of Valid Appellate Decisions": {
@@ -9667,7 +9722,7 @@
                 "schema": {
                   "type": "array",
                   "items": { "$ref": "#/components/schemas/CaseTagsList" },
-                  "title": "Response List Case Tags List Case Tags  Court Type  Get"
+                  "title": "Response List Case Tags"
                 },
                 "examples": {
                   "List Of Valid Case Tags For FederalDistrict": {
@@ -10995,7 +11050,7 @@
                 "schema": {
                   "type": "array",
                   "items": { "$ref": "#/components/schemas/CaseTypesList" },
-                  "title": "Response List Case Types List Case Types  Court Type  Get"
+                  "title": "Response List Case Types"
                 },
                 "examples": {
                   "List Of Valid Case Types For FederalDistrict": {
@@ -12841,7 +12896,7 @@
                       "items": { "$ref": "#/components/schemas/StateCourt" }
                     }
                   ],
-                  "title": "Response List Courts List Courts  Court Type  Get"
+                  "title": "Response List Courts"
                 },
                 "examples": {
                   "List of Valid Courts for FederalDistrict": {
@@ -15647,7 +15702,7 @@
                 "schema": {
                   "items": { "type": "string" },
                   "type": "array",
-                  "title": "Response List Supreme Court Decisions List Supreme Court Decisions Federalappeals Get"
+                  "title": "Response List Supreme Court Decisions"
                 },
                 "examples": {
                   "FederalAppeals List of Valid Supreme Court Decisions": {
@@ -16795,7 +16850,7 @@
                 "schema": {
                   "items": { "$ref": "#/components/schemas/PartyGroup" },
                   "type": "array",
-                  "title": "Response Get Party Groups Party Groups Get"
+                  "title": "Response Get Party Groups"
                 },
                 "examples": {
                   "List Of Party Groups": {
@@ -17124,6 +17179,7 @@
           "type": { "type": "string", "title": "Type" },
           "runs": {
             "additionalProperties": { "type": "string" },
+            "propertyNames": { "format": "date" },
             "type": "object",
             "title": "Runs"
           }
@@ -17492,6 +17548,49 @@
         "additionalProperties": false,
         "type": "object",
         "title": "AppealsCaseDatesFilter"
+      },
+      "AppealsCaseNumberReference": {
+        "properties": {
+          "url": { "type": "string", "title": "Url" },
+          "appealsCaseId": { "type": "integer", "title": "Appealscaseid" },
+          "civilActionNumber": {
+            "type": "string",
+            "title": "Civilactionnumber"
+          },
+          "court": { "type": "string", "title": "Court" },
+          "title": { "type": "string", "title": "Title" }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "url",
+          "appealsCaseId",
+          "civilActionNumber",
+          "court",
+          "title"
+        ],
+        "title": "AppealsCaseNumberReference"
+      },
+      "AppealsCaseNumberSearchResult": {
+        "properties": {
+          "totalCount": { "type": "integer", "title": "Totalcount" },
+          "inputCaseNumber": { "type": "string", "title": "Inputcasenumber" },
+          "inputCourt": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Inputcourt"
+          },
+          "matches": {
+            "items": {
+              "$ref": "#/components/schemas/AppealsCaseNumberReference"
+            },
+            "type": "array",
+            "title": "Matches"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": ["totalCount", "inputCaseNumber", "matches"],
+        "title": "AppealsCaseNumberSearchResult"
       },
       "AppealsCaseQuery": {
         "properties": {
@@ -18206,11 +18305,23 @@
             "title": "Parties"
           },
           "assets": {
-            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              { "type": "null" }
+            ],
             "title": "Assets"
           },
           "liabilities": {
-            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              { "type": "null" }
+            ],
             "title": "Liabilities"
           },
           "docket": { "$ref": "#/components/schemas/Docket" }
@@ -18627,7 +18738,10 @@
           "amount": {
             "anyOf": [
               { "$ref": "#/components/schemas/UnspecifiedDamagesAmount" },
-              { "type": "string" },
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
               { "$ref": "#/components/schemas/MassCounterfeiterDefaultDamages" }
             ],
             "title": "Amount"
@@ -19897,7 +20011,10 @@
           "minimumAmount": {
             "anyOf": [
               { "type": "number" },
-              { "type": "string" },
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
               { "type": "null" }
             ],
             "title": "Minimumamount"
@@ -20113,7 +20230,10 @@
           "minimumAmount": {
             "anyOf": [
               { "type": "number" },
-              { "type": "string" },
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
               { "type": "null" }
             ],
             "title": "Minimumamount"
@@ -20601,7 +20721,10 @@
         "properties": {
           "amountPerDefendant": {
             "anyOf": [
-              { "type": "string" },
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
               { "$ref": "#/components/schemas/UnspecifiedDamagesAmount" }
             ],
             "title": "Amountperdefendant"
@@ -20713,6 +20836,53 @@
         "type": "object",
         "required": ["code", "title"],
         "title": "NatureOfSuit"
+      },
+      "OrangebookPatent": {
+        "properties": {
+          "applicationNumber": {
+            "type": "string",
+            "title": "Applicationnumber"
+          },
+          "productNumber": { "type": "string", "title": "Productnumber" },
+          "tradeName": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Tradename"
+          },
+          "activeIngredient": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Activeingredient"
+          },
+          "applicant": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Applicant"
+          },
+          "strength": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Strength"
+          },
+          "dosageFormRoute": {
+            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "title": "Dosageformroute"
+          },
+          "patentExpirationDate": {
+            "anyOf": [
+              { "type": "string", "format": "date" },
+              { "type": "null" }
+            ],
+            "title": "Patentexpirationdate"
+          },
+          "pediatricExclusivityExpirationDate": {
+            "anyOf": [
+              { "type": "string", "format": "date" },
+              { "type": "null" }
+            ],
+            "title": "Pediatricexclusivityexpirationdate"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": ["applicationNumber", "productNumber"],
+        "title": "OrangebookPatent"
       },
       "Ordering": {
         "type": "string",
@@ -21381,11 +21551,16 @@
           "inventors": { "$ref": "#/components/schemas/Inventors" },
           "districtCourtCases": {
             "$ref": "#/components/schemas/PatentCaseInformation"
+          },
+          "orangeBook": {
+            "items": { "$ref": "#/components/schemas/OrangebookPatent" },
+            "type": "array",
+            "title": "Orangebook"
           }
         },
         "additionalProperties": false,
         "type": "object",
-        "required": ["number", "inventors", "districtCourtCases"],
+        "required": ["number", "inventors", "districtCourtCases", "orangeBook"],
         "title": "PatentData"
       },
       "PatentFilter": {
@@ -21552,7 +21727,11 @@
             "type": "array",
             "title": "Awardedagainstpartyids"
           },
-          "amount": { "type": "string", "title": "Amount" },
+          "amount": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+            "title": "Amount"
+          },
           "awarded": { "type": "string", "format": "date", "title": "Awarded" }
         },
         "additionalProperties": false,
@@ -22112,7 +22291,6 @@
       "UnspecifiedDamagesAmount": {
         "type": "string",
         "enum": ["NotSpecified"],
-        "const": "NotSpecified",
         "title": "UnspecifiedDamagesAmount"
       },
       "ValidationError": {
@@ -22123,7 +22301,9 @@
             "title": "Location"
           },
           "msg": { "type": "string", "title": "Message" },
-          "type": { "type": "string", "title": "Error Type" }
+          "type": { "type": "string", "title": "Error Type" },
+          "input": { "title": "Input" },
+          "ctx": { "type": "object", "title": "Context" }
         },
         "type": "object",
         "required": ["loc", "msg", "type"],
