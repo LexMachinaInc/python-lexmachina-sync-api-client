@@ -227,7 +227,7 @@ configuration = lexmachina.Configuration(
 with lexmachina.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = lexmachina.FederalDistrictCasesApi(api_client)
-    case_numbers = ['case_numbers_example'] # List[Optional[str]] | 
+    case_numbers = ['case_numbers_example'] # List[str] | 
     court = 'court_example' # str |  (optional)
 
     try:
@@ -246,7 +246,7 @@ with lexmachina.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **case_numbers** | [**List[Optional[str]]**](str.md)|  | 
+ **case_numbers** | [**List[str]**](str.md)|  | 
  **court** | **str**|  | [optional] 
 
 ### Return type

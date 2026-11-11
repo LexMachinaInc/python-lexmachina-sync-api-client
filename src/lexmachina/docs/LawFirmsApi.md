@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get_law_firm**
-> ResponseGetLawFirmLawFirmsLawFirmIdGet get_law_firm(law_firm_id)
+> ResponseGetLawFirm get_law_firm(law_firm_id)
 
 Get Law Firm
 
@@ -24,7 +24,7 @@ Gets data for a single law firm.
 
 ```python
 import lexmachina
-from lexmachina.models.response_get_law_firm_law_firms_law_firm_id_get import ResponseGetLawFirmLawFirmsLawFirmIdGet
+from lexmachina.models.response_get_law_firm import ResponseGetLawFirm
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseGetLawFirmLawFirmsLawFirmIdGet**](ResponseGetLawFirmLawFirmsLawFirmIdGet.md)
+[**ResponseGetLawFirm**](ResponseGetLawFirm.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_law_firms**
-> List[GetLawFirms200ResponseInner] get_law_firms(law_firm_ids)
+> List[ResponseGetLawFirmsInner] get_law_firms(law_firm_ids)
 
 Get Law Firms
 
@@ -109,7 +109,7 @@ If any of the the lawFirmIds given are not the current lexmachina lawFirmId, the
 
 ```python
 import lexmachina
-from lexmachina.models.get_law_firms200_response_inner import GetLawFirms200ResponseInner
+from lexmachina.models.response_get_law_firms_inner import ResponseGetLawFirmsInner
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[GetLawFirms200ResponseInner]**](GetLawFirms200ResponseInner.md)
+[**List[ResponseGetLawFirmsInner]**](ResponseGetLawFirmsInner.md)
 
 ### Authorization
 

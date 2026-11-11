@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get_attorney**
-> ResponseGetAttorneyAttorneysAttorneyIdGet get_attorney(attorney_id)
+> ResponseGetAttorney get_attorney(attorney_id)
 
 Get Attorney
 
@@ -24,7 +24,7 @@ Gets data for a single attorney.
 
 ```python
 import lexmachina
-from lexmachina.models.response_get_attorney_attorneys_attorney_id_get import ResponseGetAttorneyAttorneysAttorneyIdGet
+from lexmachina.models.response_get_attorney import ResponseGetAttorney
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseGetAttorneyAttorneysAttorneyIdGet**](ResponseGetAttorneyAttorneysAttorneyIdGet.md)
+[**ResponseGetAttorney**](ResponseGetAttorney.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_attorneys**
-> List[GetAttorneys200ResponseInner] get_attorneys(attorney_ids)
+> List[ResponseGetAttorneysInner] get_attorneys(attorney_ids)
 
 Get Attorneys
 
@@ -109,7 +109,7 @@ If any of the the attorneyIds given are not the current lexmachina attorneyId, t
 
 ```python
 import lexmachina
-from lexmachina.models.get_attorneys200_response_inner import GetAttorneys200ResponseInner
+from lexmachina.models.response_get_attorneys_inner import ResponseGetAttorneysInner
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[GetAttorneys200ResponseInner]**](GetAttorneys200ResponseInner.md)
+[**List[ResponseGetAttorneysInner]**](ResponseGetAttorneysInner.md)
 
 ### Authorization
 

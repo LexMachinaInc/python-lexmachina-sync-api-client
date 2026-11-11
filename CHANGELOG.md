@@ -20,3 +20,7 @@ Used the Python generator from [openapi-generator](https://openapi-generator.tec
 
 - The updated client has methods for recently added endpoints such as those accessing alerts results and searching for cases by case number.
 - The previous version of the client is accessible under a `v1` subpackage. We will not be providing continuing support for the `v1` subpackage and it will be removed in 2026.
+
+2026-11-11 v2.0.0.20261103
+
+Regenerate client for new endpoints for Orange Book patents and searching for cases in the U.S. Federal Courts of Appeals by case number.

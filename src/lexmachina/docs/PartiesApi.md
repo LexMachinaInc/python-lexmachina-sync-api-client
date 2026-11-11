@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_parties**
-> List[GetParties200ResponseInner] get_parties(party_ids)
+> List[ResponseGetPartiesInner] get_parties(party_ids)
 
 Get Parties
 
@@ -27,7 +27,7 @@ If any of the the partyIds given are not the current lexmachina partyId, the res
 
 ```python
 import lexmachina
-from lexmachina.models.get_parties200_response_inner import GetParties200ResponseInner
+from lexmachina.models.response_get_parties_inner import ResponseGetPartiesInner
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[GetParties200ResponseInner]**](GetParties200ResponseInner.md)
+[**List[ResponseGetPartiesInner]**](ResponseGetPartiesInner.md)
 
 ### Authorization
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_party**
-> ResponseGetPartyPartiesPartyIdGet get_party(party_id)
+> ResponseGetParty get_party(party_id)
 
 Get Party
 
@@ -110,7 +110,7 @@ Gets data for a single party.
 
 ```python
 import lexmachina
-from lexmachina.models.response_get_party_parties_party_id_get import ResponseGetPartyPartiesPartyIdGet
+from lexmachina.models.response_get_party import ResponseGetParty
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseGetPartyPartiesPartyIdGet**](ResponseGetPartyPartiesPartyIdGet.md)
+[**ResponseGetParty**](ResponseGetParty.md)
 
 ### Authorization
 

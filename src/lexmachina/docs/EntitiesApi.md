@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **get_attorney**
-> ResponseGetAttorneyAttorneysAttorneyIdGet get_attorney(attorney_id)
+> ResponseGetAttorney get_attorney(attorney_id)
 
 Get Attorney
 
@@ -35,7 +35,7 @@ Gets data for a single attorney.
 
 ```python
 import lexmachina
-from lexmachina.models.response_get_attorney_attorneys_attorney_id_get import ResponseGetAttorneyAttorneysAttorneyIdGet
+from lexmachina.models.response_get_attorney import ResponseGetAttorney
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseGetAttorneyAttorneysAttorneyIdGet**](ResponseGetAttorneyAttorneysAttorneyIdGet.md)
+[**ResponseGetAttorney**](ResponseGetAttorney.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_attorneys**
-> List[GetAttorneys200ResponseInner] get_attorneys(attorney_ids)
+> List[ResponseGetAttorneysInner] get_attorneys(attorney_ids)
 
 Get Attorneys
 
@@ -120,7 +120,7 @@ If any of the the attorneyIds given are not the current lexmachina attorneyId, t
 
 ```python
 import lexmachina
-from lexmachina.models.get_attorneys200_response_inner import GetAttorneys200ResponseInner
+from lexmachina.models.response_get_attorneys_inner import ResponseGetAttorneysInner
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[GetAttorneys200ResponseInner]**](GetAttorneys200ResponseInner.md)
+[**List[ResponseGetAttorneysInner]**](ResponseGetAttorneysInner.md)
 
 ### Authorization
 
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_law_firm**
-> ResponseGetLawFirmLawFirmsLawFirmIdGet get_law_firm(law_firm_id)
+> ResponseGetLawFirm get_law_firm(law_firm_id)
 
 Get Law Firm
 
@@ -535,7 +535,7 @@ Gets data for a single law firm.
 
 ```python
 import lexmachina
-from lexmachina.models.response_get_law_firm_law_firms_law_firm_id_get import ResponseGetLawFirmLawFirmsLawFirmIdGet
+from lexmachina.models.response_get_law_firm import ResponseGetLawFirm
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseGetLawFirmLawFirmsLawFirmIdGet**](ResponseGetLawFirmLawFirmsLawFirmIdGet.md)
+[**ResponseGetLawFirm**](ResponseGetLawFirm.md)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_law_firms**
-> List[GetLawFirms200ResponseInner] get_law_firms(law_firm_ids)
+> List[ResponseGetLawFirmsInner] get_law_firms(law_firm_ids)
 
 Get Law Firms
 
@@ -620,7 +620,7 @@ If any of the the lawFirmIds given are not the current lexmachina lawFirmId, the
 
 ```python
 import lexmachina
-from lexmachina.models.get_law_firms200_response_inner import GetLawFirms200ResponseInner
+from lexmachina.models.response_get_law_firms_inner import ResponseGetLawFirmsInner
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[GetLawFirms200ResponseInner]**](GetLawFirms200ResponseInner.md)
+[**List[ResponseGetLawFirmsInner]**](ResponseGetLawFirmsInner.md)
 
 ### Authorization
 
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_parties**
-> List[GetParties200ResponseInner] get_parties(party_ids)
+> List[ResponseGetPartiesInner] get_parties(party_ids)
 
 Get Parties
 
@@ -871,7 +871,7 @@ If any of the the partyIds given are not the current lexmachina partyId, the res
 
 ```python
 import lexmachina
-from lexmachina.models.get_parties200_response_inner import GetParties200ResponseInner
+from lexmachina.models.response_get_parties_inner import ResponseGetPartiesInner
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -917,7 +917,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[GetParties200ResponseInner]**](GetParties200ResponseInner.md)
+[**List[ResponseGetPartiesInner]**](ResponseGetPartiesInner.md)
 
 ### Authorization
 
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_party**
-> ResponseGetPartyPartiesPartyIdGet get_party(party_id)
+> ResponseGetParty get_party(party_id)
 
 Get Party
 
@@ -954,7 +954,7 @@ Gets data for a single party.
 
 ```python
 import lexmachina
-from lexmachina.models.response_get_party_parties_party_id_get import ResponseGetPartyPartiesPartyIdGet
+from lexmachina.models.response_get_party import ResponseGetParty
 from lexmachina.rest import ApiException
 from pprint import pprint
 
@@ -1000,7 +1000,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseGetPartyPartiesPartyIdGet**](ResponseGetPartyPartiesPartyIdGet.md)
+[**ResponseGetParty**](ResponseGetParty.md)
 
 ### Authorization
 

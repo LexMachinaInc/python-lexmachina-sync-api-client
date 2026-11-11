@@ -4,6 +4,7 @@ All URIs are relative to *https://api.lexmachina.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**find_appeals_case_by_number**](FederalAppealsCasesApi.md#find_appeals_case_by_number) | **GET** /find-appeals-cases | Find Appeals Case By Number
 [**get_appeals_case**](FederalAppealsCasesApi.md#get_appeals_case) | **GET** /appeals-cases/{appeals_case_id} | Get Appeals Case
 [**list_appealability_rulings**](FederalAppealsCasesApi.md#list_appealability_rulings) | **GET** /list-appealability-rulings | List Appealability Rulings
 [**list_appellate_decisions**](FederalAppealsCasesApi.md#list_appellate_decisions) | **GET** /list-appellate-decisions/FederalDistrict | List Appellate Decisions
@@ -11,6 +12,98 @@ Method | HTTP request | Description
 [**list_supreme_court_decisions**](FederalAppealsCasesApi.md#list_supreme_court_decisions) | **GET** /list-supreme-court-decisions/FederalAppeals | List Supreme Court Decisions
 [**query_appeals_cases**](FederalAppealsCasesApi.md#query_appeals_cases) | **POST** /query-appeals-cases | Query Appeals Cases
 
+
+# **find_appeals_case_by_number**
+> List[AppealsCaseNumberSearchResult] find_appeals_case_by_number(case_numbers, court=court)
+
+Find Appeals Case By Number
+
+Finds Lex Machina case ids for specified federal court of appeals case numbers.
+
+- **case_numbers**: case number search strings
+- **court**: optional court to limit results
+
+Matches results for each individual case number is cut off at 1000 match results.
+
+Because case number formats vary, and because the case number for the same case can change over time, the search tries to err on the side of being more inclusive.
+So, this may return more results than you expect.
+
+The court param is optional and can be any of the name versions given by the /list-courts endpoint (must match capitalization).
+Providing a value for the court param will filter all case number searches in the request for cases within that court.
+
+### Example
+
+* Bearer Authentication (JwtAccessBearer):
+
+```python
+import lexmachina
+from lexmachina.models.appeals_case_number_search_result import AppealsCaseNumberSearchResult
+from lexmachina.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.lexmachina.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = lexmachina.Configuration(
+    host = "https://api.lexmachina.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JwtAccessBearer
+configuration = lexmachina.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with lexmachina.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = lexmachina.FederalAppealsCasesApi(api_client)
+    case_numbers = ['case_numbers_example'] # List[Optional[str]] | 
+    court = 'court_example' # str |  (optional)
+
+    try:
+        # Find Appeals Case By Number
+        api_response = api_instance.find_appeals_case_by_number(case_numbers, court=court)
+        print("The response of FederalAppealsCasesApi->find_appeals_case_by_number:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FederalAppealsCasesApi->find_appeals_case_by_number: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **case_numbers** | [**List[Optional[str]]**](str.md)|  | 
+ **court** | **str**|  | [optional] 
+
+### Return type
+
+[**List[AppealsCaseNumberSearchResult]**](AppealsCaseNumberSearchResult.md)
+
+### Authorization
+
+[JwtAccessBearer](../README.md#JwtAccessBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_appeals_case**
 > AppealsCaseData get_appeals_case(appeals_case_id, docket_retrieval=docket_retrieval)
