@@ -27,6 +27,6 @@ response_get_parties_inner_dict = response_get_parties_inner_instance.to_dict()
 # create an instance of ResponseGetPartiesInner from a dict
 response_get_parties_inner_from_dict = ResponseGetPartiesInner.from_dict(response_get_parties_inner_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

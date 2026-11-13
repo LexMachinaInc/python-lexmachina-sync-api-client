@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JwtAccessBearer](../README.md#JwtAccessBearer)
+[JwtAccessBearer](../../../README.md#JwtAccessBearer)
 
 ### HTTP request headers
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 **200** | Successful Response |  -  |
 **422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_appeals_case**
 > AppealsCaseData get_appeals_case(appeals_case_id, docket_retrieval=docket_retrieval)

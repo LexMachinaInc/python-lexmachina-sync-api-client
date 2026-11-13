@@ -32,6 +32,6 @@ orangebook_patent_dict = orangebook_patent_instance.to_dict()
 # create an instance of OrangebookPatent from a dict
 orangebook_patent_from_dict = OrangebookPatent.from_dict(orangebook_patent_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 
