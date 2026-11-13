@@ -23,6 +23,6 @@ itemid_dict = itemid_instance.to_dict()
 # create an instance of Itemid from a dict
 itemid_from_dict = Itemid.from_dict(itemid_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

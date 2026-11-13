@@ -27,6 +27,6 @@ state_docket_entry_dict = state_docket_entry_instance.to_dict()
 # create an instance of StateDocketEntry from a dict
 state_docket_entry_from_dict = StateDocketEntry.from_dict(state_docket_entry_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

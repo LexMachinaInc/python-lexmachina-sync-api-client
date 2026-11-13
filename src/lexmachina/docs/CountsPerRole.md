@@ -25,6 +25,6 @@ counts_per_role_dict = counts_per_role_instance.to_dict()
 # create an instance of CountsPerRole from a dict
 counts_per_role_from_dict = CountsPerRole.from_dict(counts_per_role_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -28,6 +28,6 @@ appeals_case_number_reference_dict = appeals_case_number_reference_instance.to_d
 # create an instance of AppealsCaseNumberReference from a dict
 appeals_case_number_reference_from_dict = AppealsCaseNumberReference.from_dict(appeals_case_number_reference_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

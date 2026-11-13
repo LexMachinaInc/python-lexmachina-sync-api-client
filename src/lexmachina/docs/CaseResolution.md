@@ -26,6 +26,6 @@ case_resolution_dict = case_resolution_instance.to_dict()
 # create an instance of CaseResolution from a dict
 case_resolution_from_dict = CaseResolution.from_dict(case_resolution_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

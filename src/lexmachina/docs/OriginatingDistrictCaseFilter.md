@@ -25,6 +25,6 @@ originating_district_case_filter_dict = originating_district_case_filter_instanc
 # create an instance of OriginatingDistrictCaseFilter from a dict
 originating_district_case_filter_from_dict = OriginatingDistrictCaseFilter.from_dict(originating_district_case_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

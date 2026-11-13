@@ -25,6 +25,6 @@ itc_party_dict = itc_party_instance.to_dict()
 # create an instance of ITCParty from a dict
 itc_party_from_dict = ITCParty.from_dict(itc_party_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

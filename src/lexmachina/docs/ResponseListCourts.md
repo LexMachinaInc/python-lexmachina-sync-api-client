@@ -23,6 +23,6 @@ response_list_courts_dict = response_list_courts_instance.to_dict()
 # create an instance of ResponseListCourts from a dict
 response_list_courts_from_dict = ResponseListCourts.from_dict(response_list_courts_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

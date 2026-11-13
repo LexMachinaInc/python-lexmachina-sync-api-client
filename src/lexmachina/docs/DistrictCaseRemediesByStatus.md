@@ -26,6 +26,6 @@ district_case_remedies_by_status_dict = district_case_remedies_by_status_instanc
 # create an instance of DistrictCaseRemediesByStatus from a dict
 district_case_remedies_by_status_from_dict = DistrictCaseRemediesByStatus.from_dict(district_case_remedies_by_status_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

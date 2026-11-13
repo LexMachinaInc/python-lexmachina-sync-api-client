@@ -27,6 +27,6 @@ party_search_results_dict = party_search_results_instance.to_dict()
 # create an instance of PartySearchResults from a dict
 party_search_results_from_dict = PartySearchResults.from_dict(party_search_results_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

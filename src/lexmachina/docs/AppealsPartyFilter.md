@@ -35,6 +35,6 @@ appeals_party_filter_dict = appeals_party_filter_instance.to_dict()
 # create an instance of AppealsPartyFilter from a dict
 appeals_party_filter_from_dict = AppealsPartyFilter.from_dict(appeals_party_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

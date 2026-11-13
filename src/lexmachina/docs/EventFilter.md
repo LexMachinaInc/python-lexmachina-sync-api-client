@@ -25,6 +25,6 @@ event_filter_dict = event_filter_instance.to_dict()
 # create an instance of EventFilter from a dict
 event_filter_from_dict = EventFilter.from_dict(event_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

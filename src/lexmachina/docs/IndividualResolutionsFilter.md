@@ -25,6 +25,6 @@ individual_resolutions_filter_dict = individual_resolutions_filter_instance.to_d
 # create an instance of IndividualResolutionsFilter from a dict
 individual_resolutions_filter_from_dict = IndividualResolutionsFilter.from_dict(individual_resolutions_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -38,6 +38,6 @@ alert_item_dict = alert_item_instance.to_dict()
 # create an instance of AlertItem from a dict
 alert_item_from_dict = AlertItem.from_dict(alert_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

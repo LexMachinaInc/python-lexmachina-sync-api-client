@@ -29,6 +29,6 @@ individual_damages_filter_dict = individual_damages_filter_instance.to_dict()
 # create an instance of IndividualDamagesFilter from a dict
 individual_damages_filter_from_dict = IndividualDamagesFilter.from_dict(individual_damages_filter_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

@@ -27,6 +27,6 @@ attorney_search_results_dict = attorney_search_results_instance.to_dict()
 # create an instance of AttorneySearchResults from a dict
 attorney_search_results_from_dict = AttorneySearchResults.from_dict(attorney_search_results_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

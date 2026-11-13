@@ -27,6 +27,6 @@ response_get_attorneys_inner_dict = response_get_attorneys_inner_instance.to_dic
 # create an instance of ResponseGetAttorneysInner from a dict
 response_get_attorneys_inner_from_dict = ResponseGetAttorneysInner.from_dict(response_get_attorneys_inner_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

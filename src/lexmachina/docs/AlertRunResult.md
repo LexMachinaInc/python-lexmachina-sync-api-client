@@ -28,6 +28,6 @@ alert_run_result_dict = alert_run_result_instance.to_dict()
 # create an instance of AlertRunResult from a dict
 alert_run_result_from_dict = AlertRunResult.from_dict(alert_run_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

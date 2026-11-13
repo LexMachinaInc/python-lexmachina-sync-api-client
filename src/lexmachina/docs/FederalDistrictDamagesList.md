@@ -25,6 +25,6 @@ federal_district_damages_list_dict = federal_district_damages_list_instance.to_d
 # create an instance of FederalDistrictDamagesList from a dict
 federal_district_damages_list_from_dict = FederalDistrictDamagesList.from_dict(federal_district_damages_list_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

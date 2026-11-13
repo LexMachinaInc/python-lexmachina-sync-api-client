@@ -25,6 +25,6 @@ administrative_patent_judge_detail_dict = administrative_patent_judge_detail_ins
 # create an instance of AdministrativePatentJudgeDetail from a dict
 administrative_patent_judge_detail_from_dict = AdministrativePatentJudgeDetail.from_dict(administrative_patent_judge_detail_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

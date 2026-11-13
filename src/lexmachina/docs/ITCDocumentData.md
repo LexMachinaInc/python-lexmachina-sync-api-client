@@ -31,6 +31,6 @@ itc_document_data_dict = itc_document_data_instance.to_dict()
 # create an instance of ITCDocumentData from a dict
 itc_document_data_from_dict = ITCDocumentData.from_dict(itc_document_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

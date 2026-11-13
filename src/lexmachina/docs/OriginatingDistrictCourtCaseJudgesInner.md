@@ -26,6 +26,6 @@ originating_district_court_case_judges_inner_dict = originating_district_court_c
 # create an instance of OriginatingDistrictCourtCaseJudgesInner from a dict
 originating_district_court_case_judges_inner_from_dict = OriginatingDistrictCourtCaseJudgesInner.from_dict(originating_district_court_case_judges_inner_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

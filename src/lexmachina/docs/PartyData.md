@@ -25,6 +25,6 @@ party_data_dict = party_data_instance.to_dict()
 # create an instance of PartyData from a dict
 party_data_from_dict = PartyData.from_dict(party_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 
